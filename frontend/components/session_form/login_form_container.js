@@ -7,15 +7,16 @@ import React from 'react';
 const mapStateToProps = (state,ownProps) => {
   return({
     errors: state.errors.session,
-    formType: "login",
-    navLink: <Link to='/signup'>sign up</Link>
+    formType: "LOGIN",
+    navLink: <Link to='/signup'>New User? Sign Up</Link>,
+    
   })
 }
 
 const mapDispatchToProps = (dispatch) => {
   return({
     processForm: (user) => dispatch(login(user)),
-
+    login: (user) => dispatch(login(user)),
   })
 }
 

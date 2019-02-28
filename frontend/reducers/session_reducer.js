@@ -18,7 +18,6 @@ const sessionReducer = (state= _nullState, action) => {
       return _nullState;
     default:
       return state;
-
   }
 }
 

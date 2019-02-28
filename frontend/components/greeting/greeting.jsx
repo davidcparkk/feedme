@@ -5,7 +5,13 @@ const Greeting = (props) => {
   const signinLink = () => {
     return (
       <nav className = 'login-signup'>
-        <Link to='/login' class='login-button'>Login</Link>
+        <header>
+          <h1>Feedme</h1>
+        </header>
+        <div >
+        <Link to='/' className='login-button'>Home</Link>
+        <Link to='/login' className='login-button'>Login</Link>
+        </div>
       </nav>
     );
   }

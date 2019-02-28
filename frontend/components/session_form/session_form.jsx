@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
 
   }
 
@@ -24,6 +25,16 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
+  handleDemo(e) {
+    e.preventDefault();
+    const user = {
+      username: 'guestDemo',
+      password: 'password'
+    };
+    
+    this.props.login(user);
+  }
+
 
   render() {
     let errors = this.props.errors.map( (error,idx) => {
@@ -34,31 +45,54 @@ class SessionForm extends React.Component {
       )
     })
 
+
+
     return(
       <div className = 'login-form-container'>
-        <form onSubmit={this.handleSubmit} className='login-form-box'>
+        <form onSubmit={this.handleSubmit}>
           Welcome to Feedme
           <br/>
-          Please {this.props.formType} or {this.props.navLink}
           <ul>{errors}</ul>
           <div className='login-form'>
             <br/>
             <label>
-              Username:
-              <input type="text" value={this.state.username} onChange={this.update('username')} className='login-input'/>
-            </label>
-
-            <label>
-              Password:
-              <input type="password" value={this.state.password} onChange={this.update('password')} className='login-input'/>
+                <input type="text" 
+                value={this.state.username} 
+                placeholder="Username"
+                onChange={this.update('username')} 
+                className='login-input'/>
             </label>
             <br/>
-            <input type='submit'  className='session-submit' value={this.props.formType}/>
+            <label>
+                <input type="password" 
+                value={this.state.password} 
+                placeholder="Password"
+                onChange={this.update('password')} 
+                className='login-input'/>
+            </label>
+            <br/>
+            <br/>
+            <input type='submit'  
+              className='session-submit' 
+              value={this.props.formType} 
+              />
+            <br/>
+            <br/>
           </div>
         </form>
+        <form onSubmit={this.handleDemo}>
+        <input type='submit' 
+              className='demo-submit' 
+              value="DEMO" 
+               />
+        </form>
+        <br/>
+        {this.props.navLink}
       </div>
     )
   }
 }
 
 export default SessionForm;
+
+// onSubmit={this.handleDemo}

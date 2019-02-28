@@ -13,24 +13,26 @@ document.addEventListener("DOMContentLoaded", () => {
             entities: {
                 users: { [window.currentUser.id]: window.currentUser }
             },
-            session: { id: window.currentUser.id }
+            session: { id: window.currentUser.id },
+            
         };
-        store = configureStore(preloadedState);
+        
         delete window.currentUser;
     } else {
         store = configureStore();
     }
 
     
-    
+    window.getState = store.getState;
+    window.dispatch = store.dispatch;
 
     ReactDOM.render(<Root store={store}/>, root);
 })
 
-// window.getState = store.getState;
-    // window.dispatch = store.dispatch;
+
     // window.login = login;
     // window.RECEIVE_CURRENT_USER = RECEIVE_CURRENT_USER;
     // window.RECEIVE_ERRORS = RECEIVE_ERRORS;
     // window.receiveCurrentUser = receiveCurrentUser;
     // window.receiveErrors = receiveErrors;
+    // demo: {username: "GuestDemo", password:"password"}
