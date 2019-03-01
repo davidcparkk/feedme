@@ -7,10 +7,8 @@ class SessionForm extends React.Component {
       username: '',
       password: ''
     }
-
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
-
   }
 
   update(field) {
@@ -18,6 +16,8 @@ class SessionForm extends React.Component {
       [field]: e.target.value
     })
   }
+
+ 
 
   handleSubmit(e) {
     e.preventDefault();
@@ -35,7 +35,6 @@ class SessionForm extends React.Component {
     this.props.login(user);
   }
 
-
   render() {
     let errors = this.props.errors.map( (error,idx) => {
       return(
@@ -45,12 +44,11 @@ class SessionForm extends React.Component {
       )
     })
 
-
-
     return(
       <div className = 'login-form-container'>
+        <div className = 'session-center-container'>
         <form onSubmit={this.handleSubmit}>
-          Welcome to Feedme
+          <h2 className='welcome-msg'>Welcome to Feedme</h2>
           <br/>
           <ul>{errors}</ul>
           <div className='login-form'>
@@ -81,13 +79,16 @@ class SessionForm extends React.Component {
           </div>
         </form>
         <form onSubmit={this.handleDemo}>
-        <input type='submit' 
-              className='demo-submit' 
-              value="DEMO" 
-               />
+          <input type='submit' 
+                className='demo-submit' 
+                value="DEMO" 
+                />
         </form>
         <br/>
+        <div className='session-navLink'>
         {this.props.navLink}
+        </div>
+        </div>
       </div>
     )
   }

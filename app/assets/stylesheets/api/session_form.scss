@@ -5,11 +5,16 @@
 
 .login-form-container {
   margin:auto;
-  width: 350px;
-  border: 1px solid black;
-  padding: 10px;
+  width: 320px;
+  border: 1px solid gray;
+  padding: 10px 10px 10px 10px;
   align-items: center;
   margin-top: 75px;
+}
+
+.session-navLink {
+  text-decoration: underline;
+  color: gray;
 }
 
 .session-submit {
@@ -21,6 +26,27 @@
   display: inline-block;
   border-radius: 2px;
   text-align: center;
+  margin-top: 15px;
+}
+
+.session-center-container{
+  align-items: center;
+}
+
+.welcome-msg {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.login-input {
+margin-top: 10px;
+margin-bottom: 10px;
+border: 1px solid gray;
+height: 40px;
+padding-bottom: 10px;
+padding-top: 10px;
+padding-left: 10px;
 }
 
 .demo-submit {

@@ -7,6 +7,11 @@ class User < ApplicationRecord
 
 	before_validation :ensure_session_token
 
+	has_many :feeds,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :Feed
+
 	def self.generate_session_token
 		SecureRandom::urlsafe_base64
 	end
