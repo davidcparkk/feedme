@@ -43,7 +43,7 @@ class SessionForm extends React.Component {
   render() {
     let errors = this.props.errors.map( (error,idx) => {
       return(
-        <li key={`error-${idx}`}>
+        <li key={`error-${idx}`} >
           {error}
         </li>
       )
@@ -52,12 +52,16 @@ class SessionForm extends React.Component {
     return(
       <div className = 'login-form-container'>
         <div className = 'session-center-container'>
-        <form onSubmit={this.handleSubmit}>
-          <h2 className='welcome-msg'>Welcome to Feedme</h2>
-          <br/>
-          <ul>{errors}</ul>
-          <div className='login-form'>
-            <br/>
+          <h2 className='welcome-msg'>{this.props.welcomeMsg}</h2>
+          <ul className='error-msg'>{errors}</ul>
+          <form onSubmit={this.handleSubmit} className='login-form'>
+          
+         
+          
+          
+          
+          <div>
+            
             <label>
                 <input type="text" 
                 value={this.state.username} 
@@ -65,7 +69,7 @@ class SessionForm extends React.Component {
                 onChange={this.update('username')} 
                 className='login-input'/>
             </label>
-            <br/>
+            
             <label>
                 <input type="password" 
                 value={this.state.password} 
@@ -74,13 +78,13 @@ class SessionForm extends React.Component {
                 className='login-input'/>
             </label>
             <br/>
-            <br/>
+            
             <input type='submit'  
               className='session-submit' 
               value={this.props.formType} 
               />
-            <br/>
-            <br/>
+            
+        
           </div>
         </form>
         <form onSubmit={this.handleDemo}>
@@ -89,8 +93,10 @@ class SessionForm extends React.Component {
                 value="DEMO" 
                 />
         </form>
-        <br/>
+       
         <div className='session-navLink' >
+        <br/>
+        
         {this.props.navLink}
         </div>
         </div>

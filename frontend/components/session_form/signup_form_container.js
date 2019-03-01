@@ -9,7 +9,7 @@ const mapStateToProps = (state,ownProps) => {
     errors: state.errors.session,
     formType: "CREATE MY ACCOUNT",
     navLink: <Link to='/login'>Existing user? Login</Link>,
-    
+    welcomeMsg: "Sign up to feedme"
   })
 }
 

@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import {login, RECEIVE_CURRENT_USER, receiveCurrentUser,receiveErrors, RECEIVE_ERRORS} from './actions/session_actions';
+import { fetchFeeds, fetchFeed, createFeed, deleteFeed, updateFeed } from './actions/feed_actions';
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
@@ -25,6 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
     
     window.getState = store.getState;
     window.dispatch = store.dispatch;
+    window.fetchFeeds = fetchFeeds;
+    window.fetchFeed = fetchFeed;
+    window.updateFeed = updateFeed;
+    window.createFeed = createFeed;
+    window.deleteFeed = deleteFeed;
 
     ReactDOM.render(<Root store={store}/>, root);
 })

@@ -4,61 +4,107 @@
 }
 
 .login-form-container {
-  margin:auto;
-  width: 320px;
-  border: 1px solid gray;
+  margin: auto;
+  width: 500px;
+  display: flex;
+  border: 1px solid #d6d6d6;
   padding: 10px 10px 10px 10px;
-  align-items: center;
-  margin-top: 75px;
+  justify-content: center;
+  margin-top: 30px;
+  height: 700px;
+  font: helvetica;
+  font-size: 19px;
+  padding-bottom: 20px;
+}
+
+.login-form {
+  display: inline-block;
+  width: 400px;
+  margin-left: 100px;
+  padding-top: 25px;
+}
+
+.error-msg {
+  color: red;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
 }
 
 .session-navLink {
   text-decoration: underline;
   color: gray;
+  margin-left: 100px;
 }
 
 .session-submit {
-  background-color: green;
+  background-color: #1d9236;
   border: none;
   color: white;
+  cursor: pointer;
+  font-weight: bold;
+  font-size:13px;
   padding: 10px 24px;
   width:300px;
   display: inline-block;
   border-radius: 2px;
   text-align: center;
   margin-top: 15px;
+  border: 1px solid 1d9236;
+  border-radius: 3px;
+}
+
+.demo-submit {
+  background-color: #1E90FF;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  font-size:13px;
+  padding: 10px 24px;
+  width:300px;
+  display: inline-block;
+  border-radius: 2px;
+  text-align: center;
+  margin-top: 15px;
+  border: 1px solid 1E90FF;
+  border-radius: 3px;
+  margin-left: 100px;
 }
 
 .session-center-container{
-  align-items: center;
+  
+  display: inline-block;
+  margin-top: 50px;
+  
+  
 }
 
 .welcome-msg {
-  font-size: 30px;
+  font-size: 23px;
+  font: helvetica;
   font-weight: bold;
   text-align: center;
+  
+  
 }
 
 .login-input {
-margin-top: 10px;
-margin-bottom: 10px;
-border: 1px solid gray;
+
+
+border: 1px solid #d6d6d6;
 height: 40px;
 padding-bottom: 10px;
 padding-top: 10px;
 padding-left: 10px;
+border: 1px solid #d6d6d6;
+border-radius: 3px;
+font-size: 20px;
+font: helvetica;
 }
 
-.demo-submit {
-  background-color: blue;
-  border: none;
-  width: 300px;
-  color: white;
-  padding: 10px 24px;
-  display: inline-block;
-  border-radius: 2px;
-  text-align: center;
-}
+
 
 label {
   display: inline-block;
@@ -73,6 +119,7 @@ input {
   border-width: 1px;
   box-sizing: border-box;
   width: 300px;
+  font-size: 13px;
   display: inline-block;
-
+  border: 1px solid #d6d6d6;
 }
