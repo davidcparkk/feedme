@@ -16,11 +16,17 @@ const Greeting = (props) => {
     );
   }
 
+  const handleLogout = (e) => {
+    e.preventDefault();
+    props.logout();
+  }
+
   const personalGreeting = () => {
+    
     return(
       <div className='header'>
         <h2 className='header-name'>Hi, {props.currentUser.username}!</h2>
-        <button className='header-button' onClick={props.logout}>Log Out</button>
+        <button className='header-button' onClick={handleLogout}>Log Out</button>
       </div>
     )
   }
