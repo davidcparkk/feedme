@@ -35,6 +35,11 @@ class SessionForm extends React.Component {
     this.props.login(user);
   }
 
+  componentWillUnmount() {
+    
+    this.props.clearErrors();
+  }
+
   render() {
     let errors = this.props.errors.map( (error,idx) => {
       return(
@@ -85,7 +90,7 @@ class SessionForm extends React.Component {
                 />
         </form>
         <br/>
-        <div className='session-navLink'>
+        <div className='session-navLink' >
         {this.props.navLink}
         </div>
         </div>
