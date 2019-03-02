@@ -1,14 +1,11 @@
 import React from 'react';
 import FeedsIndexItem from './feeds_index_item';
-
-
-
+import CreateFormContainer from './feeds_form_container';
 
 class FeedsIndex extends React.Component {
   constructor(props){
     super(props);
   }
-
 
   componentDidMount() {
     this.props.fetchFeeds();
@@ -30,6 +27,7 @@ class FeedsIndex extends React.Component {
         <ul>
           {feeds}
         </ul>
+        <CreateFormContainer />
       </div>
     )
   }

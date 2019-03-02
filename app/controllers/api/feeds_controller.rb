@@ -11,7 +11,7 @@ class Api::FeedsController < ApplicationController
     @feed = Feed.new(feed_params)
     @feed.user_id = current_user.id
     if @feed.save
-      render 'api/feeds/feed'
+      render 'api/feeds/show'
     else
       render json: @feed.errors.full_messages, status: 400
     end
@@ -42,6 +42,6 @@ class Api::FeedsController < ApplicationController
 
   private
   def feed_params
-    params.require(:feed).permit(:title)
+    params.require(:feed).permit(:feed_title)
   end
 end
