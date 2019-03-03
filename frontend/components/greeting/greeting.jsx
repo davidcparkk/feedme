@@ -33,8 +33,17 @@ const Greeting = (props) => {
           </div>
         
         <div className='profile-container'>
-          <h2 className='header-name'>Hi, {props.currentUser.username}</h2>
-          <button className='header-button' onClick={handleLogout}>Log Out</button>
+          <p className='header-name'>Hi, {props.currentUser.username}</p>
+          <nav role='navigation'>
+            <ul>
+              <li><button className='header-button' onClick={handleLogout}>Log Out</button></li>
+            </ul>
+          </nav>
+          <div className='dropdown'>
+            
+          </div>
+          
+          
         </div>
       </div>
     )
@@ -44,3 +53,7 @@ const Greeting = (props) => {
 };
 
 export default Greeting;
+
+ 
+
+{/* <img src={require('/home/david/Documents/App Academy/Projects/Feedme/feedMe/app/assets/images/flashlight-svgrepo-com.svg')} alt="" className='icon-img' size={24} /> */}
