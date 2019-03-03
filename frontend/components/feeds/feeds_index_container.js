@@ -4,7 +4,7 @@ import FeedsIndex from './feeds_index';
 import {selectFeed} from '../../reducers/selectors';
 
 const mapStateToProps = state => {
-  debugger
+  
   
   let feeds_values = Object.values(state.entities.feeds);
   

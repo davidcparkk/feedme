@@ -4,7 +4,8 @@ import {Link} from 'react-router-dom';
 const FeedsIndexItem = (props) => {
   return (
     <li>
-      {props.feed.feed_title}
+      <div className='tab'>
+        <div className='icon'></div>{props.feed.feed_title}</div>
     </li>
   )
 }

@@ -29,7 +29,7 @@ const Splash = (props) => {
 
   const SignedInPage = () => {
     return(
-      <div className='header'>
+      <div className='placeholder'>
 
       </div>
     )
