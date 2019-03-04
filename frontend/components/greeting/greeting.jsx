@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '/home/david/Documents/App Academy/Projects/Feedme/feedMe/app/assets/images/feedly.svg';
 
 const Greeting = (props) => {
   const signinLink = () => {
