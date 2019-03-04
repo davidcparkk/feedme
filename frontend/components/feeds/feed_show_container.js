@@ -1,22 +1,28 @@
 import {connect} from 'react-redux';
-import {fetchFeed} from '../../actions/feed_actions';
+import {fetchFeed, fetchFeeds} from '../../actions/feed_actions';
 import {selectFeed} from '../../reducers/selectors';
 import FeedShow from './feed_show';
 
 const mapStateToProps = (state, ownProps) => {
   let feeds_values = Object.values(state.entities.feeds);
-  
   let feedId = parseInt(ownProps.match.params.feedId);
-  const feed = selectFeed(feeds_values, feedId);
+  const feed = feeds_values[feedId];
+
+  
+  let currentUserId = parseInt(state.session.id);
+  let currentUserFeeds = selectFeed(feeds_values, currentUserId);
+
 
   return ({
+    currentUserFeeds: currentUserFeeds,
     feed: feed,
   });
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchFeed: id => dispatch(fetchFeed(id))
+    fetchFeed: id => dispatch(fetchFeed(id)),
+    fetchFeeds: () => dispatch(fetchFeeds())
   };
 };
 
