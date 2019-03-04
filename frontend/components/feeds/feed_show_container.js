@@ -2,6 +2,7 @@ import {connect} from 'react-redux';
 import {fetchFeed, fetchFeeds} from '../../actions/feed_actions';
 import {selectFeed} from '../../reducers/selectors';
 import FeedShow from './feed_show';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let feeds_values = Object.values(state.entities.feeds);
@@ -22,7 +23,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchFeed: id => dispatch(fetchFeed(id)),
-    fetchFeeds: () => dispatch(fetchFeeds())
+    fetchFeeds: () => dispatch(fetchFeeds()),
+    openModal: (type) => dispatch(openModal(type))
   };
 };
 

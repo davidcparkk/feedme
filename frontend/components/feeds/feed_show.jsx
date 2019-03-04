@@ -31,6 +31,7 @@ class FeedShow extends React.Component {
             </div>
             <div className='separator'></div>
             <div className='personal-feed'>Personal Feeds
+            <div className='separator-small'></div>
               <div className='tab'>
               <Link to='/feeds'>All</Link>
                 <div className='icon'></div>
@@ -43,7 +44,8 @@ class FeedShow extends React.Component {
               </ul>
             </div>
             <div className='tab'>
-              <Link to='/feeds/new'>Create Feed</Link>
+            <div className='separator-small'></div>
+            <button className='create-button' onClick={() => dispatch(this.props.openModal('feedsForm'))}>Create New Feed</button>
             </div>
             <div className='separator'></div>
             <button className='add-content'>Add Content</button>

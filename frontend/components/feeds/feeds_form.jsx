@@ -4,8 +4,11 @@ import { withRouter } from 'react-router-dom';
 class FeedsForm extends React.Component {
   constructor(props) {
     super(props);
+    
+    this.state = {
+      feed_title: ""
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = this.props.feed;
   }
 
   update(field) {
@@ -16,22 +19,25 @@ class FeedsForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state).then(() => this.props.history.push('/feeds'));
+    const feed = Object.assign({}, this.state);
+    this.props.action(feed).then(this.props.closeModal).then(() => this.props.history.push('/feeds'));
   }
 
   render () {
     return (
       <div className='display-container'>
-        <h3>{this.props.formType}</h3>
+        <h3>Create </h3>
         <form onSubmit={this.handleSubmit}>
-          <label>Title
-            <input
-              type="text"
-              value={this.state.feed_title}
-              onChange={this.update('feed_title')} />
-          </label>
+          <div onClick={this.props.closeModal} className='close-x'>X</div>
+            <label>Title
+              <input
+                type="text"
+                value={this.state.feed_title}
+                onChange={this.update('feed_title')} />
+            </label>
 
-          <input type="submit" value={this.props.formType} />
+            <input type="submit" value={this.props.formType} />
+          
         </form>
       </div>
     );

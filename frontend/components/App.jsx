@@ -7,6 +7,7 @@ import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import SplashContainer from './splash/splash_container';
 import FeedsIndexContainer from './feeds/feeds_index_container';
 import FeedShowContainer from './feeds/feed_show_container';
+import Modal from './modal/modal';
 
 import FeedsFormContainer from './feeds/feeds_form_container';
 // <Route path='/feeds' component={FeedsContainer} />
@@ -16,10 +17,11 @@ const App =() => {
   return(
       <div className='splash-div'>
         <GreetingContainer className='greeting-container'/> 
+        <Modal />
         <Switch>
           <AuthRoute path='/login' component={LoginFormContainer} />
           <AuthRoute path='/signup' component={SignupFormContainer} />
-          <ProtectedRoute path='/feeds/new' component={FeedsFormContainer} />
+          
           <Route path='/feeds/:feedId' component={FeedShowContainer} />
           <ProtectedRoute path='/feeds' component={FeedsIndexContainer} />
 
@@ -30,3 +32,5 @@ const App =() => {
 };
 
 export default App;
+
+{/* <ProtectedRoute path='/feeds/new' component={FeedsFormContainer} /> */}
