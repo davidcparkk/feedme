@@ -8,7 +8,9 @@
   
   display: flex;
   justify-content: flex-end;
+  
 }
+
 
 .feedme-welcome-container{
   float:left;
@@ -48,10 +50,11 @@
 
 .header{
   display: block;
-  height: 56px;
+  height: 35px;
   line-height: 24px;
   
   margin-left: 308px;
+  margin-right: 50px;
   border-bottom: 1px solid #e8e8e8;
 
 }

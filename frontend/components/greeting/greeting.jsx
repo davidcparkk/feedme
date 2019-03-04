@@ -32,20 +32,9 @@ const Greeting = (props) => {
           </div>
         
         <div className='profile-container'>
-          
-          <nav id='dropdown'>
-            <img src={window.flashlightURL} alt="" className='icon-img' size={24} />  
-            <ul>
-              <li><p className='header-name'>{props.currentUser.username}</p></li>
-              <li><button className='header-button' onClick={handleLogout}>Log Out</button></li>
-            </ul>
-          </nav>
-          <div className='dropdown'>
-            
-          </div>
-          
-          
-          
+          <p className='header-name'>{props.currentUser.username}</p>
+          <img src={window.flashlightURL} alt="" className='icon-img' size={24} />  
+          <button className='header-button' onClick={handleLogout}>Log Out</button>
         </div>
       </div>
     )
