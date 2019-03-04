@@ -11,7 +11,96 @@
 .modal-child{
   position: absolute;
   height: 100%;
-  left: 20%;
+  left: 30%;
   right: 0;
   background: white;
+}
+
+.create-new-feed-container{
+  padding-left: 120px;
+  padding-top: 30px;
+  width: 606px;
+  float: left;
+}
+.news-feed-header{
+  font-family: sans-serif;
+  font-size: 2.125rem;
+  font-weight: 700;
+  line-height: 1.25em;
+  margin-bottom: .7rem;
+  margin-top: 1rem;
+  text-transform: none;
+  font-weight: bold;
+}
+.news-feed-description{
+  font-family: sans-serif;
+  color: gray;
+  font-size: 1rem;
+}
+.close-x{
+  top:10px;
+  left:10px;
+  margin-top:10px;
+  margin-left:10px;
+  color: #a9a9a9;
+}
+.create-feed-button{
+  border: 1px solid #6cc56c;
+  background-color: #6cc56c;
+  color: white;
+  position: relative;
+  font-weight: 700;
+  font-size: 12px;
+  border-radius: 3px;
+  line-height: 1rem;
+  margin-top: 2px;
+  margin-right: 0.5rem;
+  margin-bottom: 0;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 2px;
+  padding-right: 2px;
+  text-align: center;
+  vertical-align: top;
+  width:80px;
+  height:38px;
+  font-family: Arial, Helvetica, sans-serif
+}
+.create-feed-cancel{
+  border: 1px solid gray;
+  background-color: white;
+  color: gray;
+  position: relative;
+  font-weight: 700;
+  font-size: 12px;
+  border-radius: 3px;
+  line-height: 1rem;
+  margin-top: 2px;
+  margin-right: 0.5rem;
+  margin-bottom: 0;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 2px;
+  padding-right: 2px;
+  text-align: center;
+  vertical-align: top;
+  width:74px;
+  height:32px;
+  font-family: Arial, Helvetica, sans-serif
+}
+.create-feed-form{
+  float:left;
+}
+.create-feed-input{
+  width: 606px;
+  padding-bottom: 7px;
+  padding-top: 7px;
+  padding-left: 7px;
+  margin-bottom: 10px;
+}
+.required-tag{
+  display: inline-block;
+  font-size: .7rem;
+  color:gray;
+  padding-left: 4px;
 }
