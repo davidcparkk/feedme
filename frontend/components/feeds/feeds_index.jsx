@@ -54,7 +54,7 @@ class FeedsIndex extends React.Component {
               </ul>
             </div>
             <div className='tab'>
-              <Link to='/feeds'>Create Feed</Link>
+              <Link to='/feeds/new'>Create Feed</Link>
             </div>
             <div className='separator'></div>
             <button className='add-content'>Add Content</button>

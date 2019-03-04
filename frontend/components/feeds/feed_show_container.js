@@ -6,7 +6,7 @@ import FeedShow from './feed_show';
 const mapStateToProps = (state, ownProps) => {
   let feeds_values = Object.values(state.entities.feeds);
   let feedId = parseInt(ownProps.match.params.feedId);
-  const feed = feeds_values[feedId];
+  let feed = state.entities.feeds[feedId];
 
   
   let currentUserId = parseInt(state.session.id);

@@ -21,7 +21,7 @@ class FeedsForm extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className='display-container'>
         <h3>{this.props.formType}</h3>
         <form onSubmit={this.handleSubmit}>
           <label>Title
