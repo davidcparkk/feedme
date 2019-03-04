@@ -2,6 +2,7 @@ import React from 'react';
 import FeedsIndexItem from './feeds_index_item';
 import AllFeedsIndexItem from './all_feeds_index_item';
 import CreateFormContainer from './feeds_form_container';
+import {Link} from 'react-router-dom';
 
 class FeedsIndex extends React.Component {
   constructor(props){
@@ -41,7 +42,8 @@ class FeedsIndex extends React.Component {
             </div>
             <div className='separator'></div>
             <div className='personal-feed'>Personal Feeds
-              <div className='tab'>All
+              <div className='tab'>
+              <Link to='/feeds'>All</Link>
                 <div className='icon'></div>
               </div>
               <div className='tab'>Favorites
@@ -52,8 +54,9 @@ class FeedsIndex extends React.Component {
               </ul>
             </div>
             <div className='tab'>
-            <CreateFormContainer />
+              <Link to='/feeds'>Create Feed</Link>
             </div>
+            <div className='separator'></div>
             <button className='add-content'>Add Content</button>
           </div>
         </div>
