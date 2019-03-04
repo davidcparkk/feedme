@@ -33,15 +33,18 @@ const Greeting = (props) => {
           </div>
         
         <div className='profile-container'>
-          <p className='header-name'>Hi, {props.currentUser.username}</p>
-          <nav role='navigation'>
+          
+          <nav id='dropdown'>
+            <img src={require('/home/david/Documents/App Academy/Projects/Feedme/feedMe/app/assets/images/flashlight-svgrepo-com.svg')} alt="" className='icon-img' size={24} />  
             <ul>
+              <li><p className='header-name'>{props.currentUser.username}</p></li>
               <li><button className='header-button' onClick={handleLogout}>Log Out</button></li>
             </ul>
           </nav>
           <div className='dropdown'>
             
           </div>
+          
           
           
         </div>
@@ -56,4 +59,3 @@ export default Greeting;
 
  
 
-{/* <img src={require('/home/david/Documents/App Academy/Projects/Feedme/feedMe/app/assets/images/flashlight-svgrepo-com.svg')} alt="" className='icon-img' size={24} /> */}

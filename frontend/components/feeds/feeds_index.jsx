@@ -1,5 +1,6 @@
 import React from 'react';
 import FeedsIndexItem from './feeds_index_item';
+import AllFeedsIndexItem from './all_feeds_index_item';
 import CreateFormContainer from './feeds_form_container';
 
 class FeedsIndex extends React.Component {
@@ -13,7 +14,7 @@ class FeedsIndex extends React.Component {
   
   render() {
 
-    let feeds = this.props.feeds.map(feed=> {
+    let personalFeeds = this.props.feeds.map(feed=> {
       return(
         <FeedsIndexItem 
         key={feed.id}
@@ -21,33 +22,52 @@ class FeedsIndex extends React.Component {
         />
       )
     })
+
+    let allFeeds = this.props.feeds.map(feed=> {
+      return(
+        <AllFeedsIndexItem 
+        key={feed.id}
+        feed={feed}
+        />
+      )
+    })
     
     return(
-      <div className="feedmeTabsHolder">
-        <div className='margin-bottom'>
-          <div className='pin-button'></div>
-          <div className='today-button'>Today
-          </div>
-          <div className='separator'></div>
-          <div className='personal-feed'>Personal Feeds
-            <div className='tab'>All
-              <div className='icon'></div>
+      <div className='feedsIndex'>
+        <div className="feedmeTabsHolder">
+          <div className='margin-bottom'>
+            <div className='pin-button'></div>
+            <div className='today-button'>Today
             </div>
-            <div className='tab'>Favorites
-              <div className='icon'></div>
+            <div className='separator'></div>
+            <div className='personal-feed'>Personal Feeds
+              <div className='tab'>All
+                <div className='icon'></div>
+              </div>
+              <div className='tab'>Favorites
+                <div className='icon'></div>
+              </div>
+              <ul>
+                {personalFeeds}
+              </ul>
             </div>
-            <ul>
-              {feeds}
-            </ul>
+            <div className='tab'>
+            <CreateFormContainer />
+            </div>
+            <button className='add-content'>Add Content</button>
           </div>
-          <div className='tab'>
-          <CreateFormContainer />
-          </div>
-          <button className='add-content'>Add Content</button>
-          
-          
-            
-          
+        </div>
+        <div className='display-container'>
+          <h2>All</h2>
+          <div className='separator-small'></div>
+          <div className='separator-small'></div>
+          <div className='separator-small'></div>
+          <p>LATEST</p>
+          <div className='separator-small'></div>
+          <div className='separator-small'></div>
+          <ul>
+            {allFeeds}
+          </ul>
         </div>
       </div>
     )

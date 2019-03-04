@@ -1,5 +1,11 @@
+.read-icon{
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+}
+
 .profile-container{
-  float:right;
+  
   display: flex;
   justify-content: flex-end;
 }
@@ -15,22 +21,23 @@
   background-color: green;
   color: white;
   position: relative;
-  margin-top: 4px;
+  
   font-weight: 700;
-  font-size: 11px;
+  font-size: 12px;
   border-radius: 3px;
   line-height: 1rem;
-  margin-top: 0;
+  margin-top: 2px;
   margin-right: 0.5rem;
   margin-bottom: 0;
-  padding-top: 4px;
+  padding-top: 2px;
   padding-bottom: 2px;
-  padding-left: 7px;
-  padding-right: 7px;
+  padding-left: 2px;
+  padding-right: 2px;
   text-align: center;
   vertical-align: top;
   width:74px;
   height:16px;
+  font-family: Arial, Helvetica, sans-serif
 }
 
 .icon-img{
@@ -43,15 +50,17 @@
   display: block;
   height: 56px;
   line-height: 24px;
-  padding: 12px 0;
+  
   margin-left: 308px;
+  border-bottom: 1px solid #e8e8e8;
+
 }
 
 .header-button {
-  background-color: blue;
+  
   border: none;
-  width: 100px;
-  color: white;
+  
+  color: black;
   display: inline-block;
   border-radius: 2px;
   text-align: center;

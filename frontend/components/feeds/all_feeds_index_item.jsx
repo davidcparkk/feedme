@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 const FeedsIndexItem = (props) => {
   return (
     <li>
-      <div className='tab'>
+      <div className='all-feeds-index-item'>
           <div className='icon'><img src={require('/home/david/Documents/App Academy/Projects/Feedme/feedMe/app/assets/images/read.svg')} />
           
           </div>
