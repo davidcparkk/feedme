@@ -22,7 +22,7 @@ const App =() => {
           <AuthRoute path='/login' component={LoginFormContainer} />
           <AuthRoute path='/signup' component={SignupFormContainer} />
           
-          <Route path='/feeds/:feedId' component={FeedShowContainer} />
+          <ProtectedRoute path='/feeds/:feedId' component={FeedShowContainer} />
           <ProtectedRoute path='/feeds' component={FeedsIndexContainer} />
 
           <Route exact path='/' component={SplashContainer} />
