@@ -23,6 +23,7 @@ class Api::FeedsController < ApplicationController
 
   def show
     @feed = Feed.find(params[:id])
+    render 'api/feeds/show'
   end
 
   def update

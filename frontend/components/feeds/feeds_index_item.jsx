@@ -1,17 +1,31 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 
-const FeedsIndexItem = (props) => {
-  return (
-    <li>
-      <div className='tab'>
-          <div className='icon'><img src={require('/home/david/Documents/App Academy/Projects/Feedme/feedMe/app/assets/images/arrow-right.svg')} />
-          
+class FeedsIndexItem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    const feedId = this.props.feed.id;
+    this.props.history.push(`/feeds/${feedId}`);
+  }
+  
+  render() {
+    return (
+      <li>
+        <div className='tab'>
+            <div className='icon'><img src={require('/home/david/Documents/App Academy/Projects/Feedme/feedMe/app/assets/images/arrow-right.svg')} />
+            
+            </div>
+            <div>
+              <Link to={`/feeds/${this.props.feed.id}`}>{this.props.feed.feed_title}</Link>
+            </div>
           </div>
-          {props.feed.feed_title}
-        </div>
-    </li>
-  )
+      </li>
+    )
+  }
 }
 
-export default FeedsIndexItem;
+export default withRouter(FeedsIndexItem);
