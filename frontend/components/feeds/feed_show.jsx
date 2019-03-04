@@ -50,11 +50,11 @@ class FeedShow extends React.Component {
           </div>
         </div>
         <div className='display-container'>
-          <h2>Hi</h2>
-          <div className='separator-small'></div>
+          <h2>{this.props.feed.feed_title}</h2>
           <div className='separator-small'></div>
           <div className='separator-small'></div>
           <p>MOST POPULAR</p>
+          <div className='separator-small'></div>
           <div className='separator-small'></div>
           <div className='separator-small'></div>
         </div>

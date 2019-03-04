@@ -9,6 +9,13 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
+  <script type='text/javascript'>
+    window.feedmeURL = "<%= image_url('feedly.svg') %>"
+    window.flashlightURL = "<%= image_url('flashlight.svg') %>"
+    window.readURL = "<%= image_url('read.svg') %>"
+    window.arrowRightURL = "<%= image_url('arrow-right.svg') %>"
+  </script>
+
   <body>
     <%= yield %>
   </body>

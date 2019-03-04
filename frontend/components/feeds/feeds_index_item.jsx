@@ -16,7 +16,7 @@ class FeedsIndexItem extends React.Component {
     return (
       <li>
         <div className='tab'>
-            <div className='icon'><img src={require('/home/david/Documents/App Academy/Projects/Feedme/feedMe/app/assets/images/arrow-right.svg')} />
+            <div className='icon'><img src={window.arrowRightURL} />
             
             </div>
             <div>

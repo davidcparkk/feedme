@@ -5,7 +5,7 @@ const FeedsIndexItem = (props) => {
   return (
     <li>
       <div className='all-feeds-index-item'>
-          <div className='icon'><img src={require('/home/david/Documents/App Academy/Projects/Feedme/feedMe/app/assets/images/read.svg')} />
+          <div className='icon'><img src={window.readURL} />
           
           </div>
           {props.feed.feed_title}

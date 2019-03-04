@@ -7,7 +7,7 @@ const Greeting = (props) => {
     return (
       <nav className = 'login-signup'>
         <div className="feedme-welcome-container">
-            <img src={require('/home/david/Documents/App Academy/Projects/Feedme/feedMe/app/assets/images/feedly.svg')} alt="" className='icon-img' size={24} />
+            <img src={window.feedmeURL} alt="" className='icon-img' size={24} />
             
           </div>
         <div >
@@ -28,14 +28,14 @@ const Greeting = (props) => {
     return(
       <div className='header'>
         <div className="feedme-welcome-container">
-            <img src={require('/home/david/Documents/App Academy/Projects/Feedme/feedMe/app/assets/images/feedly.svg')} alt="" className='icon-img' size={24} />
+          <img src={window.feedmeURL} alt="" className='icon-img' size={24} />
             <div className='feedme-welcome'>feedme</div>
           </div>
         
         <div className='profile-container'>
           
           <nav id='dropdown'>
-            <img src={require('/home/david/Documents/App Academy/Projects/Feedme/feedMe/app/assets/images/flashlight-svgrepo-com.svg')} alt="" className='icon-img' size={24} />  
+            <img src={window.flashlightURL} alt="" className='icon-img' size={24} />  
             <ul>
               <li><p className='header-name'>{props.currentUser.username}</p></li>
               <li><button className='header-button' onClick={handleLogout}>Log Out</button></li>
