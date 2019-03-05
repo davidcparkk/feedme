@@ -24213,3 +24213,1853 @@ Processing by Api::FeedsController#index as JSON
 Completed 200 OK in 110ms (Views: 106.4ms | ActiveRecord: 3.0ms)
 
 
+Started DELETE "/api/session" for 127.0.0.1 at 2019-03-04 21:18:30 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "a699ouWZ6eF6FgUsmz_JFw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "cQ6hOBvETjnJHbjZsB5EaA"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (9.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "cQ6hOBvETjnJHbjZsB5EaA"], ["updated_at", "2019-03-05 05:18:30.970212"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/users/show.json.jbuilder (11.3ms)
+Completed 200 OK in 98ms (Views: 46.9ms | ActiveRecord: 27.8ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2019-03-04 21:18:35 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]", "email"=>"guest@feedme.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "JPQ6Z8EVPky6d5OTc4iAYw"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (2.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "JPQ6Z8EVPky6d5OTc4iAYw"], ["updated_at", "2019-03-05 05:18:35.894870"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (267.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/users/show.json.jbuilder (3.8ms)
+Completed 200 OK in 469ms (Views: 24.2ms | ActiveRecord: 273.0ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 21:18:36 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (3.7ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (51.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (874.8ms)
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (3.9ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (2.9ms)
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (5.9ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (4.6ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (4.8ms)
+  Rendered api/feeds/index.json.jbuilder (916.2ms)
+Completed 200 OK in 930ms (Views: 864.2ms | ActiveRecord: 61.3ms)
+
+
+Started GET "/api/sources" for 127.0.0.1 at 2019-03-04 21:18:46 -0800
+Processing by Api::SourcesController#index as JSON
+  Rendering api/sources/index.json.jbuilder
+  [1m[36mSource Load (0.3ms)[0m  [1m[34mSELECT "sources".* FROM "sources"[0m
+  ↳ app/views/api/sources/index.json.jbuilder:1
+  Rendered api/sources/_source.json.jbuilder (0.5ms)
+  Rendered api/sources/_source.json.jbuilder (0.1ms)
+  Rendered api/sources/_source.json.jbuilder (0.1ms)
+  Rendered api/sources/_source.json.jbuilder (0.1ms)
+  Rendered api/sources/index.json.jbuilder (24.4ms)
+Completed 200 OK in 54ms (Views: 39.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/sources" for 127.0.0.1 at 2019-03-04 21:18:47 -0800
+Processing by Api::SourcesController#index as JSON
+  Rendering api/sources/index.json.jbuilder
+  [1m[36mSource Load (5.5ms)[0m  [1m[34mSELECT "sources".* FROM "sources"[0m
+  ↳ app/views/api/sources/index.json.jbuilder:1
+  Rendered api/sources/_source.json.jbuilder (0.3ms)
+  Rendered api/sources/_source.json.jbuilder (0.1ms)
+  Rendered api/sources/_source.json.jbuilder (0.0ms)
+  Rendered api/sources/_source.json.jbuilder (0.0ms)
+  Rendered api/sources/index.json.jbuilder (46.6ms)
+Completed 200 OK in 80ms (Views: 73.6ms | ActiveRecord: 5.5ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2019-03-04 21:20:37 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JPQ6Z8EVPky6d5OTc4iAYw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (2.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "z4sdJxDsiIV7qejpXhdClQ"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (1.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "z4sdJxDsiIV7qejpXhdClQ"], ["updated_at", "2019-03-05 05:20:37.920008"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered api/users/show.json.jbuilder (8.9ms)
+Completed 200 OK in 82ms (Views: 23.8ms | ActiveRecord: 11.5ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2019-03-04 21:29:45 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]", "email"=>"guest@feedme.com"}}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "u3XOUSm3TVNqyBKjnGcq2w"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (4.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "u3XOUSm3TVNqyBKjnGcq2w"], ["updated_at", "2019-03-05 05:29:45.611728"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (51.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (1.3ms)
+  Rendered api/users/show.json.jbuilder (35.4ms)
+Completed 200 OK in 412ms (Views: 59.9ms | ActiveRecord: 74.4ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 21:29:46 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (1.9ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (12.4ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (18.5ms)
+  [1m[35m (9.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (21.2ms)
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (12.1ms)
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (12.8ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (39.4ms)
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (23.3ms)
+  Rendered api/feeds/index.json.jbuilder (202.9ms)
+Completed 200 OK in 256ms (Views: 211.4ms | ActiveRecord: 33.7ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2019-03-04 21:43:14 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "u3XOUSm3TVNqyBKjnGcq2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (2.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (2.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "e9u23MkcD0IDqppVDLWx-w"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (5.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "e9u23MkcD0IDqppVDLWx-w"], ["updated_at", "2019-03-05 05:43:14.720059"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (7.6ms)
+Completed 200 OK in 70ms (Views: 22.1ms | ActiveRecord: 28.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 21:43:16 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (17.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (73.4ms)
+Completed 200 OK in 8091ms (Views: 8018.3ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 21:44:53 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 6006ms (Views: 5996.4ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2019-03-04 21:45:10 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]", "email"=>"guest@feedme.com"}}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (8.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (2.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "CGTSSG7VmePg4JuVFNsorg"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (3.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "CGTSSG7VmePg4JuVFNsorg"], ["updated_at", "2019-03-05 05:45:11.105232"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered api/users/show.json.jbuilder (14.3ms)
+Completed 200 OK in 679ms (Views: 40.1ms | ActiveRecord: 41.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 21:46:04 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CGTSSG7VmePg4JuVFNsorg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (40.8ms)
+Completed 200 OK in 6180ms (Views: 6172.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 21:48:45 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CGTSSG7VmePg4JuVFNsorg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (56.6ms)
+Completed 200 OK in 4565ms (Views: 4562.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 21:50:53 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CGTSSG7VmePg4JuVFNsorg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (21.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (109.9ms)
+Completed 200 OK in 8945ms (Views: 8929.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 21:51:10 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (5.8ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (7.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (26.6ms)
+  [1m[35m (21.0ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (37.7ms)
+  [1m[35m (20.8ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (30.4ms)
+  [1m[35m (19.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (24.5ms)
+  [1m[35m (24.2ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (35.1ms)
+  [1m[35m (14.4ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (18.8ms)
+  Rendered api/feeds/index.json.jbuilder (270.8ms)
+Completed 200 OK in 339ms (Views: 192.3ms | ActiveRecord: 125.1ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 21:51:10 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (4.9ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (28.7ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (39.2ms)
+  [1m[35m (16.8ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (24.8ms)
+  [1m[35m (25.8ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (29.9ms)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (36.7ms)
+  [1m[35m (15.8ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (34.7ms)
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (43.1ms)
+  Rendered api/feeds/index.json.jbuilder (311.8ms)
+Completed 200 OK in 400ms (Views: 298.7ms | ActiveRecord: 100.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 21:52:29 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CGTSSG7VmePg4JuVFNsorg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (61.9ms)
+Completed 200 OK in 6300ms (Views: 6291.4ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 21:52:39 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (17.1ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (8.9ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (40.6ms)
+  [1m[35m (47.9ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (79.1ms)
+  [1m[35m (33.8ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (39.9ms)
+  [1m[35m (14.0ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (17.3ms)
+  [1m[35m (26.0ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (60.4ms)
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (39.0ms)
+  Rendered api/feeds/index.json.jbuilder (339.1ms)
+Completed 200 OK in 381ms (Views: 227.7ms | ActiveRecord: 151.9ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 21:52:39 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (9.6ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (28.0ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (122.9ms)
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (61.7ms)
+  [1m[35m (17.1ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (26.0ms)
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (39.3ms)
+  [1m[35m (5.4ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (39.3ms)
+  [1m[35m (7.9ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (33.8ms)
+  Rendered api/feeds/index.json.jbuilder (375.5ms)
+Completed 200 OK in 453ms (Views: 355.5ms | ActiveRecord: 77.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 21:53:30 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (7.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CGTSSG7VmePg4JuVFNsorg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (58.3ms)
+Completed 200 OK in 349ms (Views: 339.8ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 21:53:33 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (12.8ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (6.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (40.5ms)
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (37.8ms)
+  [1m[35m (25.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (40.4ms)
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (33.3ms)
+  [1m[35m (18.2ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (22.0ms)
+  [1m[35m (45.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (91.4ms)
+  Rendered api/feeds/index.json.jbuilder (327.2ms)
+Completed 200 OK in 399ms (Views: 270.9ms | ActiveRecord: 114.3ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 21:53:34 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (3.5ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (14.7ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (46.1ms)
+  [1m[35m (38.2ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (43.9ms)
+  [1m[35m (14.8ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (23.9ms)
+  [1m[35m (11.2ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (19.3ms)
+  [1m[35m (15.3ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (22.9ms)
+  [1m[35m (23.0ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (36.4ms)
+  Rendered api/feeds/index.json.jbuilder (239.5ms)
+Completed 200 OK in 361ms (Views: 238.8ms | ActiveRecord: 120.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 21:56:50 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CGTSSG7VmePg4JuVFNsorg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (37.7ms)
+Completed 200 OK in 6636ms (Views: 6596.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 22:01:28 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CGTSSG7VmePg4JuVFNsorg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (2.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (64.5ms)
+Completed 200 OK in 2904ms (Views: 2890.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 22:01:47 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CGTSSG7VmePg4JuVFNsorg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 13503ms (Views: 13482.5ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 22:05:34 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (16.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CGTSSG7VmePg4JuVFNsorg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (51.2ms)
+Completed 200 OK in 7576ms (Views: 7558.4ms | ActiveRecord: 16.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 22:07:35 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CGTSSG7VmePg4JuVFNsorg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (2.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (52.9ms)
+Completed 200 OK in 8089ms (Views: 8062.4ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 22:08:24 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (36.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CGTSSG7VmePg4JuVFNsorg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (79.0ms)
+Completed 200 OK in 2676ms (Views: 2620.7ms | ActiveRecord: 36.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 22:11:15 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CGTSSG7VmePg4JuVFNsorg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 6686ms (Views: 6682.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 22:11:58 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CGTSSG7VmePg4JuVFNsorg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (20.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (72.1ms)
+Completed 200 OK in 507ms (Views: 483.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 22:15:16 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CGTSSG7VmePg4JuVFNsorg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (15.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (89.8ms)
+Completed 200 OK in 2630ms (Views: 2616.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 22:15:25 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CGTSSG7VmePg4JuVFNsorg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (5.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (35.6ms)
+Completed 200 OK in 271ms (Views: 269.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 22:16:48 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (12.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CGTSSG7VmePg4JuVFNsorg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (45.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (129.9ms)
+Completed 200 OK in 582ms (Views: 552.9ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 22:17:04 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (7.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CGTSSG7VmePg4JuVFNsorg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (53.8ms)
+Completed 200 OK in 6378ms (Views: 6368.5ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 22:20:30 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CGTSSG7VmePg4JuVFNsorg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (44.5ms)
+Completed 200 OK in 9105ms (Views: 9095.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 22:20:48 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (51.0ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (12.6ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (34.9ms)
+  [1m[35m (49.0ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (112.6ms)
+  [1m[35m (15.4ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (51.5ms)
+  [1m[35m (42.1ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (48.3ms)
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (35.9ms)
+  [1m[35m (11.9ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (37.7ms)
+  Rendered api/feeds/index.json.jbuilder (420.9ms)
+Completed 200 OK in 507ms (Views: 307.4ms | ActiveRecord: 187.4ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2019-03-04 22:20:57 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (10.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CGTSSG7VmePg4JuVFNsorg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (2.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (14.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (5.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "qsAOmdn9VZWgeYw9z5S2Rg"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (16.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "qsAOmdn9VZWgeYw9z5S2Rg"], ["updated_at", "2019-03-05 06:20:57.570757"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (42.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (12.4ms)
+Completed 200 OK in 181ms (Views: 23.8ms | ActiveRecord: 91.2ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2019-03-04 22:21:04 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]", "email"=>"guest@feedme.com"}}
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (7.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (5.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "ZV0XLwIrVelIVo9owfvsIw"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (5.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "ZV0XLwIrVelIVo9owfvsIw"], ["updated_at", "2019-03-05 06:21:04.742339"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/users/show.json.jbuilder (21.2ms)
+Completed 200 OK in 699ms (Views: 49.5ms | ActiveRecord: 31.9ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 22:21:05 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (17.4ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (77.6ms)
+  [1m[35m (5.8ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (51.8ms)
+  [1m[35m (27.8ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (43.8ms)
+  [1m[35m (20.3ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (40.5ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (34.3ms)
+  [1m[35m (7.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (123.5ms)
+  Rendered api/feeds/index.json.jbuilder (462.4ms)
+Completed 200 OK in 621ms (Views: 538.9ms | ActiveRecord: 80.4ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 22:21:06 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (10.4ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (45.6ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (68.9ms)
+  [1m[35m (14.4ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (56.4ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (23.5ms)
+  [1m[35m (6.2ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (23.1ms)
+  [1m[35m (17.2ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (31.9ms)
+  [1m[35m (17.8ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (35.2ms)
+  Rendered api/feeds/index.json.jbuilder (369.8ms)
+Completed 200 OK in 443ms (Views: 328.8ms | ActiveRecord: 112.4ms)
+
+
+Started GET "/api/sources" for 127.0.0.1 at 2019-03-04 22:23:06 -0800
+Processing by Api::SourcesController#index as JSON
+  Rendering api/sources/index.json.jbuilder
+  [1m[36mSource Load (2.7ms)[0m  [1m[34mSELECT "sources".* FROM "sources"[0m
+  ↳ app/views/api/sources/index.json.jbuilder:1
+  Rendered api/sources/_source.json.jbuilder (0.5ms)
+  Rendered api/sources/_source.json.jbuilder (0.1ms)
+  Rendered api/sources/_source.json.jbuilder (0.1ms)
+  Rendered api/sources/_source.json.jbuilder (0.1ms)
+  Rendered api/sources/index.json.jbuilder (71.3ms)
+Completed 200 OK in 98ms (Views: 47.5ms | ActiveRecord: 36.9ms)
+
+
+Started GET "/api/sources" for 127.0.0.1 at 2019-03-04 22:23:08 -0800
+Processing by Api::SourcesController#index as JSON
+  Rendering api/sources/index.json.jbuilder
+  [1m[36mSource Load (0.4ms)[0m  [1m[34mSELECT "sources".* FROM "sources"[0m
+  ↳ app/views/api/sources/index.json.jbuilder:1
+  Rendered api/sources/_source.json.jbuilder (11.3ms)
+  Rendered api/sources/_source.json.jbuilder (0.1ms)
+  Rendered api/sources/_source.json.jbuilder (0.1ms)
+  Rendered api/sources/_source.json.jbuilder (0.1ms)
+  Rendered api/sources/index.json.jbuilder (53.5ms)
+Completed 200 OK in 110ms (Views: 99.9ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2019-03-04 22:24:50 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ZV0XLwIrVelIVo9owfvsIw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (4.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (20.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (6.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "cYTGRoKnrj_RuwnafadDdQ"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (6.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "cYTGRoKnrj_RuwnafadDdQ"], ["updated_at", "2019-03-05 06:24:50.602092"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (2.3ms)
+  Rendered api/users/show.json.jbuilder (24.0ms)
+Completed 200 OK in 133ms (Views: 58.2ms | ActiveRecord: 46.4ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 22:24:50 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (10.0ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (38.3ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (53.0ms)
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (79.4ms)
+  [1m[35m (13.3ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (40.6ms)
+  [1m[35m (6.3ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (117.8ms)
+  [1m[35m (9.1ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (94.4ms)
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (68.5ms)
+  Rendered api/feeds/index.json.jbuilder (604.4ms)
+Completed 200 OK in 688ms (Views: 583.6ms | ActiveRecord: 84.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 22:24:53 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 1929ms (Views: 1924.2ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 22:24:57 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (2.7ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (17.4ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (198.4ms)
+  [1m[35m (15.4ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (53.9ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (38.1ms)
+  [1m[35m (25.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (35.5ms)
+  [1m[35m (19.7ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (52.5ms)
+  [1m[35m (7.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (45.4ms)
+  Rendered api/feeds/index.json.jbuilder (605.5ms)
+Completed 200 OK in 712ms (Views: 602.8ms | ActiveRecord: 89.1ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2019-03-04 22:25:10 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]", "email"=>"guest@feedme.com"}}
+  [1m[36mUser Load (7.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "0AYNmhHnk2BwDKswIUeXVQ"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (6.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "0AYNmhHnk2BwDKswIUeXVQ"], ["updated_at", "2019-03-05 06:25:10.499642"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (16.4ms)
+Completed 200 OK in 360ms (Views: 29.9ms | ActiveRecord: 23.0ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 22:25:10 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (13.7ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (9.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (32.8ms)
+  [1m[35m (4.6ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (25.4ms)
+  [1m[35m (21.2ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (29.4ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (51.6ms)
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (44.4ms)
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (40.9ms)
+  Rendered api/feeds/index.json.jbuilder (291.0ms)
+Completed 200 OK in 384ms (Views: 298.2ms | ActiveRecord: 56.7ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 22:25:11 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (6.6ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (16.3ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (45.1ms)
+  [1m[35m (8.3ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (27.5ms)
+  [1m[35m (28.0ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (35.4ms)
+  [1m[35m (11.8ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (19.4ms)
+  [1m[35m (13.0ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (21.4ms)
+  [1m[35m (8.2ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (39.0ms)
+  Rendered api/feeds/index.json.jbuilder (571.2ms)
+Completed 200 OK in 644ms (Views: 550.1ms | ActiveRecord: 92.1ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2019-03-04 22:28:03 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (45.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0AYNmhHnk2BwDKswIUeXVQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (11.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "or9cvmL7Fw1lnpU2IhMG1g"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (22.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "or9cvmL7Fw1lnpU2IhMG1g"], ["updated_at", "2019-03-05 06:28:04.154975"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (13.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (5.1ms)
+  Rendered api/users/show.json.jbuilder (25.5ms)
+Completed 200 OK in 283ms (Views: 74.2ms | ActiveRecord: 94.9ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 22:28:04 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (1.8ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (12.1ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (44.2ms)
+  [1m[35m (15.6ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (32.9ms)
+  [1m[35m (11.2ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (48.5ms)
+  [1m[35m (10.9ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (39.1ms)
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (37.6ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (59.3ms)
+  Rendered api/feeds/index.json.jbuilder (416.8ms)
+Completed 200 OK in 499ms (Views: 439.7ms | ActiveRecord: 55.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 22:28:05 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 266ms (Views: 258.3ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 22:28:09 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (0.4ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (10.7ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (52.3ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (63.4ms)
+  [1m[35m (11.7ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (45.1ms)
+  [1m[35m (23.6ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (41.1ms)
+  [1m[35m (17.3ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (27.0ms)
+  [1m[35m (11.9ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (24.3ms)
+  Rendered api/feeds/index.json.jbuilder (311.5ms)
+Completed 200 OK in 431ms (Views: 311.9ms | ActiveRecord: 76.1ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2019-03-04 22:28:15 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]", "email"=>"guest@feedme.com"}}
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:20
+  [1m[35m (4.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "HK7v1eyOEXAAxhI2jMXx-w"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "HK7v1eyOEXAAxhI2jMXx-w"], ["updated_at", "2019-03-05 06:28:15.668777"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (7.7ms)
+  Rendered api/users/show.json.jbuilder (12.4ms)
+Completed 200 OK in 353ms (Views: 31.3ms | ActiveRecord: 18.0ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 22:28:16 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (0.5ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (20.0ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (36.4ms)
+  [1m[35m (20.3ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (30.6ms)
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (45.2ms)
+  [1m[35m (18.2ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (52.2ms)
+  [1m[35m (4.8ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (48.5ms)
+  [1m[35m (15.8ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (21.9ms)
+  Rendered api/feeds/index.json.jbuilder (292.9ms)
+Completed 200 OK in 352ms (Views: 257.6ms | ActiveRecord: 83.1ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 22:28:16 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (3.9ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (28.3ms)
+  [1m[35m (13.7ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (23.1ms)
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (14.0ms)
+  [1m[35m (11.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (34.0ms)
+  [1m[35m (15.0ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (28.7ms)
+  [1m[35m (10.9ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (59.4ms)
+  Rendered api/feeds/index.json.jbuilder (240.3ms)
+Completed 200 OK in 311ms (Views: 229.4ms | ActiveRecord: 61.0ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2019-03-04 22:31:26 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (9.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "HK7v1eyOEXAAxhI2jMXx-w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (10.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "HkexANLQUD4CYCT4vs_zJA"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (6.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "HkexANLQUD4CYCT4vs_zJA"], ["updated_at", "2019-03-05 06:31:26.663371"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered api/users/show.json.jbuilder (8.6ms)
+Completed 200 OK in 105ms (Views: 26.5ms | ActiveRecord: 30.1ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 22:31:26 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (1.1ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (90.3ms)
+  [1m[35m (31.7ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (39.6ms)
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (34.9ms)
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (21.4ms)
+  [1m[35m (8.1ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (14.8ms)
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (19.3ms)
+  Rendered api/feeds/index.json.jbuilder (339.7ms)
+Completed 200 OK in 463ms (Views: 376.1ms | ActiveRecord: 54.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 22:31:28 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (35.2ms)
+Completed 200 OK in 8409ms (Views: 8400.3ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 22:34:30 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (33.1ms)
+Completed 200 OK in 7128ms (Views: 7120.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 22:35:14 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 6465ms (Views: 6462.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 22:35:25 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (12.6ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (31.1ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (81.0ms)
+  [1m[35m (7.4ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (44.4ms)
+  [1m[35m (28.6ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (35.4ms)
+  [1m[35m (32.9ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (48.1ms)
+  [1m[35m (16.7ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (32.1ms)
+  [1m[35m (29.0ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (35.3ms)
+  Rendered api/feeds/index.json.jbuilder (409.6ms)
+Completed 200 OK in 506ms (Views: 323.2ms | ActiveRecord: 158.4ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2019-03-04 22:35:42 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]", "email"=>"guest@feedme.com"}}
+  [1m[36mUser Load (49.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:20
+  [1m[35m (2.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (25.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "D_YgvCeGY2SMSZwY6SDvxg"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (27.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "D_YgvCeGY2SMSZwY6SDvxg"], ["updated_at", "2019-03-05 06:35:43.290945"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered api/users/show.json.jbuilder (14.3ms)
+Completed 200 OK in 788ms (Views: 63.6ms | ActiveRecord: 110.3ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 22:35:43 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (5.9ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (33.7ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (46.4ms)
+  [1m[35m (9.3ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (55.0ms)
+  [1m[35m (40.2ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (57.7ms)
+  [1m[35m (22.7ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (93.1ms)
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (81.3ms)
+  [1m[35m (18.2ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (53.5ms)
+  Rendered api/feeds/index.json.jbuilder (499.6ms)
+Completed 200 OK in 611ms (Views: 440.3ms | ActiveRecord: 132.4ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 22:35:44 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (8.6ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (11.8ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (49.6ms)
+  [1m[35m (25.8ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (38.2ms)
+  [1m[35m (17.3ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (19.8ms)
+  [1m[35m (7.1ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (30.2ms)
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (32.9ms)
+  [1m[35m (8.4ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (67.6ms)
+  Rendered api/feeds/index.json.jbuilder (307.3ms)
+Completed 200 OK in 473ms (Views: 365.7ms | ActiveRecord: 84.3ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2019-03-04 22:36:46 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (13.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "D_YgvCeGY2SMSZwY6SDvxg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (20.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (12.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (8.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "cxFqnGE1N5tGZpo9e3hVTA"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (6.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "cxFqnGE1N5tGZpo9e3hVTA"], ["updated_at", "2019-03-05 06:36:46.650830"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (12.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (8.8ms)
+Completed 200 OK in 166ms (Views: 58.2ms | ActiveRecord: 74.6ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 22:36:46 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (8.5ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (33.1ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (55.8ms)
+  [1m[35m (9.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (16.8ms)
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (49.1ms)
+  [1m[35m (5.9ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (34.3ms)
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (34.5ms)
+  Rendered api/feeds/index.json.jbuilder (276.6ms)
+Completed 200 OK in 352ms (Views: 294.6ms | ActiveRecord: 35.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 22:36:48 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 7998ms (Views: 7993.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 22:36:59 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (39.0ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (24.8ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (57.7ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (36.2ms)
+  [1m[35m (28.7ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (30.8ms)
+  [1m[35m (16.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (18.5ms)
+  [1m[35m (85.6ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (89.1ms)
+  [1m[35m (14.7ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (22.9ms)
+  Rendered api/feeds/index.json.jbuilder (443.8ms)
+Completed 200 OK in 543ms (Views: 325.6ms | ActiveRecord: 210.1ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2019-03-04 22:37:11 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]", "email"=>"guest@feedme.com"}}
+  [1m[36mUser Load (14.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (7.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "dSIBeYf7_NFWMP5f5nde4Q"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (4.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "dSIBeYf7_NFWMP5f5nde4Q"], ["updated_at", "2019-03-05 06:37:11.830350"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (6.8ms)
+  Rendered api/users/show.json.jbuilder (9.8ms)
+Completed 200 OK in 528ms (Views: 31.7ms | ActiveRecord: 52.1ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 22:39:23 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (2.2ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (32.6ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (43.9ms)
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (28.3ms)
+  [1m[35m (8.2ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (22.5ms)
+  [1m[35m (9.4ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (13.7ms)
+  [1m[35m (19.7ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (34.9ms)
+  [1m[35m (13.3ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (29.4ms)
+  Rendered api/feeds/index.json.jbuilder (228.7ms)
+Completed 200 OK in 297ms (Views: 203.1ms | ActiveRecord: 92.6ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 22:39:23 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (3.4ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (50.1ms)
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (26.8ms)
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (25.1ms)
+  [1m[35m (6.6ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (19.7ms)
+  [1m[35m (11.6ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (30.9ms)
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (16.8ms)
+  Rendered api/feeds/index.json.jbuilder (211.5ms)
+Completed 200 OK in 276ms (Views: 241.4ms | ActiveRecord: 32.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 22:47:26 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dSIBeYf7_NFWMP5f5nde4Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (59.9ms)
+Completed 200 OK in 8292ms (Views: 8270.3ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 22:50:22 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (66.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dSIBeYf7_NFWMP5f5nde4Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (136.3ms)
+Completed 200 OK in 935ms (Views: 850.2ms | ActiveRecord: 66.9ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 22:50:26 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (3.1ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (7.3ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (38.3ms)
+  [1m[35m (22.1ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (32.4ms)
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (48.8ms)
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (27.9ms)
+  [1m[35m (14.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (21.2ms)
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (28.6ms)
+  Rendered api/feeds/index.json.jbuilder (263.7ms)
+Completed 200 OK in 327ms (Views: 252.1ms | ActiveRecord: 63.3ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2019-03-04 23:02:52 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (65.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dSIBeYf7_NFWMP5f5nde4Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (5.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "wJTnt0F0deINjRi6PN_ppw"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (126.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "wJTnt0F0deINjRi6PN_ppw"], ["updated_at", "2019-03-05 07:02:54.617158"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (12.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (5.9ms)
+  Rendered api/users/show.json.jbuilder (13.0ms)
+Completed 200 OK in 639ms (Views: 79.2ms | ActiveRecord: 366.6ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 23:02:55 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (2.2ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (26.9ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (153.5ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (57.0ms)
+  [1m[35m (30.8ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (117.6ms)
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (30.2ms)
+  [1m[35m (8.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (34.3ms)
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (29.8ms)
+  Rendered api/feeds/index.json.jbuilder (614.9ms)
+Completed 200 OK in 788ms (Views: 626.1ms | ActiveRecord: 93.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 23:02:59 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (46.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (91.5ms)
+Completed 200 OK in 8922ms (Views: 8872.0ms | ActiveRecord: 46.3ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 23:03:12 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (18.3ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (34.4ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (41.6ms)
+  [1m[35m (15.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (67.7ms)
+  [1m[35m (25.9ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (61.9ms)
+  [1m[35m (35.0ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (51.3ms)
+  [1m[35m (20.2ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (23.4ms)
+  [1m[35m (9.3ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (47.8ms)
+  Rendered api/feeds/index.json.jbuilder (392.4ms)
+Completed 200 OK in 456ms (Views: 296.0ms | ActiveRecord: 158.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 23:09:49 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (13.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (62.6ms)
+Completed 200 OK in 25694ms (Views: 25664.3ms | ActiveRecord: 24.3ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 23:10:23 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (33.0ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (40.9ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (104.2ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (58.3ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (23.8ms)
+  [1m[35m (13.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (23.5ms)
+  [1m[35m (17.4ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (23.5ms)
+  [1m[35m (17.7ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (26.4ms)
+  Rendered api/feeds/index.json.jbuilder (460.1ms)
+Completed 200 OK in 570ms (Views: 342.3ms | ActiveRecord: 191.4ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2019-03-04 23:10:32 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]", "email"=>"guest@feedme.com"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (5.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "sBnnvO6CsTsr_hx0fjy_DQ"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "sBnnvO6CsTsr_hx0fjy_DQ"], ["updated_at", "2019-03-05 07:10:32.559573"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (10.3ms)
+Completed 200 OK in 340ms (Views: 30.3ms | ActiveRecord: 25.4ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 23:10:34 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (1.5ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (41.1ms)
+  [1m[35m (13.6ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (35.5ms)
+  [1m[35m (5.2ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (62.3ms)
+  [1m[35m (11.6ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (32.5ms)
+  [1m[35m (6.7ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (23.2ms)
+  [1m[35m (19.8ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (24.8ms)
+  Rendered api/feeds/index.json.jbuilder (318.7ms)
+Completed 200 OK in 378ms (Views: 312.1ms | ActiveRecord: 59.3ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 23:10:35 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (2.6ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (5.6ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (21.0ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (21.8ms)
+  [1m[35m (17.2ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (27.4ms)
+  [1m[35m (22.6ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (37.8ms)
+  [1m[35m (12.2ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (49.9ms)
+  [1m[35m (16.9ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (39.2ms)
+  Rendered api/feeds/index.json.jbuilder (244.4ms)
+Completed 200 OK in 316ms (Views: 212.3ms | ActiveRecord: 77.7ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2019-03-04 23:14:06 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sBnnvO6CsTsr_hx0fjy_DQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (2.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "NraeEtoeY85ecUljHK83Vw"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (5.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "NraeEtoeY85ecUljHK83Vw"], ["updated_at", "2019-03-05 07:14:06.443945"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered api/users/show.json.jbuilder (7.1ms)
+Completed 200 OK in 96ms (Views: 28.3ms | ActiveRecord: 16.0ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 23:14:06 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (8.9ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (4.8ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (89.9ms)
+  [1m[35m (20.1ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (75.3ms)
+  [1m[35m (10.1ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (62.7ms)
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (58.5ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (31.3ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (45.0ms)
+  Rendered api/feeds/index.json.jbuilder (471.4ms)
+Completed 200 OK in 535ms (Views: 470.2ms | ActiveRecord: 50.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 23:14:07 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (8.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 2417ms (Views: 2391.6ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 23:14:12 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (3.8ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (15.1ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (22.2ms)
+  [1m[35m (19.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (30.2ms)
+  [1m[35m (25.1ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (29.6ms)
+  [1m[35m (9.1ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (31.1ms)
+  [1m[35m (23.7ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (72.0ms)
+  [1m[35m (28.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (52.2ms)
+  Rendered api/feeds/index.json.jbuilder (329.8ms)
+Completed 200 OK in 386ms (Views: 251.0ms | ActiveRecord: 124.7ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 23:14:12 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (11.1ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (14.9ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (51.5ms)
+  [1m[35m (14.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (37.3ms)
+  [1m[35m (14.6ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (27.7ms)
+  [1m[35m (5.6ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (46.4ms)
+  [1m[35m (26.8ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (32.1ms)
+  [1m[35m (20.9ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (37.5ms)
+  Rendered api/feeds/index.json.jbuilder (266.9ms)
+Completed 200 OK in 336ms (Views: 226.2ms | ActiveRecord: 108.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 23:20:02 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 3931ms (Views: 3918.2ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 23:20:47 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (14.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 402ms (Views: 361.0ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 23:20:59 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (37.2ms)
+Completed 200 OK in 4755ms (Views: 4723.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 23:21:06 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (36.5ms)
+Completed 200 OK in 598ms (Views: 576.9ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 23:21:09 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (10.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 460ms (Views: 444.2ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 23:23:44 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 3330ms (Views: 3328.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 23:24:41 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 4199ms (Views: 4195.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 23:24:48 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (6.4ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (9.1ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (42.5ms)
+  [1m[35m (37.1ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (42.0ms)
+  [1m[35m (24.2ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (37.2ms)
+  [1m[35m (13.1ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (38.0ms)
+  [1m[35m (25.3ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (60.4ms)
+  [1m[35m (6.4ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (30.3ms)
+  Rendered api/feeds/index.json.jbuilder (372.2ms)
+Completed 200 OK in 461ms (Views: 284.4ms | ActiveRecord: 148.3ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2019-03-04 23:25:05 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]", "email"=>"guest@feedme.com"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "-NYDc9teGFKqBal7ADPuuw"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (12.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "-NYDc9teGFKqBal7ADPuuw"], ["updated_at", "2019-03-05 07:25:06.070595"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (317.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (8.7ms)
+  Rendered api/users/show.json.jbuilder (207.1ms)
+Completed 200 OK in 1445ms (Views: 527.3ms | ActiveRecord: 338.8ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 23:25:11 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (0.8ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 9]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (214.0ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 10]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (155.5ms)
+  [1m[35m (8.9ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 11]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (27.1ms)
+  [1m[35m (9.8ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 12]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (20.0ms)
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 13]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (44.0ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "sources"."id" FROM "sources" INNER JOIN "feed_source_items" ON "sources"."id" = "feed_source_items"."source_id" WHERE "feed_source_items"."feed_id" = $1[0m  [["feed_id", 14]]
+  ↳ app/views/api/feeds/_feed.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (17.3ms)
+  Rendered api/feeds/index.json.jbuilder (538.3ms)
+Completed 200 OK in 634ms (Views: 602.8ms | ActiveRecord: 25.9ms)
+
+

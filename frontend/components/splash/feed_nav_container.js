@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 import {selectFeed} from '../../reducers/selectors';
 import {logout} from '../../actions/session_actions';
 import {fetchFeeds} from '../../actions/feed_actions';
-import Splash from './splash';
+import FeedNav from './feed_nav';
 
 const mapStateToProps = state => {
   let feeds_values = Object.values(state.entities.feeds);
@@ -22,4 +22,4 @@ const mapDispatchToProps = dispatch => {
   });
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Splash);
+export default connect(mapStateToProps,mapDispatchToProps)(FeedNav);

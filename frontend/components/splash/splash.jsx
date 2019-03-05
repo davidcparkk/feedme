@@ -1,9 +1,10 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FeedsIndexItem from '../feeds/feeds_index_item';
 
-const Splash = (props) => {
-  const SplashPage = () => {
+class Splash extends React.Component {
+  SplashPage () {
     return (
       <div className='landing'>
         <div className='get-started'>
@@ -16,26 +17,24 @@ const Splash = (props) => {
             <Link to='/signup' className='signup-link'>GET STARTED FOR FREE</Link>
           </div>
         </div>
-
         <div className='discover'>
           <div className='container-centered'>
             <h2>Discover insightful sources</h2>
           </div>
-        </div>
-        
+        </div> 
         </div>
     );
   }
-
-  const SignedInPage = () => {
-    return(
-      <div className='placeholder'>
-
-      </div>
-    )
+  
+  render (){
+    if (this.props.currentUser) {
+      return null;
+    } else {
+      return this.SplashPage();
+    }
   }
-
-  return props.currentUser ? SignedInPage() : SplashPage();
+  
+  
 };
 
 export default Splash;

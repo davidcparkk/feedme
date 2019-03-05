@@ -7,6 +7,7 @@ import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import SplashContainer from './splash/splash_container';
 import FeedsIndexContainer from './feeds/feeds_index_container';
 import FeedShowContainer from './feeds/feed_show_container';
+import FeedNavContainer from './splash/feed_nav_container.js';
 import Modal from './modal/modal';
 import SourcesIndexContainer from './sources/sources_index_container';
 import SourceShowContainer from './sources/source_show_container';
@@ -18,6 +19,7 @@ const App =() => {
   return(
       <div className='splash-div'>
         <GreetingContainer className='greeting-container'/> 
+        <FeedNavContainer />
         <Modal />
         <Switch>
           <AuthRoute path='/login' component={LoginFormContainer} />

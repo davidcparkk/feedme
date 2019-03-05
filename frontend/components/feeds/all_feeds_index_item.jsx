@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const FeedsIndexItem = (props) => {
+const AllFeedsIndexItem = (props) => {
   return (
     <li>
       <div className='all-feeds-index-item'>
@@ -14,4 +14,4 @@ const FeedsIndexItem = (props) => {
   )
 }
 
-export default FeedsIndexItem;
+export default AllFeedsIndexItem;

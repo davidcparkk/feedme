@@ -14,7 +14,8 @@ const mapStateToProps = state => {
 
  
   return {
-    feeds: currentUserFeeds
+    feeds: currentUserFeeds,
+    currentUser: state.entities.users[state.session.id]
   }
 }
 
