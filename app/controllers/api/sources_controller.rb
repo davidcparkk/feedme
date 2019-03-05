@@ -43,7 +43,7 @@ class Api::SourcesController < ApplicationController
   
     private
     def source_params
-      params.require(:source).permit(:source_name)
+      params.require(:source).permit(:source_name, :description)
     end
 
   

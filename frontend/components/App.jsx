@@ -8,8 +8,9 @@ import SplashContainer from './splash/splash_container';
 import FeedsIndexContainer from './feeds/feeds_index_container';
 import FeedShowContainer from './feeds/feed_show_container';
 import Modal from './modal/modal';
+import SourcesIndexContainer from './sources/sources_index_container';
+import SourceShowContainer from './sources/source_show_container';
 
-import FeedsFormContainer from './feeds/feeds_form_container';
 // <Route path='/feeds' component={FeedsContainer} />
 
 
@@ -22,6 +23,8 @@ const App =() => {
           <AuthRoute path='/login' component={LoginFormContainer} />
           <AuthRoute path='/signup' component={SignupFormContainer} />
           
+          <ProtectedRoute exact path='/sources' component={SourcesIndexContainer} />
+          <ProtectedRoute path='/sources/:sourceId' component={SourceShowContainer} />
           <ProtectedRoute path='/feeds/:feedId' component={FeedShowContainer} />
           <ProtectedRoute path='/feeds' component={FeedsIndexContainer} />
 

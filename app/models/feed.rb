@@ -8,7 +8,7 @@ class Feed < ApplicationRecord
 
   has_many :feedSourceItems,
   primary_key: :id,
-  foriegn_key: :feed_id,
+  foreign_key: :feed_id,
   class_name: :FeedSourceItem
 
   has_many :sources,

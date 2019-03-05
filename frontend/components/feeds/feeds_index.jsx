@@ -59,7 +59,7 @@ class FeedsIndex extends React.Component {
               <button className='create-button' onClick={() => dispatch(this.props.openModal('feedsForm'))}>Create New Feed</button>
             </div>
             <div className='separator'></div>
-            <button className='add-content'>Add Content</button>
+            <Link to='/sources' className='add-content'>Add Content</Link>
           </div>
         </div>
         <div className='display-container'>

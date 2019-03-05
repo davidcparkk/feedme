@@ -23016,3 +23016,663 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 3691ms (Views: 3686.8ms | ActiveRecord: 1.4ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4499781369416081595)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4499781369416081595)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "p8J7ZKCyRePIuNE51LCzxw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (2.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Guest"], ["session_token", "p8J7ZKCyRePIuNE51LCzxw"], ["password_digest", "$2a$10$FuqSWmv2wpolpOF6EHeWGeMMK079qrQ.ud6FguJZmVlgQQZYN8ZOG"], ["created_at", "2019-03-05 01:12:53.755211"], ["updated_at", "2019-03-05 01:12:53.755211"], ["email", "guest@feedme.com"]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Ben"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "5ASd8NWzMWoTAE2_u3FjiQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Ben"], ["session_token", "5ASd8NWzMWoTAE2_u3FjiQ"], ["password_digest", "$2a$10$b0VHjhjL1XN3M4wxmXwdQOSJMLhcmx/nrFCYzr5OKGST01NnRqU/q"], ["created_at", "2019-03-05 01:12:53.842546"], ["updated_at", "2019-03-05 01:12:53.842546"], ["email", "ben@feedme.com"]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Davies"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "p-9QWZd4EWnMku9sLSgoPQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Davies"], ["session_token", "p-9QWZd4EWnMku9sLSgoPQ"], ["password_digest", "$2a$10$2U8PehHxo5GUSoBVFI8vruERqYrcJMmFWFBkuyEcO/DatatFIJD.a"], ["created_at", "2019-03-05 01:12:53.932537"], ["updated_at", "2019-03-05 01:12:53.932537"], ["email", "davies@feedme.com"]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Camilla"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "-8-lHdzK0zQyFDWJ7QhRYA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Camilla"], ["session_token", "-8-lHdzK0zQyFDWJ7QhRYA"], ["password_digest", "$2a$10$sfUmzu2259lISfOb5aoC1ejOAON96sSAlfscjjL1Z2AGNNFU.fLq2"], ["created_at", "2019-03-05 01:12:54.014051"], ["updated_at", "2019-03-05 01:12:54.014051"], ["email", "camilla@feedme.com"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Destroy (8.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "y0KydqZ5daMipqlrxUCyYA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Guest"], ["session_token", "y0KydqZ5daMipqlrxUCyYA"], ["password_digest", "$2a$10$qEdDbqU3A91Izi.Tj5k8xOhAPJRUEnRXKlLH7qp40yqUyivzFbN2G"], ["created_at", "2019-03-05 01:13:51.487297"], ["updated_at", "2019-03-05 01:13:51.487297"], ["email", "guest@feedme.com"]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Ben"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "05OSQMQxjz7oDcCtFurpLQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Ben"], ["session_token", "05OSQMQxjz7oDcCtFurpLQ"], ["password_digest", "$2a$10$HEpnP6DVXq7aOXbW.qKsyudSiwLgVBe6hFeKdpt6wVhhe699SzmOG"], ["created_at", "2019-03-05 01:13:51.574892"], ["updated_at", "2019-03-05 01:13:51.574892"], ["email", "ben@feedme.com"]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Davies"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "7hGF6BzPzGTWnIgBP-m9tw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Davies"], ["session_token", "7hGF6BzPzGTWnIgBP-m9tw"], ["password_digest", "$2a$10$UmVAd/aVlFjlOcAP8lPx6e91fg4xXZSdpavc9on5j5o.d/9RIZ0Te"], ["created_at", "2019-03-05 01:13:51.656556"], ["updated_at", "2019-03-05 01:13:51.656556"], ["email", "davies@feedme.com"]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Camilla"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PLdNFNFUyJ26xUvAWe2AZQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Camilla"], ["session_token", "PLdNFNFUyJ26xUvAWe2AZQ"], ["password_digest", "$2a$10$o41Qqb3YpkKNjrLc5VfH/eJTbLmrudfC8nAzCx47ndBBLjoQmB9Iy"], ["created_at", "2019-03-05 01:13:51.743551"], ["updated_at", "2019-03-05 01:13:51.743551"], ["email", "camilla@feedme.com"]]
+  ↳ db/seeds.rb:17
+  [1m[36mFeed Load (2.5ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ db/seeds.rb:19
+  [1m[36mFeed Destroy (0.2ms)[0m  [1m[31mDELETE FROM "feeds" WHERE "feeds"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mFeed Destroy (0.8ms)[0m  [1m[31mDELETE FROM "feeds" WHERE "feeds"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:19
+  [1m[36mFeed Destroy (0.9ms)[0m  [1m[31mDELETE FROM "feeds" WHERE "feeds"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:19
+  [1m[36mFeed Destroy (0.6ms)[0m  [1m[31mDELETE FROM "feeds" WHERE "feeds"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mFeed Create (0.4ms)[0m  [1m[32mINSERT INTO "feeds" ("feed_title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["feed_title", "Geopolitics"], ["user_id", 9], ["created_at", "2019-03-05 01:13:51.811375"], ["updated_at", "2019-03-05 01:13:51.811375"]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mFeed Create (0.4ms)[0m  [1m[32mINSERT INTO "feeds" ("feed_title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["feed_title", "Football"], ["user_id", 10], ["created_at", "2019-03-05 01:13:51.817731"], ["updated_at", "2019-03-05 01:13:51.817731"]]
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+  [1m[36mFeed Create (0.9ms)[0m  [1m[32mINSERT INTO "feeds" ("feed_title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["feed_title", "Outdoors"], ["user_id", 11], ["created_at", "2019-03-05 01:13:51.827300"], ["updated_at", "2019-03-05 01:13:51.827300"]]
+  ↳ db/seeds.rb:23
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mFeed Create (1.3ms)[0m  [1m[32mINSERT INTO "feeds" ("feed_title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["feed_title", "Tech"], ["user_id", 12], ["created_at", "2019-03-05 01:13:51.836011"], ["updated_at", "2019-03-05 01:13:51.836011"]]
+  ↳ db/seeds.rb:24
+  [1m[36mSource Load (2.1ms)[0m  [1m[34mSELECT "sources".* FROM "sources"[0m
+  ↳ db/seeds.rb:26
+  [1m[36mSource Create (9.0ms)[0m  [1m[32mINSERT INTO "sources" ("source_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["source_name", "WaPo"], ["created_at", "2019-03-05 01:13:51.871445"], ["updated_at", "2019-03-05 01:13:51.871445"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Destroy (5.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Destroy (1.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3FzXZCX2DoK9X8pDZhnqmg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Guest"], ["session_token", "3FzXZCX2DoK9X8pDZhnqmg"], ["password_digest", "$2a$10$CtQc6cxWYHY.GsNTQbxnI.okwsCwx/U9ki6pn3N47f4AHRVtsn1Ba"], ["created_at", "2019-03-05 01:14:51.948739"], ["updated_at", "2019-03-05 01:14:51.948739"], ["email", "guest@feedme.com"]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Ben"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "pDf8cNPXQXZiI7_fTdArfQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (3.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Ben"], ["session_token", "pDf8cNPXQXZiI7_fTdArfQ"], ["password_digest", "$2a$10$qEoxgcQxpF.iaQ77Q5Dc9.p2lXinNS52abzLZ9wJ1y22f321ZrwGK"], ["created_at", "2019-03-05 01:14:52.038606"], ["updated_at", "2019-03-05 01:14:52.038606"], ["email", "ben@feedme.com"]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Davies"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "n7DENAyroniM6rFCar4_sA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Davies"], ["session_token", "n7DENAyroniM6rFCar4_sA"], ["password_digest", "$2a$10$.P1EecQ7U4yp6YVBWupZzOgKqgQKWjsNEl8xYyXk5BNiGCKQM9y6K"], ["created_at", "2019-03-05 01:14:52.124417"], ["updated_at", "2019-03-05 01:14:52.124417"], ["email", "davies@feedme.com"]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Camilla"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Pne1_jETTAA3X3LpoLhFCQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Camilla"], ["session_token", "Pne1_jETTAA3X3LpoLhFCQ"], ["password_digest", "$2a$10$iqvn0XuEDR3OvfSIDr3rEeCZBr/wnWYra7lNXJ/UY0pJNrqp612Pu"], ["created_at", "2019-03-05 01:14:52.211139"], ["updated_at", "2019-03-05 01:14:52.211139"], ["email", "camilla@feedme.com"]]
+  ↳ db/seeds.rb:17
+  [1m[36mFeed Load (0.7ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ db/seeds.rb:19
+  [1m[36mFeed Destroy (0.2ms)[0m  [1m[31mDELETE FROM "feeds" WHERE "feeds"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mFeed Destroy (0.2ms)[0m  [1m[31mDELETE FROM "feeds" WHERE "feeds"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:19
+  [1m[36mFeed Destroy (0.2ms)[0m  [1m[31mDELETE FROM "feeds" WHERE "feeds"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:19
+  [1m[36mFeed Destroy (1.6ms)[0m  [1m[31mDELETE FROM "feeds" WHERE "feeds"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mFeed Create (0.3ms)[0m  [1m[32mINSERT INTO "feeds" ("feed_title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["feed_title", "Geopolitics"], ["user_id", 13], ["created_at", "2019-03-05 01:14:52.251575"], ["updated_at", "2019-03-05 01:14:52.251575"]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mFeed Create (0.3ms)[0m  [1m[32mINSERT INTO "feeds" ("feed_title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["feed_title", "Football"], ["user_id", 14], ["created_at", "2019-03-05 01:14:52.265668"], ["updated_at", "2019-03-05 01:14:52.265668"]]
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+  [1m[36mFeed Create (0.7ms)[0m  [1m[32mINSERT INTO "feeds" ("feed_title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["feed_title", "Outdoors"], ["user_id", 15], ["created_at", "2019-03-05 01:14:52.272947"], ["updated_at", "2019-03-05 01:14:52.272947"]]
+  ↳ db/seeds.rb:23
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mFeed Create (0.4ms)[0m  [1m[32mINSERT INTO "feeds" ("feed_title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["feed_title", "Tech"], ["user_id", 16], ["created_at", "2019-03-05 01:14:52.280862"], ["updated_at", "2019-03-05 01:14:52.280862"]]
+  ↳ db/seeds.rb:24
+  [1m[36mSource Load (0.3ms)[0m  [1m[34mSELECT "sources".* FROM "sources"[0m
+  ↳ db/seeds.rb:26
+  [1m[36mSource Create (7.0ms)[0m  [1m[32mINSERT INTO "sources" ("source_name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["source_name", "WaPo"], ["description", ""], ["created_at", "2019-03-05 01:14:52.300943"], ["updated_at", "2019-03-05 01:14:52.300943"]]
+  ↳ db/seeds.rb:28
+  [1m[36mSource Create (0.3ms)[0m  [1m[32mINSERT INTO "sources" ("source_name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["source_name", "Politico"], ["description", ""], ["created_at", "2019-03-05 01:14:52.327860"], ["updated_at", "2019-03-05 01:14:52.327860"]]
+  ↳ db/seeds.rb:29
+  [1m[36mSource Create (0.4ms)[0m  [1m[32mINSERT INTO "sources" ("source_name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["source_name", "BassFishPro"], ["description", ""], ["created_at", "2019-03-05 01:14:52.332637"], ["updated_at", "2019-03-05 01:14:52.332637"]]
+  ↳ db/seeds.rb:30
+  [1m[36mSource Create (1.6ms)[0m  [1m[32mINSERT INTO "sources" ("source_name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["source_name", "Twitter"], ["description", ""], ["created_at", "2019-03-05 01:14:52.337079"], ["updated_at", "2019-03-05 01:14:52.337079"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+Started GET "/" for 127.0.0.1 at 2019-03-04 17:14:59 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (55.3ms)
+Completed 200 OK in 5352ms (Views: 5337.8ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 17:16:45 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (17.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 3661ms (Views: 3637.1ms | ActiveRecord: 17.5ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2019-03-04 17:16:57 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]", "email"=>"guest@feedme.com"}}
+  [1m[36mUser Load (11.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "aKIAUsG9LoZPvkYn9jSwdQ"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "aKIAUsG9LoZPvkYn9jSwdQ"], ["updated_at", "2019-03-05 01:16:57.441354"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/show.json.jbuilder (22.1ms)
+Completed 200 OK in 260ms (Views: 40.9ms | ActiveRecord: 32.4ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 17:16:57 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (1.5ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/feeds/_feed.json.jbuilder (0.1ms)
+  Rendered api/feeds/_feed.json.jbuilder (0.1ms)
+  Rendered api/feeds/_feed.json.jbuilder (0.1ms)
+  Rendered api/feeds/index.json.jbuilder (210.5ms)
+Completed 200 OK in 336ms (Views: 209.8ms | ActiveRecord: 25.3ms)
+
+
+Started GET "/api/sources" for 127.0.0.1 at 2019-03-04 17:17:01 -0800
+Processing by Api::SourcesController#index as JSON
+  Rendering api/sources/index.json.jbuilder
+  [1m[36mSource Load (0.4ms)[0m  [1m[34mSELECT "sources".* FROM "sources"[0m
+  ↳ app/views/api/sources/index.json.jbuilder:1
+  Rendered api/sources/_source.json.jbuilder (0.5ms)
+  Rendered api/sources/_source.json.jbuilder (0.0ms)
+  Rendered api/sources/_source.json.jbuilder (0.0ms)
+  Rendered api/sources/_source.json.jbuilder (0.0ms)
+  Rendered api/sources/index.json.jbuilder (48.5ms)
+Completed 200 OK in 87ms (Views: 62.1ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 17:17:30 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aKIAUsG9LoZPvkYn9jSwdQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (10.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 259ms (Views: 251.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/sources" for 127.0.0.1 at 2019-03-04 17:17:32 -0800
+Processing by Api::SourcesController#index as JSON
+  Rendering api/sources/index.json.jbuilder
+  [1m[36mSource Load (11.0ms)[0m  [1m[34mSELECT "sources".* FROM "sources"[0m
+  ↳ app/views/api/sources/index.json.jbuilder:1
+  Rendered api/sources/_source.json.jbuilder (0.3ms)
+  Rendered api/sources/_source.json.jbuilder (0.1ms)
+  Rendered api/sources/_source.json.jbuilder (0.1ms)
+  Rendered api/sources/_source.json.jbuilder (0.2ms)
+  Rendered api/sources/index.json.jbuilder (89.4ms)
+Completed 200 OK in 152ms (Views: 140.3ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 17:17:51 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aKIAUsG9LoZPvkYn9jSwdQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (14.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (125.3ms)
+Completed 200 OK in 3621ms (Views: 3601.2ms | ActiveRecord: 4.8ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2019-03-04 17:17:59 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aKIAUsG9LoZPvkYn9jSwdQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (5.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "CITHa0RTY5znBJYsMsUBpQ"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (2.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "CITHa0RTY5znBJYsMsUBpQ"], ["updated_at", "2019-03-05 01:17:59.453412"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (11.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (7.6ms)
+Completed 200 OK in 106ms (Views: 31.4ms | ActiveRecord: 23.1ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2019-03-04 17:18:06 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]", "email"=>"guest@feedme.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "xldjZoE1iEYxiHO5stdwWw"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "xldjZoE1iEYxiHO5stdwWw"], ["updated_at", "2019-03-05 01:18:06.727745"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (6.2ms)
+Completed 200 OK in 279ms (Views: 37.7ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 17:18:07 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (0.6ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/feeds/_feed.json.jbuilder (0.1ms)
+  Rendered api/feeds/_feed.json.jbuilder (0.1ms)
+  Rendered api/feeds/_feed.json.jbuilder (0.1ms)
+  Rendered api/feeds/index.json.jbuilder (71.7ms)
+Completed 200 OK in 110ms (Views: 102.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/sources" for 127.0.0.1 at 2019-03-04 17:18:09 -0800
+Processing by Api::SourcesController#index as JSON
+  Rendering api/sources/index.json.jbuilder
+  [1m[36mSource Load (9.9ms)[0m  [1m[34mSELECT "sources".* FROM "sources"[0m
+  ↳ app/views/api/sources/index.json.jbuilder:1
+  Rendered api/sources/_source.json.jbuilder (0.4ms)
+  Rendered api/sources/_source.json.jbuilder (0.1ms)
+  Rendered api/sources/_source.json.jbuilder (0.0ms)
+  Rendered api/sources/_source.json.jbuilder (0.1ms)
+  Rendered api/sources/index.json.jbuilder (36.3ms)
+Completed 200 OK in 77ms (Views: 61.5ms | ActiveRecord: 9.9ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2019-03-04 17:19:15 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "xldjZoE1iEYxiHO5stdwWw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (6.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "8p-FQ7QuSshX0fzmXr9Reg"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (15.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "8p-FQ7QuSshX0fzmXr9Reg"], ["updated_at", "2019-03-05 01:19:16.024115"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (10.7ms)
+  Rendered api/users/show.json.jbuilder (25.0ms)
+Completed 200 OK in 176ms (Views: 90.7ms | ActiveRecord: 32.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 17:19:20 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 4053ms (Views: 4045.7ms | ActiveRecord: 6.7ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2019-03-04 17:19:31 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]", "email"=>"guest@feedme.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:20
+  [1m[35m (5.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (4.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "MKJA9rPIXQSYTnevqXuEmQ"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (1.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "MKJA9rPIXQSYTnevqXuEmQ"], ["updated_at", "2019-03-05 01:19:31.297348"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (12.6ms)
+Completed 200 OK in 243ms (Views: 23.2ms | ActiveRecord: 15.2ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 17:19:31 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (29.8ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/feeds/_feed.json.jbuilder (0.1ms)
+  Rendered api/feeds/_feed.json.jbuilder (0.1ms)
+  Rendered api/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/feeds/index.json.jbuilder (89.7ms)
+Completed 200 OK in 145ms (Views: 112.2ms | ActiveRecord: 29.8ms)
+
+
+Started GET "/api/sources" for 127.0.0.1 at 2019-03-04 17:19:34 -0800
+Processing by Api::SourcesController#index as JSON
+  Rendering api/sources/index.json.jbuilder
+  [1m[36mSource Load (2.1ms)[0m  [1m[34mSELECT "sources".* FROM "sources"[0m
+  ↳ app/views/api/sources/index.json.jbuilder:1
+  Rendered api/sources/_source.json.jbuilder (0.8ms)
+  Rendered api/sources/_source.json.jbuilder (0.0ms)
+  Rendered api/sources/_source.json.jbuilder (0.0ms)
+  Rendered api/sources/_source.json.jbuilder (0.1ms)
+  Rendered api/sources/index.json.jbuilder (35.0ms)
+Completed 200 OK in 88ms (Views: 70.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 17:19:59 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (8.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "MKJA9rPIXQSYTnevqXuEmQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (57.1ms)
+Completed 200 OK in 333ms (Views: 323.3ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 17:21:56 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "MKJA9rPIXQSYTnevqXuEmQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (74.0ms)
+Started GET "/" for 127.0.0.1 at 2019-03-04 17:22:00 -0800
+Completed 200 OK in 3938ms (Views: 3930.4ms | ActiveRecord: 6.4ms)
+
+
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "MKJA9rPIXQSYTnevqXuEmQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (10.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (95.0ms)
+Completed 200 OK in 298ms (Views: 274.5ms | ActiveRecord: 21.9ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2019-03-04 17:22:05 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "MKJA9rPIXQSYTnevqXuEmQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (4.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "iKW1I_m-pfgvDVLCG5PGMg"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (2.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "iKW1I_m-pfgvDVLCG5PGMg"], ["updated_at", "2019-03-05 01:22:05.809995"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (20.4ms)
+Completed 200 OK in 78ms (Views: 31.1ms | ActiveRecord: 14.0ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2019-03-04 17:22:09 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]", "email"=>"guest@feedme.com"}}
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (3.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "vyUpO1O5uAFfCm9MkTKM8w"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "vyUpO1O5uAFfCm9MkTKM8w"], ["updated_at", "2019-03-05 01:22:09.537022"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (6.8ms)
+Completed 200 OK in 230ms (Views: 26.4ms | ActiveRecord: 15.5ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 17:22:09 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (2.0ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (0.6ms)
+  Rendered api/feeds/_feed.json.jbuilder (0.1ms)
+  Rendered api/feeds/_feed.json.jbuilder (1.5ms)
+  Rendered api/feeds/_feed.json.jbuilder (0.1ms)
+  Rendered api/feeds/index.json.jbuilder (142.2ms)
+Completed 200 OK in 251ms (Views: 180.2ms | ActiveRecord: 23.0ms)
+
+
+Started GET "/api/sources" for 127.0.0.1 at 2019-03-04 17:22:11 -0800
+Processing by Api::SourcesController#index as JSON
+  Rendering api/sources/index.json.jbuilder
+  [1m[36mSource Load (0.3ms)[0m  [1m[34mSELECT "sources".* FROM "sources"[0m
+  ↳ app/views/api/sources/index.json.jbuilder:1
+  Rendered api/sources/_source.json.jbuilder (0.5ms)
+  Rendered api/sources/_source.json.jbuilder (0.1ms)
+  Rendered api/sources/_source.json.jbuilder (0.0ms)
+  Rendered api/sources/_source.json.jbuilder (0.1ms)
+  Rendered api/sources/index.json.jbuilder (99.7ms)
+Completed 200 OK in 152ms (Views: 113.2ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/api/sources" for 127.0.0.1 at 2019-03-04 17:22:13 -0800
+Processing by Api::SourcesController#index as JSON
+  Rendering api/sources/index.json.jbuilder
+  [1m[36mSource Load (11.6ms)[0m  [1m[34mSELECT "sources".* FROM "sources"[0m
+  ↳ app/views/api/sources/index.json.jbuilder:1
+  Rendered api/sources/_source.json.jbuilder (0.3ms)
+  Rendered api/sources/_source.json.jbuilder (0.1ms)
+  Rendered api/sources/_source.json.jbuilder (4.7ms)
+  Rendered api/sources/_source.json.jbuilder (0.1ms)
+  Rendered api/sources/index.json.jbuilder (59.4ms)
+Completed 200 OK in 105ms (Views: 91.9ms | ActiveRecord: 11.6ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2019-03-04 17:23:07 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (7.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "vyUpO1O5uAFfCm9MkTKM8w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (2.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "QTgVYyTKEQb_6kCfjKdqjA"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (1.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "QTgVYyTKEQb_6kCfjKdqjA"], ["updated_at", "2019-03-05 01:23:07.604454"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (118.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (7.8ms)
+  Rendered api/users/show.json.jbuilder (30.7ms)
+Completed 200 OK in 229ms (Views: 63.8ms | ActiveRecord: 131.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-04 17:24:19 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (8.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 4610ms (Views: 4593.2ms | ActiveRecord: 8.8ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2019-03-04 17:24:32 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Guest", "password"=>"[FILTERED]", "email"=>"guest@feedme.com"}}
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:20
+  [1m[35m (3.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "LnWX2dt72LWUUEh1iDLn8Q"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "LnWX2dt72LWUUEh1iDLn8Q"], ["updated_at", "2019-03-05 01:24:32.481328"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (15.6ms)
+Completed 200 OK in 395ms (Views: 34.0ms | ActiveRecord: 13.2ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2019-03-04 17:24:32 -0800
+Processing by Api::FeedsController#index as JSON
+  Rendering api/feeds/index.json.jbuilder
+  [1m[36mFeed Load (9.9ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ app/views/api/feeds/index.json.jbuilder:1
+  Rendered api/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/feeds/_feed.json.jbuilder (0.1ms)
+  Rendered api/feeds/_feed.json.jbuilder (0.0ms)
+  Rendered api/feeds/_feed.json.jbuilder (0.1ms)
+  Rendered api/feeds/index.json.jbuilder (57.7ms)
+Completed 200 OK in 126ms (Views: 87.1ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/api/sources" for 127.0.0.1 at 2019-03-04 17:24:34 -0800
+Processing by Api::SourcesController#index as JSON
+  Rendering api/sources/index.json.jbuilder
+  [1m[36mSource Load (5.6ms)[0m  [1m[34mSELECT "sources".* FROM "sources"[0m
+  ↳ app/views/api/sources/index.json.jbuilder:1
+  Rendered api/sources/_source.json.jbuilder (0.4ms)
+  Rendered api/sources/_source.json.jbuilder (0.1ms)
+  Rendered api/sources/_source.json.jbuilder (0.1ms)
+  Rendered api/sources/_source.json.jbuilder (0.3ms)
+  Rendered api/sources/index.json.jbuilder (239.4ms)
+Completed 200 OK in 277ms (Views: 264.1ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/api/sources" for 127.0.0.1 at 2019-03-04 17:24:37 -0800
+Processing by Api::SourcesController#index as JSON
+  Rendering api/sources/index.json.jbuilder
+  [1m[36mSource Load (7.1ms)[0m  [1m[34mSELECT "sources".* FROM "sources"[0m
+  ↳ app/views/api/sources/index.json.jbuilder:1
+  Rendered api/sources/_source.json.jbuilder (0.3ms)
+  Rendered api/sources/_source.json.jbuilder (0.1ms)
+  Rendered api/sources/_source.json.jbuilder (0.1ms)
+  Rendered api/sources/_source.json.jbuilder (0.1ms)
+  Rendered api/sources/index.json.jbuilder (89.7ms)
+Completed 200 OK in 185ms (Views: 176.9ms | ActiveRecord: 7.1ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2019-03-04 17:24:41 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "LnWX2dt72LWUUEh1iDLn8Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (5.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Guest"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "xNVmbZpuRndoXy2R5OafOg"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (3.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "xNVmbZpuRndoXy2R5OafOg"], ["updated_at", "2019-03-05 01:24:41.211518"], ["id", 13]]
+  ↳ app/models/user.rb:39
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (2.6ms)
+  Rendered api/users/show.json.jbuilder (5.6ms)
+Completed 200 OK in 66ms (Views: 23.6ms | ActiveRecord: 14.5ms)
+
+

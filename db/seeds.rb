@@ -23,5 +23,12 @@ ActiveRecord::Base.transaction do
   f3 = Feed.create!(feed_title: "Outdoors", user_id: u3.id)
   f4 = Feed.create!(feed_title: "Tech", user_id: u4.id)
 
+  Source.destroy_all
+
+  s1 = Source.create!(source_name: "WaPo", description:'')
+  s2 = Source.create!(source_name: "Politico",description:'')
+  s3 = Source.create!(source_name: "BassFishPro",description:'')
+  s4 = Source.create!(source_name: "Twitter", description:'')
+
 
 end
