@@ -1,3 +1,23 @@
 // Place all the styles related to the api/Sources controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.margin-bottom-show{
+  
+    margin-bottom: 40px;
+    margin-left: 20px;
+    padding-left: 17px;
+    margin-right: -23px;
+    padding-right: 23px;
+    padding-bottom: 50px;
+    display:block;
+  
+}
+.margin-bottom-show-list{
+  height: 800px;
+  width: 400px;
+  position: fixed;
+  top: 50%;
+  left: 30%;
+  line-height:28px;
+}

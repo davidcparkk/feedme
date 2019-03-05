@@ -16,7 +16,7 @@ class FeedNav extends React.Component {
   }
   
   SignedInPage(){
-    debugger
+    
     let personalFeeds = this.props.feeds.map(feed=> {
       return(
         <FeedsIndexItem 

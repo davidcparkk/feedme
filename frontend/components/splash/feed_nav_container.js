@@ -3,6 +3,7 @@ import {selectFeed} from '../../reducers/selectors';
 import {logout} from '../../actions/session_actions';
 import {fetchFeeds} from '../../actions/feed_actions';
 import FeedNav from './feed_nav';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = state => {
   let feeds_values = Object.values(state.entities.feeds);
@@ -18,7 +19,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return({
     logout: () => dispatch(logout()),
-    fetchFeeds: () => dispatch(fetchFeeds())
+    fetchFeeds: () => dispatch(fetchFeeds()),
+    openModal: (type) => dispatch(openModal(type))
   });
 }
 
