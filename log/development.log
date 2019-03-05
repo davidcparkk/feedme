@@ -28557,3 +28557,291 @@ Completed 200 OK in 301ms (Views: 217.9ms | ActiveRecord: 80.9ms)
   ↳ bin/rails:9
   [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4499781369416081595)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4499781369416081595)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (224.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "feedMe_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (132.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "feedMe_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (1593.6ms)[0m  [1m[35mCREATE DATABASE "feedMe_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1439.0ms)[0m  [1m[35mCREATE DATABASE "feedMe_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "feed_source_items" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (33.0ms)[0m  [1m[35mCREATE TABLE "feed_source_items" ("id" bigserial primary key, "feed_id" integer NOT NULL, "source_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (21.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_feed_source_items_on_feed_id_and_source_id" ON "feed_source_items"  ("feed_id", "source_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (5.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "feeds" CASCADE[0m
+  ↳ db/schema.rb:26
+  [1m[35m (34.4ms)[0m  [1m[35mCREATE TABLE "feeds" ("id" bigserial primary key, "feed_title" character varying NOT NULL, "user_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "sources" CASCADE[0m
+  ↳ db/schema.rb:33
+  [1m[35m (26.9ms)[0m  [1m[35mCREATE TABLE "sources" ("id" bigserial primary key, "source_name" character varying NOT NULL, "description" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:33
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:40
+  [1m[35m (28.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "session_token" character varying NOT NULL, "password_digest" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "email" character varying NOT NULL)[0m
+  ↳ db/schema.rb:40
+  [1m[35m (23.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:40
+  [1m[35m (17.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:40
+  [1m[35m (28.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (4.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190304234559)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (6.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190228183546),
+(20190226195825),
+(20190228183737),
+(20190304232653);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (33.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (3.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (2.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-03-05 20:19:56.351235"], ["updated_at", "2019-03-05 20:19:56.351235"]]
+  ↳ db/schema.rb:13
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "feed_source_items" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (18.2ms)[0m  [1m[35mCREATE TABLE "feed_source_items" ("id" bigserial primary key, "feed_id" integer NOT NULL, "source_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (17.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_feed_source_items_on_feed_id_and_source_id" ON "feed_source_items"  ("feed_id", "source_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "feeds" CASCADE[0m
+  ↳ db/schema.rb:26
+  [1m[35m (26.1ms)[0m  [1m[35mCREATE TABLE "feeds" ("id" bigserial primary key, "feed_title" character varying NOT NULL, "user_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "sources" CASCADE[0m
+  ↳ db/schema.rb:33
+  [1m[35m (33.1ms)[0m  [1m[35mCREATE TABLE "sources" ("id" bigserial primary key, "source_name" character varying NOT NULL, "description" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:33
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:40
+  [1m[35m (35.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "session_token" character varying NOT NULL, "password_digest" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "email" character varying NOT NULL)[0m
+  ↳ db/schema.rb:40
+  [1m[35m (14.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:40
+  [1m[35m (14.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:40
+  [1m[35m (29.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (4.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190304234559)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190228183546),
+(20190226195825),
+(20190228183737),
+(20190304232653);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (24.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (7.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-03-05 20:19:56.695005"], ["updated_at", "2019-03-05 20:19:56.695005"]]
+  ↳ db/schema.rb:13
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (1.0ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-03-05 20:19:56.711771"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JCKFax-Jp8_Xcd9w0dea9w"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Guest"], ["session_token", "JCKFax-Jp8_Xcd9w0dea9w"], ["password_digest", "$2a$10$f6mMfK.wWdFM1t8lPkRiieruGq00/G51nXthi6I.t68aIFkPhURP2"], ["created_at", "2019-03-05 20:19:56.962492"], ["updated_at", "2019-03-05 20:19:56.962492"], ["email", "guest@feedme.com"]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Ben"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Hwe3pP-GRSbAZde4hIzZng"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Ben"], ["session_token", "Hwe3pP-GRSbAZde4hIzZng"], ["password_digest", "$2a$10$Fh35aPmx2gXo75.t3uJhkesqI7uVae6S3iQZQAODc0NMSNL7WEuzO"], ["created_at", "2019-03-05 20:19:57.042930"], ["updated_at", "2019-03-05 20:19:57.042930"], ["email", "ben@feedme.com"]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Davies"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mlVyMX-Z1yt4Y-OIEa4oFA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Davies"], ["session_token", "mlVyMX-Z1yt4Y-OIEa4oFA"], ["password_digest", "$2a$10$b13xDjfFRVMgMnwQKO0b4eu.UkXBkVpKsDgVc.7d1933kn9dFoH8i"], ["created_at", "2019-03-05 20:19:57.126204"], ["updated_at", "2019-03-05 20:19:57.126204"], ["email", "davies@feedme.com"]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Camilla"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "xul5bFHhhV-OgHP3dGpMZA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Camilla"], ["session_token", "xul5bFHhhV-OgHP3dGpMZA"], ["password_digest", "$2a$10$vkaKMyrQnWCJ.Okp3hwc4OZ6USo27PEmO10HjALpGnXn8pw6/YRbO"], ["created_at", "2019-03-05 20:19:57.207019"], ["updated_at", "2019-03-05 20:19:57.207019"], ["email", "camilla@feedme.com"]]
+  ↳ db/seeds.rb:17
+  [1m[36mFeed Load (0.5ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ db/seeds.rb:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mFeed Create (0.5ms)[0m  [1m[32mINSERT INTO "feeds" ("feed_title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["feed_title", "Geopolitics"], ["user_id", 1], ["created_at", "2019-03-05 20:19:57.264931"], ["updated_at", "2019-03-05 20:19:57.264931"]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mFeed Create (1.4ms)[0m  [1m[32mINSERT INTO "feeds" ("feed_title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["feed_title", "Football"], ["user_id", 2], ["created_at", "2019-03-05 20:19:57.276314"], ["updated_at", "2019-03-05 20:19:57.276314"]]
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+  [1m[36mFeed Create (0.7ms)[0m  [1m[32mINSERT INTO "feeds" ("feed_title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["feed_title", "Outdoors"], ["user_id", 3], ["created_at", "2019-03-05 20:19:57.285117"], ["updated_at", "2019-03-05 20:19:57.285117"]]
+  ↳ db/seeds.rb:23
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mFeed Create (1.1ms)[0m  [1m[32mINSERT INTO "feeds" ("feed_title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["feed_title", "Tech"], ["user_id", 4], ["created_at", "2019-03-05 20:19:57.295589"], ["updated_at", "2019-03-05 20:19:57.295589"]]
+  ↳ db/seeds.rb:24
+  [1m[36mSource Load (2.4ms)[0m  [1m[34mSELECT "sources".* FROM "sources"[0m
+  ↳ db/seeds.rb:26
+  [1m[36mSource Create (0.5ms)[0m  [1m[32mINSERT INTO "sources" ("source_name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["source_name", "WaPo"], ["description", ""], ["created_at", "2019-03-05 20:19:57.330925"], ["updated_at", "2019-03-05 20:19:57.330925"]]
+  ↳ db/seeds.rb:28
+  [1m[36mSource Create (0.9ms)[0m  [1m[32mINSERT INTO "sources" ("source_name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["source_name", "Politico"], ["description", ""], ["created_at", "2019-03-05 20:19:57.335846"], ["updated_at", "2019-03-05 20:19:57.335846"]]
+  ↳ db/seeds.rb:29
+  [1m[36mSource Create (2.7ms)[0m  [1m[32mINSERT INTO "sources" ("source_name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["source_name", "BassFishPro"], ["description", ""], ["created_at", "2019-03-05 20:19:57.340810"], ["updated_at", "2019-03-05 20:19:57.340810"]]
+  ↳ db/seeds.rb:30
+  [1m[36mSource Create (1.8ms)[0m  [1m[32mINSERT INTO "sources" ("source_name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["source_name", "Twitter"], ["description", ""], ["created_at", "2019-03-05 20:19:57.347346"], ["updated_at", "2019-03-05 20:19:57.347346"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "VCPljJVdilhxGWdkxr_p-g"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Guest"], ["session_token", "VCPljJVdilhxGWdkxr_p-g"], ["password_digest", "$2a$10$EXiRZ114qFXWCL2V8x4KTunzpKFdwER64PG2HNhrIRl4csMFBlhSW"], ["created_at", "2019-03-05 20:20:04.455855"], ["updated_at", "2019-03-05 20:20:04.455855"], ["email", "guest@feedme.com"]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (4.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Ben"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0-gzTsg2U8HAbdZPjGFWNw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Ben"], ["session_token", "0-gzTsg2U8HAbdZPjGFWNw"], ["password_digest", "$2a$10$EZRFUuoCPMYgEqevbyD74uKTlapn.FhaDnszQGabZEna3h42sCxYS"], ["created_at", "2019-03-05 20:20:04.555966"], ["updated_at", "2019-03-05 20:20:04.555966"], ["email", "ben@feedme.com"]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Davies"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Z4tnMnVijL_kZPu5Kwi9BA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Create (2.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Davies"], ["session_token", "Z4tnMnVijL_kZPu5Kwi9BA"], ["password_digest", "$2a$10$.FUOOqswGLdV5hj6Qhm4PuSqizbdDDDhLRd79hJtZCNxaT1408gDK"], ["created_at", "2019-03-05 20:20:04.679870"], ["updated_at", "2019-03-05 20:20:04.679870"], ["email", "davies@feedme.com"]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Camilla"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UZ2TIXKvWCneGE_BV7LNcw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at", "email") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Camilla"], ["session_token", "UZ2TIXKvWCneGE_BV7LNcw"], ["password_digest", "$2a$10$J45/waYlvwESEHAgDEnfVuVoDkwygbK.GTJAEXMe2box435pUsbUe"], ["created_at", "2019-03-05 20:20:04.763690"], ["updated_at", "2019-03-05 20:20:04.763690"], ["email", "camilla@feedme.com"]]
+  ↳ db/seeds.rb:17
+  [1m[36mFeed Load (0.5ms)[0m  [1m[34mSELECT "feeds".* FROM "feeds"[0m
+  ↳ db/seeds.rb:19
+  [1m[36mFeed Destroy (0.4ms)[0m  [1m[31mDELETE FROM "feeds" WHERE "feeds"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mFeed Destroy (0.7ms)[0m  [1m[31mDELETE FROM "feeds" WHERE "feeds"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:19
+  [1m[36mFeed Destroy (0.2ms)[0m  [1m[31mDELETE FROM "feeds" WHERE "feeds"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:19
+  [1m[36mFeed Destroy (0.3ms)[0m  [1m[31mDELETE FROM "feeds" WHERE "feeds"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mFeed Create (0.7ms)[0m  [1m[32mINSERT INTO "feeds" ("feed_title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["feed_title", "Geopolitics"], ["user_id", 5], ["created_at", "2019-03-05 20:20:04.804914"], ["updated_at", "2019-03-05 20:20:04.804914"]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mFeed Create (0.3ms)[0m  [1m[32mINSERT INTO "feeds" ("feed_title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["feed_title", "Football"], ["user_id", 6], ["created_at", "2019-03-05 20:20:04.815465"], ["updated_at", "2019-03-05 20:20:04.815465"]]
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+  [1m[36mFeed Create (1.0ms)[0m  [1m[32mINSERT INTO "feeds" ("feed_title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["feed_title", "Outdoors"], ["user_id", 7], ["created_at", "2019-03-05 20:20:04.820996"], ["updated_at", "2019-03-05 20:20:04.820996"]]
+  ↳ db/seeds.rb:23
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mFeed Create (0.8ms)[0m  [1m[32mINSERT INTO "feeds" ("feed_title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["feed_title", "Tech"], ["user_id", 8], ["created_at", "2019-03-05 20:20:04.826833"], ["updated_at", "2019-03-05 20:20:04.826833"]]
+  ↳ db/seeds.rb:24
+  [1m[36mSource Load (0.4ms)[0m  [1m[34mSELECT "sources".* FROM "sources"[0m
+  ↳ db/seeds.rb:26
+  [1m[36mSource Destroy (0.3ms)[0m  [1m[31mDELETE FROM "sources" WHERE "sources"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mSource Destroy (0.2ms)[0m  [1m[31mDELETE FROM "sources" WHERE "sources"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:26
+  [1m[36mSource Destroy (0.5ms)[0m  [1m[31mDELETE FROM "sources" WHERE "sources"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:26
+  [1m[36mSource Destroy (0.6ms)[0m  [1m[31mDELETE FROM "sources" WHERE "sources"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:26
+  [1m[36mSource Create (0.3ms)[0m  [1m[32mINSERT INTO "sources" ("source_name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["source_name", "WaPo"], ["description", ""], ["created_at", "2019-03-05 20:20:04.858496"], ["updated_at", "2019-03-05 20:20:04.858496"]]
+  ↳ db/seeds.rb:28
+  [1m[36mSource Create (0.2ms)[0m  [1m[32mINSERT INTO "sources" ("source_name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["source_name", "Politico"], ["description", ""], ["created_at", "2019-03-05 20:20:04.862726"], ["updated_at", "2019-03-05 20:20:04.862726"]]
+  ↳ db/seeds.rb:29
+  [1m[36mSource Create (1.4ms)[0m  [1m[32mINSERT INTO "sources" ("source_name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["source_name", "BassFishPro"], ["description", ""], ["created_at", "2019-03-05 20:20:04.866066"], ["updated_at", "2019-03-05 20:20:04.866066"]]
+  ↳ db/seeds.rb:30
+  [1m[36mSource Create (0.2ms)[0m  [1m[32mINSERT INTO "sources" ("source_name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["source_name", "Twitter"], ["description", ""], ["created_at", "2019-03-05 20:20:04.868997"], ["updated_at", "2019-03-05 20:20:04.868997"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
