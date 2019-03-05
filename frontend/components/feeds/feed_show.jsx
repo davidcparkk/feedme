@@ -8,49 +8,19 @@ class FeedShow extends React.Component {
     super(props);
   }
   
-  componentDidMount() {
-    this.props.fetchFeeds();
-  }
+  
 
   render() {
-    let personalFeeds = this.props.currentUserFeeds.map(feed=> {
+    let sourcesMap = this.props.feedSourceArr.map(source=> {
       return(
-        <FeedsIndexItem 
-        key={feed.id}
-        feed={feed}
-        />
+        <li>
+          Name: {source.source_name} and Description: {source.description}
+        </li>
       )
     })
 
     return (
-      <div className='feedsIndex'>
-        <div className="feedmeTabsHolder">
-          <div className='margin-bottom'>
-            <div className='pin-button'></div>
-            <div className='today-button'>Today
-            </div>
-            <div className='separator'></div>
-            <div className='personal-feed'>Personal Feeds
-            <div className='separator-small'></div>
-              <div className='tab'>
-              <Link to='/feeds'>All</Link>
-                <div className='icon'></div>
-              </div>
-              <div className='tab'>Favorites
-                <div className='icon'></div>
-              </div>
-              <ul>
-                {personalFeeds}
-              </ul>
-            </div>
-            <div className='tab'>
-            <div className='separator-small'></div>
-            <button className='create-button' onClick={() => dispatch(this.props.openModal('feedsForm'))}>Create New Feed</button>
-            </div>
-            <div className='separator'></div>
-            <button className='add-content'>Add Content</button>
-          </div>
-        </div>
+      
         <div className='display-container'>
           <h2>{this.props.feed.feed_title}</h2>
           <div className='separator-small'></div>
@@ -59,8 +29,9 @@ class FeedShow extends React.Component {
           <div className='separator-small'></div>
           <div className='separator-small'></div>
           <div className='separator-small'></div>
+          <ul>{sourcesMap}</ul>
         </div>
-      </div>
+      
     )
   }
 }

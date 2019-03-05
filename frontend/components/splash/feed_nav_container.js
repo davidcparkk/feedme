@@ -2,6 +2,7 @@ import {connect} from 'react-redux';
 import {selectFeed} from '../../reducers/selectors';
 import {logout} from '../../actions/session_actions';
 import {fetchFeeds} from '../../actions/feed_actions';
+import {fetchSources} from '../../actions/source_actions';
 import FeedNav from './feed_nav';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
@@ -20,7 +21,8 @@ const mapDispatchToProps = dispatch => {
   return({
     logout: () => dispatch(logout()),
     fetchFeeds: () => dispatch(fetchFeeds()),
-    openModal: (type) => dispatch(openModal(type))
+    openModal: (type) => dispatch(openModal(type)),
+    fetchSources: () => dispatch(fetchSources())
   });
 }
 

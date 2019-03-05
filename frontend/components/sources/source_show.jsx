@@ -8,9 +8,6 @@ class SourceShow extends React.Component {
     super(props);
   }
   
-  componentDidMount() {
-    this.props.fetchFeeds();
-  }
 
   render() {
     let personalFeeds = this.props.feeds.map(feed=> {

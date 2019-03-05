@@ -8,7 +8,7 @@ export const createFeed = (feed) => dispatch => {
   };
 
 export const deleteFeed = (feedId) => dispatch => {
-  return feedSourceItemApiUtils.deleteFeedSourceItem(feedId).then( feedSourceITem => dispatch(removeFeedSourceItem(feedSourceItemId)))
+  return feedSourceItemApiUtils.deleteFeedSourceItem(feedId).then( feedSourceItem => dispatch(removeFeedSourceItem(feedSourceItemId)))
   };
 
 const receiveFeedSourceItem = (feedSourceItem) => {

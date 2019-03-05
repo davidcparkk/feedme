@@ -1,4 +1,6 @@
 class FeedSourceItem < ApplicationRecord
+  validates :feed_id, :feed_id, presence:true
+
   belongs_to :feed,
   primary_key: :id,
   foreign_key: :feed_id,

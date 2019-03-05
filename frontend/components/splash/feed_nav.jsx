@@ -13,6 +13,9 @@ class FeedNav extends React.Component {
   }
   componentDidMount () {
     this.props.fetchFeeds();
+    
+    this.props.fetchSources();
+    
   }
   
   SignedInPage(){

@@ -2,7 +2,7 @@ class Api::FeedSourceItemsController < ApplicationController
   def create
     @feed_source_item = FeedSourceItem.new(feed_source_item_params)
     if @feed_source_item.save
-      render 'api/feed_source_item/show'
+      render 'api/feed_source_items/show'
     else
       render json: @feed_source_item.errors.full_messages, status: 400
     end
@@ -17,4 +17,5 @@ class Api::FeedSourceItemsController < ApplicationController
 
   def feed_source_item_params
     params.require(:feed_source_item).permit(:feed_id, :source_id)
+  end
 end
