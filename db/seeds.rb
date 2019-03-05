@@ -11,10 +11,10 @@ ActiveRecord::Base.transaction do
 
   User.destroy_all
 
-  u1 = User.create!(username: "guestDemo", password: 'password')
-  u2 = User.create!(username: "Ben", password: 'password')
-  u3 = User.create!(username: "Davies", password: 'password')
-  u4 = User.create!(username: "Camilla", password: 'password')
+  u1 = User.create!(username: "Guest", password: 'password', email: 'guest@feedme.com')
+  u2 = User.create!(username: "Ben", password: 'password', email: 'ben@feedme.com')
+  u3 = User.create!(username: "Davies", password: 'password', email: 'davies@feedme.com')
+  u4 = User.create!(username: "Camilla", password: 'password', email: 'camilla@feedme.com')
 
   Feed.destroy_all
 

@@ -1,2 +1,1 @@
-json.extract! user, :id, :username
-json.feedIds []
+json.extract! user, :id, :username, :email
