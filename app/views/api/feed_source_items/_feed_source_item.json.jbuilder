@@ -1,0 +1,1 @@
+json.extract! feed_source_item, :id, :source_id, :feed_id

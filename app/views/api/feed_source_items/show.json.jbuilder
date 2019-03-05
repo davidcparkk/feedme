@@ -1,0 +1,1 @@
+json.partial! '/api/feed_source_items/feed_source_item', feed_source_item: @feed_source_item

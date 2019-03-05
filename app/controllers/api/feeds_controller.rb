@@ -29,7 +29,7 @@ class Api::FeedsController < ApplicationController
   def update
     @feed = current_user.feeds.find(params[:id])
     if @feed.update(feed_params)
-      render 'api/feeds/feed'
+      render 'api/feeds/show'
     else
       render json: ['Invalid feed inputs'], status: 400
     end
@@ -38,7 +38,7 @@ class Api::FeedsController < ApplicationController
   def destroy
     feed = Feed.find(params[:id])
     feed.destroy
-    render 'api/feeds/feed'
+    render 'api/feeds/index'
   end
 
   private

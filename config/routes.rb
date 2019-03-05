@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resource :session, only:[:create, :destroy]
     resources :feeds
     resources :sources
+    resources :feed_source_items, only: [:create, :destroy]
   end
 
   root to: 'static_pages#root'

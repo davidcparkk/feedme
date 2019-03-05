@@ -9,7 +9,6 @@ class SourceShow extends React.Component {
   }
   
   componentDidMount() {
-    this.props.fetchSources();
     this.props.fetchFeeds();
   }
 
