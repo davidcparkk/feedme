@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import SourcesIndexItem from './sources_index_item';
-import FeedsIndexItem from '../feeds/feeds_index_item';
+import ModalFeedsIndexItemContainer from '../feeds/modal_feeds_index_item_container';
 
 class SourceShow extends React.Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class SourceShow extends React.Component {
   render() {
     let personalFeeds = this.props.feeds.map(feed=> {
       return(
-        <FeedsIndexItem 
+        <ModalFeedsIndexItemContainer 
         key={feed.id}
         feed={feed}
         />

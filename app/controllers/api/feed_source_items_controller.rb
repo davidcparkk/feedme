@@ -16,6 +16,6 @@ class Api::FeedSourceItemsController < ApplicationController
   end
 
   def feed_source_item_params
-    params.require(:feed_source_item).permit(:feed_id, :source_id)
+    params.require(:feedSourceItem).permit(:feed_id, :source_id)
   end
 end
