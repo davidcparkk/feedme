@@ -13,8 +13,15 @@ class FeedShow extends React.Component {
   render() {
     let sourcesMap = this.props.feedSourceArr.map(source=> {
       return(
-        <li>
-          Name: {source.source_name} and Description: {source.description}
+        <li key={source.id} className='source-boxes'>
+          <div className='source-box-picture'>pic</div>
+          
+            
+          <div className='source-box-details'>
+            <div className='source-box-title'>Name: {source.source_name}</div>
+            <div className='source-box-description'> Description: {source.description}</div>
+          </div>
+          
         </li>
       )
     })

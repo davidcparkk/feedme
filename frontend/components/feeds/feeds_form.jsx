@@ -9,11 +9,6 @@ class FeedsForm extends React.Component {
       feed_title: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.goBack = this.goBack.bind(this);
-  }
-
-  goBack() {
-    this.props.history.goBack();
   }
 
   update(field) {

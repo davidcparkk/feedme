@@ -7,6 +7,15 @@ export const createFeedSourceItem = (feedSourceItem) => {
   })
 }
 
+export const fetchFeedSourceItems = () => {
+  return $.ajax({
+    method: "get",
+    url: `/api/feed_source_items`,
+    
+    error: err => console.log(err)
+  })
+}
+
 export const deleteFeedSourceItem = (id) => {
   return $.ajax({
     method: "delete",

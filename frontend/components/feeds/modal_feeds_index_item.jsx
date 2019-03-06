@@ -13,7 +13,7 @@ class ModalFeedsIndexItem extends React.Component {
   }
   
   render() {
-    debugger
+    
     return (
       <li>
         <div className='tab'>

@@ -5,6 +5,7 @@ import {fetchFeeds} from '../../actions/feed_actions';
 import {fetchSources} from '../../actions/source_actions';
 import FeedNav from './feed_nav';
 import { openModal, closeModal } from '../../actions/modal_actions';
+import {fetchFeedSourceItems}  from '../../actions/feed_source_items_actions';
 
 const mapStateToProps = state => {
   let feeds_values = Object.values(state.entities.feeds);
@@ -22,7 +23,8 @@ const mapDispatchToProps = dispatch => {
     logout: () => dispatch(logout()),
     fetchFeeds: () => dispatch(fetchFeeds()),
     openModal: (type) => dispatch(openModal(type)),
-    fetchSources: () => dispatch(fetchSources())
+    fetchSources: () => dispatch(fetchSources()),
+    fetchFeedSourceItems: () => dispatch(fetchFeedSourceItems())
   });
 }
 
