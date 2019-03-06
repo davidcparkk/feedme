@@ -50,9 +50,11 @@ class FeedNav extends React.Component {
             </div>
             <div className='create-feed-tab'>
             <div className='separator-small'></div>
+            
               <button className='create-button' onClick={() => dispatch(this.props.openModal('feedsForm'))}>Create New Feed</button>
             </div>
             <div className='separator'></div>
+            
             <Link to='/sources' className='add-content'>Add Content</Link>
           </div>
         </div>

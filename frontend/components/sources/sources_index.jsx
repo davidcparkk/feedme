@@ -23,7 +23,7 @@ class SourcesIndex extends React.Component {
     })
     
     return(
-      <div className='feedsIndex'>
+      
         <div className='display-container'>
           <h2>All Sources</h2>
           <div className='separator-small'></div>
@@ -32,11 +32,12 @@ class SourcesIndex extends React.Component {
           <p>LATEST</p>
           <div className='separator-small'></div>
           <div className='separator-small'></div>
+          <div className='related-topics'>RELATED TOPICS</div>
           <ul>
             {allSources}
           </ul>
         </div>
-      </div>
+      
     )
   }
 }
