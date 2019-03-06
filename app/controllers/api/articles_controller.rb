@@ -3,7 +3,8 @@ class Api::ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    render :show
+    @source = @article.source
+    render 'api/sources/show'
   end
 
   def index

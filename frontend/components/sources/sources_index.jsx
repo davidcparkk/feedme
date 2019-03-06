@@ -1,5 +1,5 @@
 import React from 'react';
-import SourcesIndexItem from './sources_index_item';
+import SourcesIndexItemContainer from './sources_index_item_container';
 import {Link} from 'react-router-dom';
 
 class SourcesIndex extends React.Component {
@@ -15,7 +15,7 @@ class SourcesIndex extends React.Component {
 
     let allSources = this.props.sources.map(source=> {
       return(
-        <SourcesIndexItem 
+        <SourcesIndexItemContainer 
         key={source.id}
         source={source}
         />

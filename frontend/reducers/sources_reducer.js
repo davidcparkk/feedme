@@ -4,12 +4,13 @@ import {merge} from 'lodash';
 const sourcesReducer = (state={}, action) => {
   Object.freeze(state);
   let newState;
+
   switch(action.type) {
     case RECEIVE_SOURCES:
       newState = merge({}, state, action.sources);
       return newState;
     case RECEIVE_SOURCE:
-      newState = merge({}, state, {[action.source.id]: action.source});
+      newState = merge({}, state, {[action.payload.source.id]: action.payload.source});
       return newState;
     case REMOVE_SOURCE:
       newState = merge({}, state);

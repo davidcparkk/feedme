@@ -10,16 +10,16 @@ const mapStateToProps = (state, ownProps) => {
   let feeds_values = Object.values(state.entities.feeds);
   let currentUserId = parseInt(state.session.id);
   const currentUserFeeds = selectFeed(feeds_values, currentUserId);
+  let articles = Object.values(state.entities.articles);
   return ({
     feeds: currentUserFeeds,
-    source: source
+    source: source,
+    articles: articles
   });
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchFeeds: () => dispatch(fetchFeeds()),
-    fetchSources: () => dispatch(fetchSources()),
     openModal: (type) => dispatch(openModal(type))
   };
 };

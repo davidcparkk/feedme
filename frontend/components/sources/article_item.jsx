@@ -1,29 +1,29 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router-dom';
 
-class SourcesIndexItem extends React.Component {
+class ArticleItem extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
-    const sourceId = this.props.source.id;
-    this.props.fetchSource(sourceId).then(this.props.history.push(`/sources/${sourceId}`));
+    // const sourceId = this.props.source.id;
+    // this.props.fetchSource(sourceId).then(this.props.history.push(`/sources/${sourceId}`));
   }
   
   render() {
     return (
-      <li key={this.props.source.id}>
+      <li key={this.props.article.id}>
         <div className='source-boxes'>
         <div className='source-box-picture'>pic</div>
           
             
           <div className='source-box-details'>
             <div className='source-box-title'>
-              <div onClick={this.handleClick}>{this.props.source.source_name}</div>
+              <div onClick={this.handleClick}>{this.props.article.title}</div>
             </div>
-            <div className='source-box-description'> Description: {this.props.source.description}</div>
+            <div className='source-box-description'>{this.props.article.body}</div>
           </div>
         </div>
       </li>
@@ -31,4 +31,4 @@ class SourcesIndexItem extends React.Component {
   }
 }
 
-export default withRouter(SourcesIndexItem);
+export default withRouter(ArticleItem);

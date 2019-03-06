@@ -3,7 +3,7 @@ import * as feedApiUtils from '../util/feed_api_util';
 export const RECEIVE_FEEDS = "RECEIVE_FEEDS";
 export const RECEIVE_FEED = "RECEIVE_FEED";
 export const REMOVE_FEED = "REMOVE_FEED";
-export const RECEIVE_ARTICLE = "RECEIVE_ARTICLE";
+
 
 // export const receive
 

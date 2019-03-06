@@ -15,5 +15,7 @@ class Feed < ApplicationRecord
   through: :feedSourceItems,
   source: :source
 
-  
+  has_many :articles,
+  through: :sources,
+  source: :articles
 end

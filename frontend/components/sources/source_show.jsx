@@ -2,6 +2,7 @@ import React from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import SourcesIndexItem from './sources_index_item';
 import ModalFeedsIndexItemContainer from '../feeds/modal_feeds_index_item_container';
+import ArticleItem from './article_item';
 
 class SourceShow extends React.Component {
   constructor(props) {
@@ -18,6 +19,14 @@ class SourceShow extends React.Component {
         />
       )
     })
+
+    let articles = this.props.articles.map(article => {
+      return(
+        <ArticleItem 
+        key = {article.id}
+        article={article}/>
+      )
+    })
     
     return (
       <div className='margin-bottom-show'>
@@ -30,6 +39,9 @@ class SourceShow extends React.Component {
           <div className='separator-small'></div>
           <div className='separator-small'></div>
           <div className='separator-small'></div>
+          <ul>
+            {articles}
+          </ul>
         </div>
 
         <div className='margin-bottom-show-list'>

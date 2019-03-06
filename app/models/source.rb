@@ -10,6 +10,6 @@ class Source < ApplicationRecord
 
   has_many :articles,
   primary_key: :id,
-  foreign_key: :feed_id,
+  foreign_key: :source_id,
   class_name: :Article
 end
