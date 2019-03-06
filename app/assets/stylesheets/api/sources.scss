@@ -14,10 +14,49 @@
   
 }
 .margin-bottom-show-list{
-  height: 800px;
-  width: 400px;
+  
+  width: 250px;
   position: fixed;
-  top: 50%;
-  left: 30%;
-  line-height:28px;
+  top: 25%;
+  left: 70%;
+  line-height:30px;
+
+  border: 1px solid #a9a9a9;
+}
+.dropdown-tab{
+  width:250px;
+  height:30px;  
+  border: 1px solid #a9a9a9;
+  display:flex;
+  
+}
+.dropdown-tab-container{
+  width:175px;
+  height:27px;  
+}
+.dropdown-tab-title{
+  width:175px;
+  height:27px; 
+}
+.add-source{
+  
+  
+  display:inline;
+  font-size: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  color: 2px solid green;
+  border: 2px solid green;
+  border-radius: 50%;
+
+}
+.delete-source{
+  font-size: 25px;
+  display:inline;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: 2px solid red;
+  border: 2px solid red;
+  border-radius: 50%;
 }

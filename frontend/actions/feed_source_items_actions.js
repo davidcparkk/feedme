@@ -1,5 +1,4 @@
 import * as feedSourceItemApiUtils from '../util/feed_source_item_api_util';
-
 export const RECEIVE_FEED_SOURCE_ITEMS = "RECEIVE_FEED_SOURCE_ITEMS";
 export const RECEIVE_FEED_SOURCE_ITEM = "RECEIVE_FEED_SOURCE_ITEM";
 export const REMOVE_FEED_SOURCE_ITEM = "REMOVE_FEED_SOURCE_ITEM";
@@ -16,12 +15,8 @@ const receiveFeed = (feed) => {
   })
 }
 
-export const fetchFeedSourceItems = () => dispatch => {
-  return feedSourceItemApiUtils.fetchFeedSourceItems().then( feedSources => dispatch(receiveFeedSourceItems(feedSources)))
-};
-
 export const deleteFeedSourceItem = (feedId) => dispatch => {
-  return feedSourceItemApiUtils.deleteFeedSourceItem(feedId).then( feedSourceItem => dispatch(removeFeedSourceItem(feedSourceItemId)))
+  return feedSourceItemApiUtils.deleteFeedSourceItem(feedId).then( feed => dispatch(receiveFeed(feed)))
   };
 
 const receiveFeedSourceItem = (feedSourceItem) => {
@@ -45,3 +40,6 @@ const removeFeedSourceItem = (feedSourceItemId) => {
   })
 }
 
+// export const fetchFeedSourceItems = () => dispatch => {
+//   return feedSourceItemApiUtils.fetchFeedSourceItems().then( feedSources => dispatch(receiveFeedSourceItems(feedSources)))
+// };

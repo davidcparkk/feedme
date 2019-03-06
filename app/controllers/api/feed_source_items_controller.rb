@@ -16,8 +16,9 @@ class Api::FeedSourceItemsController < ApplicationController
 
   def destroy
     @feed_source_item = FeedSourceItem.find(params[:id])
+    @feed = @feed_source_item.feed
     @feed_source_item.destroy
-    render 'api/feed_source_items/show'
+    render 'api/feeds/show'
   end
 
   def feed_source_item_params

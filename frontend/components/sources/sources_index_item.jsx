@@ -9,7 +9,7 @@ class SourcesIndexItem extends React.Component {
 
   handleClick() {
     const sourceId = this.props.source.id;
-    this.props.history.push(`/feeds/${sourceId}`);
+    this.props.history.push(`/sources/${sourceId}`);
   }
   
   render() {
