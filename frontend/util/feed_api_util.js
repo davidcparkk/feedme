@@ -1,3 +1,18 @@
+export const fetchArticles = () => {
+  return $.ajax({
+    method: 'get',
+    url: '/api/articles'
+  })
+}
+
+export const fetchArticle = (articleId) => {
+  return $.ajax({
+    method: 'get',
+    url: `/api/articles/${articleId}`,
+    error: err => console.log(err)
+  })
+}
+
 export const fetchFeeds = () => {
   return $.ajax({
     method: "get",
@@ -39,3 +54,4 @@ export const updateFeed = (feed) => {
     error: err => console.log(err)
   })
 }
+

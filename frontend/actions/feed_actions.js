@@ -3,6 +3,9 @@ import * as feedApiUtils from '../util/feed_api_util';
 export const RECEIVE_FEEDS = "RECEIVE_FEEDS";
 export const RECEIVE_FEED = "RECEIVE_FEED";
 export const REMOVE_FEED = "REMOVE_FEED";
+export const RECEIVE_ARTICLE = "RECEIVE_ARTICLE";
+
+// export const receive
 
 export const fetchFeeds = () => dispatch => {
   return feedApiUtils.fetchFeeds().then( feeds => dispatch(receiveFeeds(feeds)))
@@ -10,7 +13,7 @@ export const fetchFeeds = () => dispatch => {
 
 
 export const fetchFeed = (feedId) => dispatch => {
-  return feedApiUtils.fetchFeed(feedId).then( feed => dispatch(receiveFeed(feed)))
+  return feedApiUtils.fetchFeed(feedId).then( payload => dispatch(receiveFeed(payload)))
   };
 
 

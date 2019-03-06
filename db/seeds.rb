@@ -18,17 +18,56 @@ ActiveRecord::Base.transaction do
 
   Feed.destroy_all
 
-  f1 = Feed.create!(feed_title: "Geopolitics", user_id: u1.id)
-  f2 = Feed.create!(feed_title: "Football", user_id: u2.id)
+  f1 = Feed.create!(feed_title: "Football", user_id: u1.id)
+  f2 = Feed.create!(feed_title: "Science Weekly", user_id: u2.id)
   f3 = Feed.create!(feed_title: "Outdoors", user_id: u3.id)
   f4 = Feed.create!(feed_title: "Tech", user_id: u4.id)
+  f5 = Feed.create!(feed_title: "Science Weekly", user_id: u1.id)
+  f6 = Feed.create!(feed_title: "Outdoors", user_id: u1.id)
+  f7 = Feed.create!(feed_title: "Tech", user_id: u1.id)
 
   Source.destroy_all
 
-  s1 = Source.create!(source_name: "WaPo", description:'')
-  s2 = Source.create!(source_name: "Politico",description:'')
-  s3 = Source.create!(source_name: "BassFishPro",description:'')
-  s4 = Source.create!(source_name: "Twitter", description:'')
+  s1 = Source.create!(source_name: "WahPo Newsletter", description:"Not to be mistaken by that one rich guy that owns his own newspaper")
+  s2 = Source.create!(source_name: "Marketing and Design Professionals", description:'The the trendy ones')
+  s3 = Source.create!(source_name: "Fitness and Health",description:'Gainz')
+  s4 = Source.create!(source_name: "Vocks",description:'Spelled differently than our sister company')
+  s5 = Source.create!(source_name: "BlueBird", description:'The greatest app you will ever use')
+  s6 = Source.create!(source_name: "Twitter", description:'The second greatest app you will ever use')
+  s7 = Source.create!(source_name: "Youtube Celebrity", description:'17 year old with a lot banking on this gig')
+  s8 = Source.create!(source_name: "Trapeze Artist Enthusiasts", description:"Title says it all")
 
+  FeedSourceItem.destroy_all
 
+  sf1 = FeedSourceItem.create!(source_id: s1.id, feed_id: f5.id)
+  sf2 = FeedSourceItem.create!(source_id: s2.id, feed_id: f6.id)
+  sf3 = FeedSourceItem.create!(source_id: s3.id, feed_id: f7.id)
+  sf4 = FeedSourceItem.create!(source_id: s4.id, feed_id: f1.id)
+  sf5 = FeedSourceItem.create!(source_id: s5.id, feed_id: f1.id)
+  sf6 = FeedSourceItem.create!(source_id: s6.id, feed_id: f2.id)
+  sf7 = FeedSourceItem.create!(source_id: s7.id, feed_id: f3.id)
+  sf8 = FeedSourceItem.create!(source_id: s8.id, feed_id: f4.id)
+
+  Article.destroy_all
+
+  a1 = Article.create!(title: "Meanwhile in Oregon", body:'Stuff is about to go down', source_id: s1.id)
+  a2 = Article.create!(title: "Boneappletea!",body:"A chef's journey to all the scrumptuous foods", source_id: s2.id)
+  a3 = Article.create!(title: "Celtics defeated the Golden State Warriors",body:"On March the third, 2019, the 9=39-26 Boston Celtics defeat the Golden State Warriors 44-20), 128-95. True story.", source_id: s3.id)
+  a4 = Article.create!(title: "Analysis", body:"A closer look: the extensive effort to bury Donald Trump's Grades", source_id: s4.id)
+  a5 = Article.create!(title: "Meanwhile in Oregon", body:'Stuff is about to go down', source_id: s2.id)
+  a6 = Article.create!(title: "Boneappletea!",body:"A chef's journey to all the scrumptuous foods", source_id: s3.id)
+  a7 = Article.create!(title: "Celtics defeated the Golden State Warriors",body:"On March the third, 2019, the 9=39-26 Boston Celtics defeat the Golden State Warriors 44-20), 128-95. True story.", source_id: s4.id)
+  a8 = Article.create!(title: "Analysis", body:"A closer look: the extensive effort to bury Donald Trump's Grades", source_id: s1.id)
+  a9 = Article.create!(title: "Meanwhile in Oregon", body:'Stuff is going down', source_id: s3.id)
+  a10 = Article.create!(title: "Boneappletea!",body:"A chef's journey to all the scrumptuous foods", source_id: s4.id)
+  a11 = Article.create!(title: "Celtics defeated the Golden State Warriors",body:"On March the third, 2019, the 9=39-26 Boston Celtics defeat the Golden State Warriors 44-20), 128-95. True story.", source_id: s1.id)
+  a12 = Article.create!(title: "Analysis", body:"A closer look: the extensive effort to bury Donald Trump's Grades", source_id: s2.id)
+  a13 = Article.create!(title: "Meanwhile in Oregon", body:'Stuff is going down', source_id: s4.id)
+  a14 = Article.create!(title: "Boneappletea!",body:"A chef's journey to all the scrumptuous foods",source_id: s1.id)
+  a15 = Article.create!(title: "Celtics defeated the Golden State Warriors",body:"On March the third, 2019, the 9=39-26 Boston Celtics defeat the Golden State Warriors 44-20), 128-95. True story.", source_id: s2.id)
+  a16 = Article.create!(title: "Analysis", body:"A closer look: the extensive effort to bury Donald Trump's Grades", source_id: s7.id)
+  a17 = Article.create!(title: "Meanwhile in Oregon", body:'Stuff is going down', source_id: s8.id)
+  a18 = Article.create!(title: "Boneappletea!",body:"A chef's journey to all the scrumptuous foods",source_id: s8.id)
+  a19 = Article.create!(title: "Celtics defeated the Golden State Warriors",body:"On March the third, 2019, the 9=39-26 Boston Celtics defeat the Golden State Warriors 44-20), 128-95. True story.", source_id: s7.id)
+  a20 = Article.create!(title: "Analysis", body:"A closer look: the extensive effort to bury Donald Trump's Grades", source_id: s8.id)
 end

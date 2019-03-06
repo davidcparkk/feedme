@@ -1,4 +1,5 @@
 class Api::FeedSourceItemsController < ApplicationController
+  before_action :require_login
   def index
     @feed_source_items = FeedSourceItem.all
   end

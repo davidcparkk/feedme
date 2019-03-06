@@ -1,4 +1,5 @@
 class Api::FeedsController < ApplicationController
+  before_action :require_login
   def index
     @feeds = Feed.all
   end
