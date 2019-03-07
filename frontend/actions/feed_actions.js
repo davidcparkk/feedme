@@ -4,7 +4,6 @@ export const RECEIVE_FEEDS = "RECEIVE_FEEDS";
 export const RECEIVE_FEED = "RECEIVE_FEED";
 export const REMOVE_FEED = "REMOVE_FEED";
 
-
 // export const receive
 
 export const fetchFeeds = () => dispatch => {
@@ -40,10 +39,10 @@ const receiveFeeds = (feeds) => {
   })
 }
 
-const receiveFeed = (feed) => {
+const receiveFeed = (payload) => {
   return({
     type: RECEIVE_FEED,
-    feed: feed
+    payload: payload
   })
 }
 

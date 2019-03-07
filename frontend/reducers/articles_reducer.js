@@ -1,4 +1,5 @@
 import { RECEIVE_SOURCE } from '../actions/source_actions';
+import { RECEIVE_FEED } from '../actions/feed_actions';
 import {merge} from 'lodash';
 
 const articlesReducer = (state={}, action) => {
@@ -7,6 +8,9 @@ const articlesReducer = (state={}, action) => {
 
   switch(action.type) {
     case RECEIVE_SOURCE:
+      newState = merge({}, state, action.payload.articles);
+      return newState;
+    case RECEIVE_FEED:
       newState = merge({}, state, action.payload.articles);
       return newState;
     default:

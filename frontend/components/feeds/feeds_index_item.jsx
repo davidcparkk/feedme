@@ -9,7 +9,7 @@ class FeedsIndexItem extends React.Component {
 
   handleClick() {
     const feedId = this.props.feed.id;
-    this.props.history.push(`/feeds/${feedId}`);
+    this.props.fetchFeed(feedId).then(this.props.history.push(`/feeds/${feedId}`));
   }
   
   render() {
@@ -20,7 +20,7 @@ class FeedsIndexItem extends React.Component {
             
             </div>
             <div>
-              <Link to={`/feeds/${this.props.feed.id}`}>{this.props.feed.feed_title}</Link>
+              <div onClick={this.handleClick}>{this.props.feed.feed_title}</div>
             </div>
           </div>
       </li>

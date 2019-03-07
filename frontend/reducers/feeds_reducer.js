@@ -9,7 +9,7 @@ const feedsReducer = (state={}, action) => {
       newState = merge({}, state, action.feeds);
       return newState;
     case RECEIVE_FEED:
-      newState = merge({}, state, {[action.feed.id]: action.feed});
+      newState = merge({}, state, {[action.payload.feed.id]: action.payload.feed});
       return newState;
     case REMOVE_FEED:
       newState = merge({}, state);

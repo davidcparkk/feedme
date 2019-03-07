@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import FeedsIndexItem from '../feeds/feeds_index_item';
+import FeedsIndexItemContainer from '../feeds/feeds_index_item_container';
 
 class FeedNav extends React.Component {
   SplashPage () {
@@ -15,13 +15,12 @@ class FeedNav extends React.Component {
     this.props.fetchFeeds();
     // this.props.fetchSources();
   }
-
   
   SignedInPage(){
     
     let personalFeeds = this.props.feeds.map(feed=> {
       return(
-        <FeedsIndexItem 
+        <FeedsIndexItemContainer 
         key={feed.id}
         feed={feed}
         />

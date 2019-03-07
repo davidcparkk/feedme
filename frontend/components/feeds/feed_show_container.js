@@ -9,14 +9,15 @@ const mapStateToProps = (state, ownProps) => {
   let feedId = parseInt(ownProps.match.params.feedId);
   let feed = state.entities.feeds[feedId];
 
-  let feedSources = feed.source_ids;
-  let sources = state.entities.sources;
-  let feedSourceArr = feedSources.map(feedSourceId => sources[feedSourceId]);
+  // let feedSources = feed.source_ids;
+  // let sources = state.entities.sources;
+  // let feedSourceArr = feedSources.map(feedSourceId => sources[feedSourceId]);
+  let articles = Object.values(state.entities.articles);
 
   return ({
     
     feed: feed,
-    feedSourceArr: feedSourceArr
+    articles: articles
   });
 };
 
