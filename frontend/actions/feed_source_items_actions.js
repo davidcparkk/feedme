@@ -5,13 +5,13 @@ export const REMOVE_FEED_SOURCE_ITEM = "REMOVE_FEED_SOURCE_ITEM";
 export const RECEIVE_FEED = "RECEIVE_FEED";
 
 export const createFeedSourceItem = (feedSourceItem) => dispatch => {
-  return feedSourceItemApiUtils.createFeedSourceItem(feedSourceItem).then( feed => dispatch(receiveFeed(feed)))
+  return feedSourceItemApiUtils.createFeedSourceItem(feedSourceItem).then( payload => dispatch(receiveFeed(payload)))
 };
 
-const receiveFeed = (feed) => {
+const receiveFeed = (payload) => {
   return({
     type: RECEIVE_FEED,
-    feed: feed
+    payload: payload
   })
 }
 

@@ -11,7 +11,7 @@ const articlesReducer = (state={}, action) => {
       newState = merge({}, state, action.payload.articles);
       return newState;
     case RECEIVE_FEED:
-      newState = merge({}, state, action.payload.articles);
+      newState = action.payload.articles;
       return newState;
     default:
       return state;

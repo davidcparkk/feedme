@@ -8,18 +8,15 @@ class FeedShow extends React.Component {
   }
   
   render() {
-    debugger
+
+
     let articles = this.props.articles.map(article=> {
       return(
-        <li key={article.id} className='source-boxes'>
-          <div className='source-box-picture'>pic</div>
-          
-            
-          <div className='source-box-details'>
-            <div className='source-box-title'>Name: {article.title}</div>
-            <div className='source-box-description'> Body: {article.body}</div>
+        <li key={article.id} className='all-feeds-index-item'>
+          <div className='icon'><img src={window.readURL} />
           </div>
-          
+            <div className="feed-show-article-name">Name: {article.title}</div>
+            <div className="feed-show-article-body">Body: {article.body}</div>
         </li>
       )
     })
@@ -32,7 +29,7 @@ class FeedShow extends React.Component {
           <div className='separator-small'></div>
           <div className='separator-small'></div>
           <div className='separator-small'></div>
-          <ul>{articles}</ul>
+          <ul className="article-ul">{articles}</ul>
         </div>
     )
   }
