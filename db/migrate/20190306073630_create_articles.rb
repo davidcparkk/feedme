@@ -4,6 +4,7 @@ class CreateArticles < ActiveRecord::Migration[5.2]
       t.string :body, null: false, default: ""
       t.string :title, null: false, default: ""
       t.integer :source_id, null: false
+      t.string :image_url
       t.timestamps
     end
     add_index :articles, :source_id

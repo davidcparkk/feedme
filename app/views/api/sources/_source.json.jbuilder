@@ -1,1 +1,1 @@
-json.extract! source, :id, :source_name, :description, :article_ids
+json.extract! source, :id, :source_name, :description, :article_ids, :image_url

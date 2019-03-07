@@ -2,12 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .feed-show-article-name{
-  display: inline;
+  
   color: gray;
+  overflow:hidden;
+  width: 120px;
+  
 }
 .feed-show-article-body{
   display: inline;
   color: black;
+  margin-left: 40px;
 }
 .article-ul{
 
@@ -161,4 +165,11 @@
   height: 28px;
   margin-right:50px;
   overflow: hidden;
+  cursor:pointer;
+}
+.nav-bar-feeds{
+  cursor:pointer;
+}
+.nav-bar-feeds:hover{
+  background-color: #a8a8a8;
 }

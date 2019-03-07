@@ -32,10 +32,10 @@ class SourceShow extends React.Component {
       <div className='margin-bottom-show'>
         
         <div className='display-container'>
-          <h2>{this.props.source.source_name}</h2>
+          <h2 className='splash-tag-line'>{this.props.source.source_name}</h2>
           <div className='separator-small'></div>
           <div className='separator-small'></div>
-          <p>MOST POPULAR</p>
+          <p>MOST POPULAR ARTICLES</p>
           <div className='separator-small'></div>
           <div className='separator-small'></div>
           <div className='separator-small'></div>
@@ -46,7 +46,7 @@ class SourceShow extends React.Component {
 
         <div className='margin-bottom-show-list'>
 
-          <Link to='/feeds'>All</Link>
+          <Link to='/feeds'>  Add Source to Any of Your Feeds</Link>
           <ul>
             {personalFeeds}
           </ul>

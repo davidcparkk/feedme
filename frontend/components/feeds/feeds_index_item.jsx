@@ -19,8 +19,8 @@ class FeedsIndexItem extends React.Component {
             <div className='icon'><img src={window.arrowRightURL} />
             
             </div>
-            <div>
-              <div onClick={this.handleClick}>{this.props.feed.feed_title}</div>
+            <div onClick={this.handleClick} className='nav-bar-feeds'>
+              {this.props.feed.feed_title}
             </div>
           </div>
       </li>

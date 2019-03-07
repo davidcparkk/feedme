@@ -16,14 +16,14 @@ class SourcesIndexItem extends React.Component {
     return (
       <li key={this.props.source.id}>
         <div className='source-boxes'>
-        <div className='source-box-picture'>pic</div>
+        <img src={this.props.source.image_url} className='image-class'/>
           
             
           <div className='source-box-details'>
             <div className='source-box-title'>
-              <div onClick={this.handleClick}>{this.props.source.source_name}</div>
+              <div onClick={this.handleClick} className="article-title">{this.props.source.source_name}</div>
             </div>
-            <div className='source-box-description'> Description: {this.props.source.description}</div>
+            <div className='source-box-description'> {this.props.source.description}</div>
           </div>
         </div>
       </li>

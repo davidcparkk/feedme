@@ -9,9 +9,10 @@ class Splash extends React.Component {
       <div className='landing'>
         <div className='get-started'>
           <div className='container-centered'>
-            <h2>Be in the know</h2>
+            <h1 className='splash-tag-line'>Be in the know</h1>
             <br/>
             <div>Keep up with all the topics that matter to you.</div>
+            <div>All in one place</div>
             <br/>
             <br/>
             <Link to='/signup' className='signup-link'>GET STARTED FOR FREE</Link>
@@ -19,10 +20,15 @@ class Splash extends React.Component {
         </div>
         <div className='discover'>
           <div className='container-centered'>
-            <h2>Discover insightful sources</h2>
+            <h2 className='splash-tag-line'>Discover insightful sources</h2>
+            <div className='splash-img-container'>
+              <div><img src={window.youtubeURL} className='splash-images'/></div>
+              <div><img src={window.twitterURL} className='splash-images'/></div>
+              <div><img src={window.rssURL} className='splash-images'/></div>
+            </div>
           </div>
         </div> 
-        </div>
+      </div>
     );
   }
   

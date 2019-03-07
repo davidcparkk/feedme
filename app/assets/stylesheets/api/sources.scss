@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.article-title{
+  cursor:pointer;
+}
+.image-class{
+  height: 50px;
+  width: 50px;
+}
 .margin-bottom-show{
   
     margin-bottom: 40px;
@@ -17,8 +24,8 @@
   
   width: 250px;
   position: fixed;
-  top: 25%;
-  left: 70%;
+  top: 30%;
+  left: 75%;
   line-height:30px;
 
   border: 1px solid #a9a9a9;
@@ -40,11 +47,10 @@
 }
 .add-source{
   
-  
+  cursor:pointer;
   display:inline;
   font-size: 25px;
-  margin-left: 10px;
-  margin-right: 10px;
+
 
   color: 2px solid green;
   border: 2px solid green;
@@ -59,4 +65,7 @@
   color: 2px solid red;
   border: 2px solid red;
   border-radius: 50%;
+}
+.add-source:hover{
+background-color: green;
 }

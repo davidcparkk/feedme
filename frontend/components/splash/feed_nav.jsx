@@ -37,12 +37,12 @@ class FeedNav extends React.Component {
             <div className='personal-feed'>Personal Feeds
             <div className='separator-small'></div>
               <div className='tab'>
-              <Link to='/feeds'>All</Link>
-                <div className='icon'></div>
+                <div className='nav-bar-feeds'>
+                  <Link to='/feeds' >All</Link>
+                  <div className='icon'></div>
+                </div>
               </div>
-              <div className='tab'>Favorites
-                <div className='icon'></div>
-              </div>
+              
               <ul>
                 {personalFeeds}
               </ul>
@@ -53,8 +53,8 @@ class FeedNav extends React.Component {
               <button className='create-button' onClick={() => dispatch(this.props.openModal('feedsForm'))}>Create New Feed</button>
             </div>
             <div className='separator'></div>
-            
             <Link to='/sources' className='add-content'>Add Content</Link>
+            
           </div>
         </div>
       </div>

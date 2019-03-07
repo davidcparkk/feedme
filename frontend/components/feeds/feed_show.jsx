@@ -15,17 +15,17 @@ class FeedShow extends React.Component {
         <li key={article.id} className='all-feeds-index-item'>
           <div className='icon'><img src={window.readURL} />
           </div>
-            <div className="feed-show-article-name">Name: {article.title}</div>
-            <div className="feed-show-article-body">Body: {article.body}</div>
+            <div className="feed-show-article-name">{article.title}</div>
+            <div className="feed-show-article-body">{article.body}</div>
         </li>
       )
     })
     return (
         <div className='display-container'>
-          <h2>{this.props.feed.feed_title}</h2>
+          <h2 className='splash-tag-line'>{this.props.feed.feed_title}</h2>
           <div className='separator-small'></div>
           <div className='separator-small'></div>
-          <p>MOST POPULAR</p>
+          <p>Most Popular Articles</p>
           <div className='separator-small'></div>
           <div className='separator-small'></div>
           <div className='separator-small'></div>

@@ -16,12 +16,12 @@ class ArticleItem extends React.Component {
     return (
       <li key={this.props.article.id}>
         <div className='source-boxes'>
-        <div className='source-box-picture'>pic</div>
+        <img src={this.props.article.image_url} className='image-class'/>
           
             
           <div className='source-box-details'>
             <div className='source-box-title'>
-              <div onClick={this.handleClick}>{this.props.article.title}</div>
+              <div onClick={this.handleClick} className="article-title">{this.props.article.title}</div>
             </div>
             <div className='source-box-description'>{this.props.article.body}</div>
           </div>

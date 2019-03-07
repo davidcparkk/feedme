@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_03_06_073630) do
     t.string "body", default: "", null: false
     t.string "title", default: "", null: false
     t.integer "source_id", null: false
+    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["source_id"], name: "index_articles_on_source_id"
@@ -35,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_03_06_073630) do
   create_table "feeds", force: :cascade do |t|
     t.string "feed_title", null: false
     t.integer "user_id", null: false
+    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -42,6 +44,7 @@ ActiveRecord::Schema.define(version: 2019_03_06_073630) do
   create_table "sources", force: :cascade do |t|
     t.string "source_name", null: false
     t.string "description", null: false
+    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -50,9 +53,9 @@ ActiveRecord::Schema.define(version: 2019_03_06_073630) do
     t.string "username", null: false
     t.string "session_token", null: false
     t.string "password_digest", null: false
+    t.string "email", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "email", null: false
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end

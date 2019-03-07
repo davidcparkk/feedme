@@ -25,7 +25,7 @@ class SourcesIndex extends React.Component {
     return(
       
         <div className='display-container'>
-          <h2>All Sources</h2>
+          <h2 className='splash-tag-line'>All Sources</h2>
           <div className='separator-small'></div>
           <div className='separator-small'></div>
           <div className='separator-small'></div>
