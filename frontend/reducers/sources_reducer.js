@@ -1,4 +1,5 @@
 import { RECEIVE_SOURCES, RECEIVE_SOURCE, REMOVE_SOURCE } from '../actions/source_actions';
+import { RECEIVE_FEED } from '../actions/feed_actions';
 import {merge} from 'lodash';
 
 const sourcesReducer = (state={}, action) => {
@@ -15,6 +16,9 @@ const sourcesReducer = (state={}, action) => {
     case REMOVE_SOURCE:
       newState = merge({}, state);
       delete newState[action.sourceId];
+      return newState;
+    case RECEIVE_FEED:
+      newState = merge({}, state, action.payload.sources);
       return newState;
     default:
       return state;

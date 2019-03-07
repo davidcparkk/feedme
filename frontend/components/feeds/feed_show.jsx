@@ -11,10 +11,13 @@ class FeedShow extends React.Component {
 
 
     let articles = this.props.articles.map(article=> {
+      
       return(
+        
         <li key={article.id} className='all-feeds-index-item'>
           <div className='icon'><img src={window.readURL} />
           </div>
+            <div className="feed-show-article-name">{this.props.sources[parseInt(article.source_id)].source_name}</div>
             <div className="feed-show-article-name">{article.title}</div>
             <div className="feed-show-article-body">{article.body}</div>
         </li>

@@ -9,3 +9,11 @@ end
     end
   end
 end
+
+@feed.sources.includes(:feeds).each do |source|
+  json.sources do 
+    json.set! source.id do
+      json.partial! 'api/sources/source', source: source
+    end
+  end
+end

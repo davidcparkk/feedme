@@ -8,16 +8,15 @@ import { fetchSources } from '../../actions/source_actions';
 const mapStateToProps = (state, ownProps) => {
   let feedId = parseInt(ownProps.match.params.feedId);
   let feed = state.entities.feeds[feedId];
-
-  // let feedSources = feed.source_ids;
-  // let sources = state.entities.sources;
+  let sources = state.entities.sources;
   // let feedSourceArr = feedSources.map(feedSourceId => sources[feedSourceId]);
   let articles = Object.values(state.entities.articles);
 
   return ({
     
     feed: feed,
-    articles: articles
+    articles: articles,
+    sources: sources
   });
 };
 
