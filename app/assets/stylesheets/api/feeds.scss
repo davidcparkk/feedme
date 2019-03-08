@@ -1,17 +1,31 @@
 // Place all the styles related to the api/feeds controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.feed-show-article-name{
+.feed-show-source-name{
   
   color: gray;
   overflow:hidden;
-  width: 120px;
   
+  text-overflow: ellipses;
+  padding-right: 10px;
+  display: inline;
+}
+.feed-show-article-name{
+  
+  color: black;
+  overflow:hidden;
+  
+  padding-right: 10px;
+  display: inline;
+}
+.feed-show-article-container{
+  display: inline;
+  overflow:hidden;
 }
 .feed-show-article-body{
+  color: gray;
   display: inline;
-  color: black;
-  margin-left: 40px;
+  overflow:hidden;
 }
 .article-ul{
 
