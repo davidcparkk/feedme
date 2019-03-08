@@ -33,7 +33,7 @@ ActiveRecord::Base.transaction do
   s3 = Source.create!(source_name: "# Fitness and Health",description:'Professional Look into the Science of Gains', image_url: "/assets/earth-globe-svgrepo-com.svg")
   s4 = Source.create!(source_name: "# Funny Comics and Bits",description:'Enjoy the latest from the sarcastic people you have the joy of meeting', image_url: "/assets/twitter-svgrepo-com.svg")
   s5 = Source.create!(source_name: "# BlueBird", description:'The greatest app you will ever use', image_url: "/assets/idea-svgrepo-com.svg")
-  s6 = Source.create!(source_name: "Trapeze Artist Enthusiasts", description:'Something about trapezes, you know', image_url: "/assets/flask-svgrepo-com.svg")
+  s6 = Source.create!(source_name: "# Trapeze Artist Enthusiasts", description:'Something about trapezes, you know', image_url: "/assets/flask-svgrepo-com.svg")
   s7 = Source.create!(source_name: "# Youtube Celebrity", description:'17 year old with a lot banking on this gig or else it is all down hill from here. Stay tuned.', image_url: "/assets/youtube-svgrepo-com.svg")
   s8 = Source.create!(source_name: "# Twitter", description:"The second greatest app you will ever use", image_url: "/assets/twitter-svgrepo-com.svg")
 
@@ -57,7 +57,7 @@ ActiveRecord::Base.transaction do
   a5 = Article.create!(title: "Meanwhile in Oregon", body:"There seems to be a festival in Eugene, Oregon, celebrating other Euguene's. It's as exciting as it sounds.", source_id: s2.id, image_url: "/assets/twitter-svgrepo-com.svg")
   a6 = Article.create!(title: "As the French Say: Boneappletea",body:"(kisses fingers) Join the world famous chef's journey to all the scrumptuous foods. Enter into the indulgence and other eggciting adventures.", source_id: s3.id, image_url: "/assets/twitter-svgrepo-com.svg")
   a7 = Article.create!(title: "Celtics defeated the Golden State Warriors",body:"On March the third, 2019, the 39-26 Boston Celtics defeat the Golden State Warriors 44-20), 128-95. True story. Was on the television as I was writing this.", source_id: s4.id, image_url: "/assets/twitter-svgrepo-com.svg")
-  a8 = Article.create!(title: "Analysis", body:"A closer look: the extensive effort to bury Donald Trump's Grades. Collusion?", source_id: s1.id, image_url: "/assets/newspaper-svgrepo-com.svg")
+  a8 = Article.create!(title: "Analysis", body:"A closer look: the extensive effort to bury Donald Trump's Grades. Collusion?", source_id: s6.id, image_url: "/assets/newspaper-svgrepo-com.svg")
   a9 = Article.create!(title: "Meanwhile in Oregon", body:"Stuff is going down. There seems to be a festival in Eugene, Oregon, celebrating other Euguene's. It is as exciting as it sounds.", source_id: s3.id, image_url: "/assets/lock-svgrepo-com.svg")
   a10 = Article.create!(title: "The Great Debators Really Making Things Fun At the Party",body:"I'm going to say with absolute authority that the iPhone5 is way better than the iPhone5S", source_id: s4.id, image_url: "/assets/star-svgrepo-com.svg")
   a11 = Article.create!(title: "The Great Debators Really Making Things Fun At the Party",body:"I'm going to say with absolute authority that the iPhone6 is way better than the iPhone6S", source_id: s1.id, image_url: "/assets/user-svgrepo-com.svg")
