@@ -10,9 +10,11 @@ class Splash extends React.Component {
         <div className='get-started'>
           <div className='container-centered'>
             <div className="intro-text">
-            <h1 className='splash-tag-line'>Where readers become leaders</h1>
+            <h1 className='splash-tag-line'>Where readers</h1>
+            <h1 className='splash-tag-line'>become leaders</h1>
             <br/>
-            <div>Be in the know. Keep up with all the topics that matter to you.</div>
+            <div>Be in the know.</div>
+            <div>Keep up with all the topics that matter to you.</div>
             <div>All in one place</div>
             <br/>
             <br/>
