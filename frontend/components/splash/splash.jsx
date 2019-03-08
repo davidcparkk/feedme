@@ -19,9 +19,11 @@ class Splash extends React.Component {
             <br/>
             <br/>
             <Link to='/signup' className='signup-link'>GET STARTED FOR FREE</Link>
+            
             </div>
+            <img className='container-centered-main-img'src={window.splashURL}/>
           </div>
-          <img className='container-centered-main-img'src={window.splashURL}/>
+          
         </div>
         <div className='discover'>
           <div className='container-centered'>
