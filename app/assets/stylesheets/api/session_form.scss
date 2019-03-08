@@ -12,8 +12,8 @@
   border: 1px solid #d6d6d6;
   
   justify-content: center;
-  margin-top: 40px;
-  height: 700px;
+  margin-top: 25px;
+  height: 600px;
   font: helvetica;
   font-size: 19px;
   padding-bottom: 20px;
@@ -56,6 +56,9 @@
   border: 1px solid 2bb24c;
   border-radius: 4px;
 }
+.session-submit:hover{
+  background-color: #3cb371;
+}
 
 .demo-submit {
   background-color: #6781c7;
@@ -75,11 +78,14 @@
   border-radius: 4px;
   margin-left: 100px;
 }
+.demo-submit:hover{
+  background-color: #4169E1;
+}
 
 .session-center-container{
   
   display: inline-block;
-  margin-top: 50px;
+  margin-top: 30px;
   
   
 }

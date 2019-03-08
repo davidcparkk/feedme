@@ -115,7 +115,9 @@
   font-size: 14px;
 }
 .add-content{
-  
+  overflow:hidden;
+  white-space: nowrap;
+  width:90px;
   position: fixed;
   font-family: Arial, Helvetica, sans-serif;
   color: #696969;
@@ -129,6 +131,9 @@
   left: 0;
   opacity:1.0;
   
+}
+.add-content:hover{
+  background-color: #d3d3d3;
 }
 .separator-small{
   height: 8px;
@@ -185,5 +190,5 @@
   cursor:pointer;
 }
 .nav-bar-feeds:hover{
-  background-color: #a8a8a8;
+  background-color: #d3d3d3;
 }

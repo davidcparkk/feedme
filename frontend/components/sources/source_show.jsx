@@ -9,6 +9,9 @@ class SourceShow extends React.Component {
     super(props);
   }
   
+  componentDidMount() {
+    this.props.fetchSource(this.props.match.params.sourceId);
+  }
 
   render() {
     let personalFeeds = this.props.feeds.map(feed=> {
@@ -28,6 +31,10 @@ class SourceShow extends React.Component {
       )
     })
     
+    if(this.props.source===undefined) {
+      return null;
+    }
+
     return (
       <div className='margin-bottom-show'>
         
@@ -37,7 +44,10 @@ class SourceShow extends React.Component {
           <div className='separator-small'></div>
           <h2 className='splash-tag-line'>{this.props.source.source_name}</h2>
           <div className='separator-small'></div>
-          {this.props.source.description}
+          <div className="source-description">{this.props.source.description}</div>
+          <div className='separator-small'></div>
+          <div className='separator-small'></div>
+          <div className='separator-small'></div>
           <div className='separator-small'></div>
           <p>MOST POPULAR ARTICLES</p>
           <div className='separator-small'></div>
