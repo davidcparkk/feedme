@@ -16,7 +16,7 @@ class ArticleItem extends React.Component {
     return (
       <li key={this.props.article.id}>
         <div className='source-boxes'>
-        <img src={this.props.article.image_url} className='image-class'/>
+        <img src={window.laptopURL} className='image-class'/>
           
             
           <div className='source-box-details'>

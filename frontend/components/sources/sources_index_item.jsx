@@ -16,7 +16,7 @@ class SourcesIndexItem extends React.Component {
     return (
       <li key={this.props.source.id}>
         <div className='source-boxes'>
-        <img src={this.props.source.image_url} className='image-class'/>
+        <img src={window.twitterURL} className='image-class'/>
           
             
           <div className='source-box-details'>

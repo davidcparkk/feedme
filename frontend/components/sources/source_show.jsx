@@ -32,8 +32,12 @@ class SourceShow extends React.Component {
       <div className='margin-bottom-show'>
         
         <div className='display-container'>
+          <div className='separator-small'></div>
+          Source
+          <div className='separator-small'></div>
           <h2 className='splash-tag-line'>{this.props.source.source_name}</h2>
           <div className='separator-small'></div>
+          {this.props.source.description}
           <div className='separator-small'></div>
           <p>MOST POPULAR ARTICLES</p>
           <div className='separator-small'></div>

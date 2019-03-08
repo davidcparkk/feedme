@@ -9,9 +9,9 @@ class Splash extends React.Component {
       <div className='landing'>
         <div className='get-started'>
           <div className='container-centered'>
-            <h1 className='splash-tag-line'>Be in the know</h1>
+            <h1 className='splash-tag-line'>Where readers become leaders</h1>
             <br/>
-            <div>Keep up with all the topics that matter to you.</div>
+            <div>Be in the know. Keep up with all the topics that matter to you.</div>
             <div>All in one place</div>
             <br/>
             <br/>
@@ -22,9 +22,14 @@ class Splash extends React.Component {
           <div className='container-centered'>
             <h2 className='splash-tag-line'>Discover insightful sources</h2>
             <div className='splash-img-container'>
-              <div><img src={window.youtubeURL} className='splash-images'/></div>
-              <div><img src={window.twitterURL} className='splash-images'/></div>
-              <div><img src={window.rssURL} className='splash-images'/></div>
+              <div className="splash-descriptions">
+              <div><img src={window.youtubeURL} className='splash-images'/></div><div>
+              See new videos from the YouTube</div></div>
+              
+              <div className="splash-descriptions"><div><img src={window.twitterURL} className='splash-images'/></div><div>Follow your favorite twitter influencer or hashtag and never miss crucial updates</div></div>
+              
+              <div className="splash-descriptions"><div><img src={window.rssURL} className='splash-images'/></div>
+              <div>Follow anyone on the Web who publishes an RSS feed</div></div>
             </div>
           </div>
         </div> 
