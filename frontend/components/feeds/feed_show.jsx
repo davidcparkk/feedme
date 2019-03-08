@@ -6,7 +6,9 @@ class FeedShow extends React.Component {
   constructor(props) {
     super(props);
   }
-  
+  componentDidMount() {
+    this.props.fetchFeed(this.props.match.params.feedId);
+  }
   render() {
 
 
@@ -23,6 +25,11 @@ class FeedShow extends React.Component {
         </li>
       )
     })
+
+    if (this.props.feed === undefined) {
+      return null;
+    }
+
     return (
         <div className='display-container'>
           <h2 className='splash-tag-line'>{this.props.feed.feed_title}</h2>
