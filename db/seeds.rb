@@ -31,7 +31,7 @@ ActiveRecord::Base.transaction do
   s1 = Source.create!(source_name: "# AA Broadcasting Company", description:"A public service broadcaster for the people. World's oldest national broadcast and the largest in the world by number of employees", image_url: "/assets/twitter-svgrepo-com.svg")
   s2 = Source.create!(source_name: "# Marketing and Design Professionals", description:'For the trendy ones', image_url: "/assets/flask-svgrepo-com.svg")
   s3 = Source.create!(source_name: "# Fitness and Health",description:'Professional Look into the Science of Gains', image_url: "/assets/earth-globe-svgrepo-com.svg")
-  s4 = Source.create!(source_name: "# Funny Comics and Bits",description:'Enjoy the latest from the most sarcastic people you will ever have the joy of meeting', image_url: "/assets/twitter-svgrepo-com.svg")
+  s4 = Source.create!(source_name: "# Funny Comics and Bits",description:'Enjoy the latest from the sarcastic people you have the joy of meeting', image_url: "/assets/twitter-svgrepo-com.svg")
   s5 = Source.create!(source_name: "# BlueBird", description:'The greatest app you will ever use', image_url: "/assets/idea-svgrepo-com.svg")
   s6 = Source.create!(source_name: "Trapeze Artist Enthusiasts", description:'Something about trapezes, you know', image_url: "/assets/flask-svgrepo-com.svg")
   s7 = Source.create!(source_name: "# Youtube Celebrity", description:'17 year old with a lot banking on this gig or else it is all down hill from here. Stay tuned.', image_url: "/assets/youtube-svgrepo-com.svg")

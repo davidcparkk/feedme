@@ -9,6 +9,7 @@ class Splash extends React.Component {
       <div className='landing'>
         <div className='get-started'>
           <div className='container-centered'>
+            <div className="intro-text">
             <h1 className='splash-tag-line'>Where readers become leaders</h1>
             <br/>
             <div>Be in the know. Keep up with all the topics that matter to you.</div>
@@ -16,6 +17,7 @@ class Splash extends React.Component {
             <br/>
             <br/>
             <Link to='/signup' className='signup-link'>GET STARTED FOR FREE</Link>
+            </div>
           </div>
           <img className='container-centered-main-img'src={window.splashURL}/>
         </div>

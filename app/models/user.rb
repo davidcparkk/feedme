@@ -10,7 +10,11 @@ class User < ApplicationRecord
 	has_many :feeds,
     primary_key: :id,
     foreign_key: :user_id,
-    class_name: :Feed
+		class_name: :Feed
+		
+	has_many :articles,
+	through: :feeds,
+	source: :articles
 
 	def self.generate_session_token
 		SecureRandom::urlsafe_base64
