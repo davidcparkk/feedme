@@ -1,3 +1,13 @@
+
+.container-centered-main-img {
+  align-items: center;
+  margin: auto;
+  display: inline-block;
+  max-width: 888px;
+  margin-top: 10px;
+  padding-top: 40px;
+  border-radius:4px;
+}
 .splash-descriptions{
   display: block;
   text-align: center;
@@ -146,8 +156,8 @@ h2 {
 .discover {
   background:white;
   text-align:center;
-  height: 270px;
-  margin-top: 90px;
+  height: 290px;
+  margin-top: 140px;
   
   padding-bottom: 30px;
 }

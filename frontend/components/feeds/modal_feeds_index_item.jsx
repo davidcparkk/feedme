@@ -14,7 +14,7 @@ class ModalFeedsIndexItem extends React.Component {
 
   // handleDelete(e) {
   //   this.props.deleteFeedSourceItem(
-  //     this.props.match.params.sourceId
+  //     {feed_id: this.props.feed.id, source_id: this.props.match.params.sourceId}
   //   );
   // }
   
