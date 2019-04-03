@@ -22,6 +22,7 @@ const App =() => {
         <FeedNavContainer />
         <Modal />
         <Switch>
+          <AuthRoute exact path='/' component={SplashContainer} />
           <AuthRoute path='/login' component={LoginFormContainer} />
           <AuthRoute path='/signup' component={SignupFormContainer} />
           
@@ -30,7 +31,7 @@ const App =() => {
           <ProtectedRoute path='/feeds/:feedId' component={FeedShowContainer} />
           <ProtectedRoute path='/feeds' component={FeedsIndexContainer} />
 
-          <Route exact path='/' component={SplashContainer} />
+          
         </Switch>
       </div>
   )
