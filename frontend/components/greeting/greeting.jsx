@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import icon from '../../../app/assets/images/icon.svg';
 
 const Greeting = (props) => {
   const signinLink = () => {
     return (
       <nav className = 'login-signup'>
         <div className="feedme-welcome-container">
-            <img src={window.feedmeURL} alt="" className='icon-img' size={24} />
+            <img src={icon} alt="" className='icon-img' size={24} />
             
           </div>
         <div >
@@ -27,7 +28,7 @@ const Greeting = (props) => {
     return(
       <div className='header'>
         <div className="feedme-welcome-container">
-          <img src={window.feedmeURL} alt="" className='icon-img' size={24} />
+          <img src={icon} alt="" className='icon-img' size={24} />
             <div className='feedme-welcome'>feedme</div>
           </div>
         
