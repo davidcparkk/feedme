@@ -1,21 +1,29 @@
-.login-signup{
+.session-main-form{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .login-form-container {
-  
-  background-image: url("https://images.unsplash.com/photo-1546700907-ffe5e9834f73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80");
-  background-position: center;
-  background-size: cover;
-  position: fixed;
-  z-index: -10;
-  opacity: 0.9;
   display: flex;
-  
   justify-content: center;
   height: 100%;
   width:100%;
+}
+
+.login-form-container::after{
+  content: "";
+  background: url("https://images.unsplash.com/photo-1546700907-ffe5e9834f73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80");
+  background-position: center;
+  // background-size: cover;
+  position: absolute;
+  top: 0;
+  left:0;
+  bottom: 0;
+  right:0;
+  z-index: -1;
+  opacity: 0.3;
 }
 
 .login-form {
@@ -23,7 +31,16 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: 400px;
+  width: 450px;
+  border: 1px solid gray;
+  margin-top: 100px;
+  padding-top: 40px;
+  padding-bottom: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 1px solid #dcdcdc;
+  background: #f5f5f5;
+  border-radius: 10px;
 }
 
 .error-msg {
@@ -31,16 +48,16 @@
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   list-style-type: none;
+  padding-bottom: 15px;
 }
 
 .session-navLink {
   text-decoration: underline;
   color: gray;
-  margin-left: 100px;
 }
 
 .session-submit {
-  background-color: #2bb24c;
+  background-color: #4cb69f;
   border: none;
   color: white;
   cursor: pointer;
@@ -57,11 +74,11 @@
   border-radius: 4px;
 }
 .session-submit:hover{
-  background-color: #3cb371;
+  background-color: #47b39b;
 }
 
 .demo-submit {
-  background-color: #6781c7;
+  background-color: #9068be;
   border: none;
   color: white;
   cursor: pointer;
@@ -76,10 +93,10 @@
   margin-top: 15px;
   border: 1px solid 1E90FF;
   border-radius: 4px;
-  margin-left: 100px;
+  
 }
 .demo-submit:hover{
-  background-color: #4169E1;
+  background-color: #7c58a5;
 }
 
 .session-center-container{
@@ -95,7 +112,7 @@
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   text-align: center;
-  
+  padding-bottom: 10px;
   
 }
 

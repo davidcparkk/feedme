@@ -5,16 +5,17 @@ import icon from '../../../app/assets/images/icon.svg';
 const Greeting = (props) => {
   const signinLink = () => {
     return (
-      <nav className = 'login-signup'>
-        <div className="feedme-welcome-container">
-            <img src={icon} alt="" className='icon-img' size={24} />
-            
+      <div className = 'splash-nav'>
+        <div className = "splash-nav-container">
+          <div className="feedme-welcome-container">
+              <img src={icon} alt="" className='icon-img' size={40} />
+            </div>
+          <div >
+          <Link to='/' className='login-button'>Home</Link>
+          <Link to='/login' className='login-button'>Login</Link>
           </div>
-        <div >
-        <Link to='/' className='login-button'>Home</Link>
-        <Link to='/login' className='login-button'>Login</Link>
         </div>
-      </nav>
+      </div>
     );
   }
 
@@ -24,11 +25,10 @@ const Greeting = (props) => {
   }
 
   const personalGreeting = () => {
-    
     return(
       <div className='header'>
         <div className="feedme-welcome-container">
-          <img src={icon} alt="" className='icon-img' size={24} />
+          <img src={icon} alt="" className='icon-img' size={40} />
             <div className='feedme-welcome'>feedme</div>
           </div>
         

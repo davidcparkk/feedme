@@ -4,20 +4,12 @@ import { Link } from 'react-router-dom';
 import FeedsIndexItemContainer from '../feeds/feeds_index_item_container';
 
 class FeedNav extends React.Component {
-  SplashPage () {
-    return (
-      <div className='landing'>
-        
-        </div>
-    );
-  }
   componentDidMount () {
     this.props.fetchFeeds();
     // this.props.fetchSources();
   }
   
   SignedInPage(){
-    
     let personalFeeds = this.props.feeds.map(feed=> {
       return(
         <FeedsIndexItemContainer 
@@ -66,7 +58,7 @@ class FeedNav extends React.Component {
     if (this.props.currentUser) {
       return this.SignedInPage();
     } else {
-      return this.SplashPage();
+      return null;
     }
   }
   
