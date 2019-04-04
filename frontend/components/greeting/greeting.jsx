@@ -26,16 +26,16 @@ const Greeting = (props) => {
 
   const personalGreeting = () => {
     return(
-      <div className='header'>
-        <div className="feedme-welcome-container">
-          <img src={icon} alt="" className='icon-img' size={40} />
-            <div className='feedme-welcome'>feedme</div>
+      <div className='top-nav'>
+        <div className="top-nav-container">
+          <div className="feedme-welcome-container">
+            <img src={icon} alt="" className='icon-img' size={40} />
+            </div>
+          <div className='profile-container'>
+            <p className='header-name'>Welcome, {props.currentUser.username}!</p>
+            <img src={window.flashlightURL} alt="" className='icon-img' size={24} />  
+            <button className='login-button' onClick={handleLogout}>Log Out</button>
           </div>
-        
-        <div className='profile-container'>
-          <p className='header-name'>Welcome, {props.currentUser.username}!</p>
-          <img src={window.flashlightURL} alt="" className='icon-img' size={24} />  
-          <button className='header-button' onClick={handleLogout}>Log Out</button>
         </div>
       </div>
     )

@@ -8,25 +8,18 @@ class Splash extends React.Component {
     return (
       <div className='landing'>
         <div className='get-started'>
-          <div className='container-centered'>
-            <div className="intro-text">
-            <h1 className='splash-tag-line'>Welcome to feedme</h1>
-            <br/>
-            <div>GET INFORMED</div>
-            <div>GET INSPIRED</div>
-            <div>Stories Curated For You</div>
-            <br/>
-            <br/>
+          <div className='get-started-center-cont'>
+            <h1 className='splash-h1'>Welcome to feedme</h1>
+            <h2 className='splash-h2'>GET INFORMED. GET INSPIRED.</h2>
+            <h3 className='splash-h3'>Stories curated for you.</h3>
             <Link to='/signup' className='signup-link'>GET STARTED FOR FREE</Link>
-            
-            </div>
-            <img className='container-centered-main-img'src={window.splashURL}/>
+            <div className='container-centered-main-img'></div>
           </div>
           
         </div>
         <div className='discover'>
           <div className='container-centered'>
-            <h2 className='splash-tag-line'>Discover insightful sources</h2>
+            <h2 className='splash-h2'>Discover insightful sources</h2>
             <div className='splash-img-container'>
               <div className="splash-descriptions">
               <div><img src={window.youtubeURL} className='splash-images'/></div><div>
