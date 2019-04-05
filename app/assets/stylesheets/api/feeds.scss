@@ -37,13 +37,12 @@
   font-size: 14px;
 }
 .display-container{
-  margin-left: 335px;
-  margin-top: 15px;
-  padding-bottom: 60px;
+  top: 100px;
+  position: relative;
+  left: 400px;
 }
 
 .feedmeTabsHolder {
-  font-family: Arial, Helvetica, sans-serif;
   height: 100%;
   width: 268px;
   position: fixed;
@@ -85,7 +84,6 @@
   display:block;
   color: #484848;
   font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .margin-bottom{
@@ -105,12 +103,10 @@
   margin-right: -23px;
   padding-right: 23px;
   display:block;
-  font-family: Arial, Helvetica, sans-serif;
   height: 28px;
 }
 .create-button{
   color: gray;
-  font-family: Arial, Helvetica, sans-serif;
   margin-left: 16px;
   font-size: 14px;
 }
@@ -119,7 +115,6 @@
   white-space: nowrap;
   width:90px;
   position: fixed;
-  font-family: Arial, Helvetica, sans-serif;
   color: #696969;
   background: #dcdcdc;
   padding-left: 99px;
@@ -162,7 +157,6 @@
   font-weight: bold;
   font-size: 14px;
   height: 28px;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .icon{

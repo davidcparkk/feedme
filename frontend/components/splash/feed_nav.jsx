@@ -19,7 +19,7 @@ class FeedNav extends React.Component {
       )
     })
     return(
-      <div className='feedsIndex'>
+      
         <div className="feedmeTabsHolder">
           <div className='margin-bottom'>
             <div className='pin-button'></div>
@@ -49,7 +49,7 @@ class FeedNav extends React.Component {
             
           </div>
         </div>
-      </div>
+      
       
     )
   }
