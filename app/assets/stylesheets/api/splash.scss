@@ -93,6 +93,7 @@ body{
   height: 50px;
   background: white;
   border-bottom: 1px solid gray;
+  z-index: 5;
 }
 
 .top-nav-container{
@@ -104,6 +105,7 @@ body{
   margin: auto;
   padding-right: 50px;
   border-bottom: 1px solid #e8e8e8;
+  
 }
 
 .header-button {

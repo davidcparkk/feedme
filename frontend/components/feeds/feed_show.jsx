@@ -10,18 +10,13 @@ class FeedShow extends React.Component {
     this.props.fetchFeed(this.props.match.params.feedId);
   }
   render() {
-
-
     let articles = this.props.articles.map(article=> {
-      
       return(
-        
         <li key={article.id} className='all-feeds-index-item'>
-          <div className='icon'><img src={window.readURL} />
-          </div>
+          <div className='article-picture'></div>
           <div className='feed-show-article-container'>
+            <div className="feed-show-article-name">{article.title}</div>            
             <div className="feed-show-source-name">{this.props.sources[parseInt(article.source_id)].source_name}</div>
-            <div className="feed-show-article-name">{article.title}</div>
             <div className="feed-show-article-body">{article.body}</div>
             </div>
         </li>
@@ -35,12 +30,7 @@ class FeedShow extends React.Component {
     return (
         <div className='display-container'>
           <h2 className='splash-tag-line'>{this.props.feed.feed_title}</h2>
-          <div className='separator-small'></div>
-          <div className='separator-small'></div>
           <p>Most Popular Articles</p>
-          <div className='separator-small'></div>
-          <div className='separator-small'></div>
-          <div className='separator-small'></div>
           <ul className="article-ul">{articles}</ul>
         </div>
     )

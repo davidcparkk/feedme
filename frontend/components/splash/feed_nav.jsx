@@ -17,40 +17,34 @@ class FeedNav extends React.Component {
         feed={feed}
         />
       )
-    })
+    });
     return(
-      
-        <div className="feedmeTabsHolder">
-          <div className='margin-bottom'>
-            <div className='pin-button'></div>
-            <div className='today-button'>Today
-            </div>
-            <div className='separator'></div>
-            <div className='personal-feed'>Personal Feeds
-            <div className='separator-small'></div>
-              <div className='tab'>
+      <div className="feedmeTabsHolder">
+        <div className='personal-feed'>
+          <div className="feeds-title">Personal Feeds</div>
+          <ul>
+            <li className="feed-list-item">
+              <div className="tab">
+                <div className='icon'><img src={window.arrowRightURL} />
+                </div>
                 <div className='nav-bar-feeds'>
-                  <Link to='/feeds' >All</Link>
-                  <div className='icon'></div>
+                  <Link to='/feeds' className="all-feeds">All Feeds</Link>
                 </div>
               </div>
-              
-              <ul>
-                {personalFeeds}
-              </ul>
-            </div>
-            <div className='create-feed-tab'>
-            <div className='separator-small'></div>
-            
-              <button className='create-button' onClick={() => dispatch(this.props.openModal('feedsForm'))}>Create New Feed</button>
-            </div>
-            <div className='separator'></div>
-            <Link to='/sources' className='add-content'>+Add Content</Link>
-            
-          </div>
+            </li>
+            {personalFeeds}
+            <li className="feed-list-item">
+              <div className="tab">
+                <div className='create-feed-tab'>
+                  <div className='create-button' onClick={() => dispatch(this.props.openModal('feedsForm'))}>+  Create New Feed</div>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
-      
-      
+        
+        <Link to='/sources' className='add-content'>+  ADD CONTENT</Link>
+      </div>
     )
   }
 

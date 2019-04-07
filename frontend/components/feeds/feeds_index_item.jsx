@@ -14,12 +14,12 @@ class FeedsIndexItem extends React.Component {
   
   render() {
     return (
-      <li>
+      <li onClick={this.handleClick} className="feed-list-item">
         <div className='tab'>
             <div className='icon'><img src={window.arrowRightURL} />
             
             </div>
-            <div onClick={this.handleClick} className='nav-bar-feeds'>
+            <div className='nav-bar-feeds'>
               {this.props.feed.feed_title}
             </div>
           </div>

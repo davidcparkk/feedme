@@ -1,35 +1,50 @@
 // Place all the styles related to the api/feeds controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.article-picture{
+  width: 40%;
+  height: 70%;
+  margin-right: 30px;
+  background: #4cb69f;
+  border-radius: 7px;
+}
+
+.splash-tag-line{
+  font-size: 40px;
+  padding-bottom: 30px;
+}
+
 .feed-show-source-name{
-  
   color: gray;
-  overflow:hidden;
-  
-  text-overflow: ellipses;
-  padding-right: 10px;
-  display: inline;
+  padding-bottom: 5px;
 }
+
 .feed-show-article-name{
-  
   color: black;
-  overflow:hidden;
-  
-  padding-right: 10px;
-  display: inline;
+  font-size: 20px;
+  font-weight: 900;
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
+
 .feed-show-article-container{
-  display: inline;
-  overflow:hidden;
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
 }
+
 .feed-show-article-body{
   color: gray;
   display: inline;
-  overflow:hidden;
 }
-.article-ul{
 
+.all-feeds-index-item:hover{
+  background: #e8e8e8;
 }
+
 .related-topics{
   float: right;
   color: gray;
@@ -37,29 +52,25 @@
   font-size: 14px;
 }
 .display-container{
-  top: 100px;
+  top: 110px;
   position: relative;
   left: 400px;
+  max-width: 700px;
+  margin-bottom: 120px;
 }
 
 .feedmeTabsHolder {
   height: 100%;
-  width: 268px;
+  width: 300px;
   position: fixed;
   z-index: 1;
   top: 0;
+  padding-top: 80px;
   left: 0;
-  background-color: #dcdcdc;
+  color:white;
+  background-color: #484848;
   overflow: hidden;
-  padding-top: 20px;
-  overflow-y: scroll;
-  padding-right: 17px;
-  box-sizing: content-box;
   clear:both;
-  margin-left: -17px;
-  padding-left: 17px;
-  margin-right: -23px;
-  padding-right: 23px;
   display:block;
 }
 
@@ -82,7 +93,7 @@
   margin-right: -23px;
   padding-right: 23px;
   display:block;
-  color: #484848;
+  color: #white;
   font-weight: bold;
 }
 
@@ -109,26 +120,28 @@
   color: gray;
   margin-left: 16px;
   font-size: 14px;
+  cursor:pointer;
 }
 .add-content{
   overflow:hidden;
   white-space: nowrap;
-  width:90px;
   position: fixed;
-  color: #696969;
-  background: #dcdcdc;
-  padding-left: 99px;
-  padding-right: 99px;
-  padding-bottom: 15px;
-  padding-top: 15px;
+  color: white;
+  background: #4cb69f;
   border-top: 1px solid #a9a9a9;
   bottom: 0;
   left: 0;
-  opacity:1.0;
+  opacity: 0.9;
+  width: 300px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  align-items: center;
   
 }
 .add-content:hover{
-  background-color: #d3d3d3;
+  background-color: #47b39b;
 }
 .separator-small{
   height: 8px;
@@ -139,50 +152,69 @@
   line-height: 28px;
 }
 .personal-feed{
-  color: gray;
-  margin-left: -17px;
-  padding-left: 17px;
-  margin-right: -23px;
-  padding-right: 23px;
-  display:block;
+  color: white;
+  box-sizing: border-box;
+  font-weight: 300;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100%;
 }
 .tab{
-  color: #484848;
+  color: white;
   line-height: 28px;
-  margin-left: -17px;
-  padding-left: 17px;
-  margin-right: -23px;
-  padding-right: 23px;
-  display:block;
+  padding-left: 20px;
   font-weight: bold;
+  margin-right: -23px;
   font-size: 14px;
   height: 28px;
+  display: flex;
+  align-items: center;
 }
 
 .icon{
-  width: 16px;
-  height: 16px;
-  padding-top: 4px;
-  float:left;
-  margin-right:10px;
-  vertical-align: middle;
+  width: 14px;
+  height: 14px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  margin-right: 10px;
 }
+
 .all-feeds-index-item{
   color: #b8b8b8;
-  line-height: 28px;
-  margin-left: -17px;
-  padding-left: 17px;
   display: flex;
-  border-bottom: 1px solid #e8e8e8;
-  border-top: 1px solid #e8e8e8;
-  height: 28px;
-  margin-right:50px;
+  border-radius:10px;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  align-items: center;
+  box-sizing: border-box;
   overflow: hidden;
   cursor:pointer;
+  height: 160px;
+  margin-bottom: 25px;
 }
 .nav-bar-feeds{
   cursor:pointer;
 }
-.nav-bar-feeds:hover{
-  background-color: #d3d3d3;
+
+.feed-list-item{
+  padding-top:3px;
+  padding-bottom:3px;
+  cursor:pointer;
+}
+
+
+.feed-list-item:hover{
+  background-color: #c3c2c2;
+}
+
+.feeds-title{
+  padding-left: 20px;
+  padding-bottom: 5px;
+}
+
+.all-feeds{
+  text-decoration:none;
+  color:white;
 }
