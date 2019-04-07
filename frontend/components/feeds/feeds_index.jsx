@@ -24,14 +24,9 @@ class FeedsIndex extends React.Component {
     });
     return(
       <div className='display-container'>
-        <h2>All</h2>
-        <div className='separator-small'></div>
-        <div className='separator-small'></div>
-        <div className='separator-small'></div>
+        <h2 className='splash-tag-line'>All</h2>
         <p>LATEST</p>
-        <div className='separator-small'></div>
-        <div className='separator-small'></div>
-        <ul>
+        <ul className="article-ul">
           {allFeeds}
         </ul>
       </div>

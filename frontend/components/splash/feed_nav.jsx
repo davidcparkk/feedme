@@ -1,14 +1,22 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter,Link } from 'react-router-dom';
 import FeedsIndexItemContainer from '../feeds/feeds_index_item_container';
 
 class FeedNav extends React.Component {
+  constructor(props){
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
   componentDidMount () {
     this.props.fetchFeeds();
-    // this.props.fetchSources();
   }
   
+  handleClick(){
+    this.props.history.push('/feeds');
+  }
+
   SignedInPage(){
     let personalFeeds = this.props.feeds.map(feed=> {
       return(
@@ -23,12 +31,13 @@ class FeedNav extends React.Component {
         <div className='personal-feed'>
           <div className="feeds-title">Personal Feeds</div>
           <ul>
-            <li className="feed-list-item">
+            <li className="feed-list-item" onClick={this.handleClick}>
               <div className="tab">
                 <div className='icon'><img src={window.arrowRightURL} />
                 </div>
                 <div className='nav-bar-feeds'>
-                  <Link to='/feeds' className="all-feeds">All Feeds</Link>
+                  All Feeds
+                  {/* <Link to='/feeds' className="all-feeds">All Feeds</Link> */}
                 </div>
               </div>
             </li>
@@ -59,4 +68,4 @@ class FeedNav extends React.Component {
   
 };
 
-export default FeedNav;
+export default withRouter(FeedNav);
