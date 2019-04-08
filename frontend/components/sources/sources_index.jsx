@@ -12,7 +12,6 @@ class SourcesIndex extends React.Component {
   }
   
   render() {
-
     let allSources = this.props.sources.map(source=> {
       return(
         <SourcesIndexItemContainer 
@@ -23,21 +22,16 @@ class SourcesIndex extends React.Component {
     })
     
     return(
-      
-        <div className='display-container'>
+        <div className='source-container'>
           <h2 className='splash-tag-line'>All Sources</h2>
-          <div className='separator-small'></div>
-          <div className='separator-small'></div>
-          <div className='separator-small'></div>
           <p>LATEST</p>
-          <div className='separator-small'></div>
-          <div className='separator-small'></div>
-          <div className='related-topics'>RELATED TOPICS</div>
-          <ul>
-            {allSources}
-          </ul>
+          {/* <div className='related-topics'>RELATED TOPICS</div> */}
+          <div className="source-list-container">
+            <ul className="source-ul">
+              {allSources}
+            </ul>
+          </div>
         </div>
-      
     )
   }
 }

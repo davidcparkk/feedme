@@ -23,9 +23,8 @@ class ModalFeedsIndexItem extends React.Component {
     return (
       <li className='dropdown-tab'>
         <div className= 'dropdown-tab-container'>
-            <div className='icon'><img src={window.arrowRightURL} />
-            
-            </div>
+            {/* <div className='icon'><img src={window.arrowRightURL} />
+            </div> */}
             <div  className='dropdown-tab-title'>
               {this.props.feed.feed_title}
             </div>

@@ -36,42 +36,29 @@ class SourceShow extends React.Component {
     }
 
     return (
-      <div className='margin-bottom-show'>
+      // <div className='margin-bottom-show'>
         
         <div className='display-container'>
-          <div className='separator-small'></div>
           Source
-          <div className='separator-small'></div>
           <h2 className='splash-tag-line'>{this.props.source.source_name}</h2>
-          <div className='separator-small'></div>
           <div className="source-description">{this.props.source.description}</div>
-          <div className='separator-small'></div>
-          <div className='separator-small'></div>
-          <div className='separator-small'></div>
-          <div className='separator-small'></div>
           <p>MOST POPULAR ARTICLES</p>
-          <div className='separator-small'></div>
-          <div className='separator-small'></div>
-          <div className='separator-small'></div>
-          <ul>
+          <ul className="article-ul">
             {articles}
           </ul>
+
+          <div className='margin-bottom-show-list'>
+            Add Source to Any of Your Feeds
+            <ul>
+              {personalFeeds}
+            </ul>
+          </div>
+
         </div>
 
-        <div className='margin-bottom-show-list'>
-
-          <Link to='/feeds'>  Add Source to Any of Your Feeds</Link>
-          <ul>
-            {personalFeeds}
-          </ul>
-            
-        </div>
-          
-      </div>
-      
-      
     )
   }
 }
 
 export default withRouter(SourceShow);
+

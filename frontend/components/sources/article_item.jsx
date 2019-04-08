@@ -14,18 +14,13 @@ class ArticleItem extends React.Component {
   
   render() {
     return (
-      <li key={this.props.article.id}>
-        <div className='source-boxes'>
-        <img src={window.laptopURL} className='image-class'/>
-          
-            
-          <div className='source-box-details'>
-            <div className='source-box-title'>
-              <div onClick={this.handleClick} className="article-title">{this.props.article.title}</div>
-            </div>
-            <div className='source-box-description'>{this.props.article.body}</div>
+      <li key={this.props.article.id} className='all-feeds-index-item'>
+        <div className='article-picture'></div>
+          <div className='feed-show-article-container'>
+            <div className="feed-show-article-name">{this.props.article.title}</div>   
+            <div className="feed-show-source-name"></div>
+            <div className="feed-show-article-body">{this.props.article.body}</div>
           </div>
-        </div>
       </li>
     )
   }

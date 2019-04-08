@@ -1,66 +1,73 @@
 // Place all the styles related to the api/Sources controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.source-container{
+  top: 110px;
+  position: relative;
+  left: 400px;
+  max-width: 800px;
+  width: 800px;
+  margin-bottom: 120px;
+}
+
+.source-list-container{
+
+}
+
+.source-ul{
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+}
+
+.source-li{
+  width: 100px;
+  height: 200px;
+  overflow: hidden;
+  background: yellow;
+  cursor:pointer;
+}
+
 .source-description{
   width: 550px;
   word-wrap: break-word;
-  padding-bottom: 10px;
+  padding-bottom: 40px;
 }
+
 .article-title{
   cursor:pointer;
 }
+
 .image-class{
   height: 50px;
   width: 50px;
 }
-.margin-bottom-show{
-  
-    margin-bottom: 40px;
-    margin-left: 20px;
-    padding-left: 17px;
-    margin-right: -23px;
-    padding-right: 23px;
-    padding-bottom: 50px;
-    display:block;
-  
-}
-.margin-bottom-show-list{
-  
-  width: 250px;
-  position: fixed;
-  top: 30%;
-  left: 75%;
-  line-height:30px;
 
-  border: 1px solid #a9a9a9;
+.margin-bottom-show-list{
+  width: 18%;
+  position: fixed;
+  top: 35%;
+  right: 50px;
 }
+
 .dropdown-tab{
-  width:250px;
-  height:30px;  
-  border: 1px solid #a9a9a9;
-  display:flex;
-  
+  border: 1px solid #d8d8d8;
+  display: flex;
+  flex-direction: row;
 }
+
 .dropdown-tab-container{
   width:175px;
-  height:27px;  
 }
+
 .dropdown-tab-title{
-  width:175px;
-  height:27px; 
+
 }
+
 .add-source{
-  
   cursor:pointer;
-  display:inline;
-  font-size: 25px;
-
-
-  color: 2px solid green;
-  border: 2px solid green;
-  border-radius: 50%;
-
 }
+
 .delete-source{
   font-size: 25px;
   display:inline;
