@@ -15,6 +15,7 @@ class ArticleItem extends React.Component {
   render() {
     return (
       <li key={this.props.article.id} className='all-feeds-index-item' onClick={()=> this.handleClick()}>
+      {/* <li key={this.props.article.id} className='all-feeds-index-item' onClick={() => dispatch(this.props.openModal('articleShow'))}> */}
         <div className='article-picture'></div>
           <div className='feed-show-article-container'>
             <div className="feed-show-article-name">{this.props.article.title}</div>   

@@ -1,17 +1,21 @@
 import {connect} from 'react-redux';
 import ArticleShow from './article_show';
+import { fetchSource } from '../../actions/source_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  // let articleId = parseInt(ownProps.match.params.articleId);
-  // let article = state.entities.articles[articleId];
+  let articleId = parseInt(ownProps.match.params.articleId);
+  let sourceId = parseInt(ownProps.match.params.sourceId);
+  let article = state.entities.articles[articleId];
+  let source = state.entities.sources[sourceId];
   return ({
-    // article: article
+    article: article,
+    source: source
   })
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    
+    fetchSource: (id) => dispatch(fetchSource(id))
   }
 };
 

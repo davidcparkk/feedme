@@ -1,3 +1,72 @@
 // Place all the styles related to the api/articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.article-splash-tag-line{
+  font-size: 40px;
+  padding-bottom: 10px;
+}
+
+.article-source-name{
+  font-size: 20px;
+  padding-bottom: 50px;
+  color: gray;
+}
+
+.article-show-img{
+  background-color: #47b39b;
+  max-width: 650px;
+  width: 650px;
+  height: 350px;
+  max-height: 350px;
+  margin-bottom: 50px;
+}
+
+.article-show-display-container{
+  top: 110px;
+  position: relative;
+  left: 400px;
+  max-width: 800px;
+  width: 800px;
+  margin-bottom: 120px;
+}
+
+.article-show-body{
+  max-width: 650px;
+  width: 650px;
+  font-size: 20px;
+}
+
+.article-show-link{
+  max-width: 650px;
+  height: 50px;
+  margin-top: 50px;
+  border: 1px solid gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:gray;
+}
+
+.source-back-btn{
+  height: 80px;
+  width: 80px;
+  max-width: 100px;
+  cursor:pointer;
+}
+
+.source-back-btn-container{
+  position: fixed;
+  top: 110px;
+  right: 110px;
+  color: gray;
+  max-width: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.source-back-instruction{
+  max-width: 120px;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import {closeModal} from '../../actions/modal_actions';
 import {connect} from 'react-redux';
 import FeedsFormContainer from '../feeds/feeds_form_container';
+import ArticleShowContainer from '../articles/article_show_container';
 
 class Modal extends React.Component {
   constructor(props){
@@ -18,6 +19,9 @@ class Modal extends React.Component {
     switch(this.props.modal) {
       case 'feedsForm':
         component= <FeedsFormContainer />;
+        break;
+      case 'articleShow':
+        component= <ArticleShowContainer />;
         break;
       default:
         return null;
