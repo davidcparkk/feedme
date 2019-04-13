@@ -8,7 +8,7 @@ const articlesReducer = (state={}, action) => {
 
   switch(action.type) {
     case RECEIVE_SOURCE:
-      newState = merge({}, state, action.payload.articles);
+      newState = merge({}, action.payload.articles);
       return newState;
     case RECEIVE_FEED:
       newState = merge({},action.payload.articles);
