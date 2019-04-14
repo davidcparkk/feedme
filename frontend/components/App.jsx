@@ -13,6 +13,8 @@ import SourcesIndexContainer from './sources/sources_index_container';
 import SourceShowContainer from './sources/source_show_container';
 import ArticleShowContainer from './articles/article_show_container';
 import FeedArticleShowContainer from './articles/feed_article_show_container';
+import ArticlesIndexContainer from './articles/articles_index_container';
+import ArticleItemShowContainer from './articles/article_item_show_container';
 
 // <Route path='/feeds' component={FeedsContainer} />
 
@@ -30,9 +32,11 @@ const App =() => {
           <ProtectedRoute path='/sources/:sourceId/articles/:articleId' component={ArticleShowContainer} />
           <ProtectedRoute path='/feeds/:feedId/articles/:articleId' component={FeedArticleShowContainer} />
           <ProtectedRoute exact path='/sources' component={SourcesIndexContainer} />
+          <ProtectedRoute path='/articles/:articleId' component={ArticleItemShowContainer} />
           <ProtectedRoute path='/sources/:sourceId' component={SourceShowContainer} />
           <ProtectedRoute path='/feeds/:feedId' component={FeedShowContainer} />
           <ProtectedRoute path='/feeds' component={FeedsIndexContainer} />
+          <ProtectedRoute path='/articles' component={ArticlesIndexContainer} />
 
           
         </Switch>

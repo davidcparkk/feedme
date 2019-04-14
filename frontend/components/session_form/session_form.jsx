@@ -23,7 +23,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then( () => this.props.history.push('/feeds') );
+    this.props.processForm(user).then( () => this.props.history.push('/articles') );
   }
 
   handleDemo(e) {
@@ -34,7 +34,7 @@ class SessionForm extends React.Component {
       email: 'guest@feedme.com'
     };
     
-    this.props.login(user).then( () => this.props.history.push('/feeds') );
+    this.props.login(user).then( () => this.props.history.push('/articles') );
   }
 
   componentWillUnmount() {

@@ -14,7 +14,7 @@ class FeedNav extends React.Component {
   }
   
   handleClick(){
-    this.props.history.push('/feeds');
+    this.props.history.push('/articles');
   }
 
   SignedInPage(){
@@ -31,7 +31,7 @@ class FeedNav extends React.Component {
         <div className='personal-feed'>
           <div className="feeds-title">Personal Feeds</div>
           <ul>
-            <li className="feed-list-item" onClick={this.handleClick}>
+            <li className="feed-list-item" onClick={() => this.handleClick()}>
               <div className="tab">
                 <div className='icon'><img src={window.arrowRightURL} />
                 </div>

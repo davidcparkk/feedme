@@ -14,6 +14,7 @@ class FeedShow extends React.Component {
       behavior: 'smooth'
     });
     this.props.fetchFeed(this.props.match.params.feedId);
+    this.props.fetchSources();
   }
 
   componentDidUpdate(prevProps) {
