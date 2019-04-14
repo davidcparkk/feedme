@@ -12,6 +12,7 @@ import Modal from './modal/modal';
 import SourcesIndexContainer from './sources/sources_index_container';
 import SourceShowContainer from './sources/source_show_container';
 import ArticleShowContainer from './articles/article_show_container';
+import FeedArticleShowContainer from './articles/feed_article_show_container';
 
 // <Route path='/feeds' component={FeedsContainer} />
 
@@ -26,9 +27,8 @@ const App =() => {
           <AuthRoute exact path='/' component={SplashContainer} />
           <AuthRoute path='/login' component={LoginFormContainer} />
           <AuthRoute path='/signup' component={SignupFormContainer} />
-
           <ProtectedRoute path='/sources/:sourceId/articles/:articleId' component={ArticleShowContainer} />
-
+          <ProtectedRoute path='/feeds/:feedId/articles/:articleId' component={FeedArticleShowContainer} />
           <ProtectedRoute exact path='/sources' component={SourcesIndexContainer} />
           <ProtectedRoute path='/sources/:sourceId' component={SourceShowContainer} />
           <ProtectedRoute path='/feeds/:feedId' component={FeedShowContainer} />

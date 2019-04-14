@@ -10,7 +10,20 @@ class SourceShow extends React.Component {
   }
   
   componentDidMount() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
     this.props.fetchSource(this.props.match.params.sourceId);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.match.params.sourceId != prevProps.match.params.sourceId) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
   }
 
   render() {
