@@ -9,6 +9,6 @@ class Api::ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
-    render :index
+    render 'api/articles/index'
   end
 end

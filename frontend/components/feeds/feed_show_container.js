@@ -3,7 +3,7 @@ import {fetchFeed, fetchFeeds} from '../../actions/feed_actions';
 import {selectFeed} from '../../reducers/selectors';
 import FeedShow from './feed_show';
 import { openModal, closeModal } from '../../actions/modal_actions';
-import { fetchSource } from '../../actions/source_actions';
+import { fetchSource, fetchSources } from '../../actions/source_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let feedId = parseInt(ownProps.match.params.feedId);
@@ -25,7 +25,7 @@ const mapDispatchToProps = dispatch => {
     fetchFeed: id => dispatch(fetchFeed(id)),
     fetchFeeds: () => dispatch(fetchFeeds()),
     openModal: (type) => dispatch(openModal(type)),
-    fetchSource: (id) => dispatch(fetchSource(id))
+    fetchSources: () => dispatch(fetchSources())
   };
 };
 

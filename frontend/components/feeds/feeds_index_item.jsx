@@ -14,7 +14,7 @@ class FeedsIndexItem extends React.Component {
   
   render() {
     return (
-      <li onClick={this.handleClick} className="feed-list-item">
+      <li onClick={() => this.handleClick()} className="feed-list-item">
         <div className='tab'>
             <div className='icon'><img src={window.arrowRightURL} />
             

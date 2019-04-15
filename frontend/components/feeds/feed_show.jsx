@@ -5,14 +5,37 @@ import FeedsIndexItem from './feeds_index_item';
 class FeedShow extends React.Component {
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
   }
+
   componentDidMount() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
     this.props.fetchFeed(this.props.match.params.feedId);
+    this.props.fetchSources();
   }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.match.params.feedId != prevProps.match.params.feedId) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  }
+
+
+  handleClick(articleId) {
+    const feedId = this.props.match.params.feedId;
+    this.props.history.push(`/feeds/${feedId}/articles/${articleId}`);
+  }
+
   render() {
     let articles = this.props.articles.map(article=> {
       return(
-        <li key={article.id} className='all-feeds-index-item'>
+        <li key={article.id} className='all-feeds-index-item' onClick={()=> this.handleClick(article.id)}>
           <div className='article-picture'></div>
           <div className='feed-show-article-container'>
             <div className="feed-show-article-name">{article.title}</div>            
@@ -22,6 +45,7 @@ class FeedShow extends React.Component {
         </li>
       )
     })
+
 
     if (this.props.feed === undefined) {
       return null;

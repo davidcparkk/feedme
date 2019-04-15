@@ -8,13 +8,13 @@ class ArticleItem extends React.Component {
   }
 
   handleClick() {
-    // const sourceId = this.props.source.id;
-    // this.props.fetchSource(sourceId).then(this.props.history.push(`/sources/${sourceId}`));
+    const sourceId = this.props.match.params.sourceId;
+    this.props.history.push(`/sources/${sourceId}/articles/${this.props.article.id}`);
   }
   
   render() {
     return (
-      <li key={this.props.article.id} className='all-feeds-index-item'>
+      <li key={this.props.article.id} className='all-feeds-index-item' onClick={()=> this.handleClick()}>
         <div className='article-picture'></div>
           <div className='feed-show-article-container'>
             <div className="feed-show-article-name">{this.props.article.title}</div>   
