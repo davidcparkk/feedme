@@ -61,8 +61,8 @@ class SourceShow extends React.Component {
           </ul>
 
           <div className='margin-bottom-show-list'>
-            Add Source to Any of Your Feeds
-            <ul>
+            <div className='add-source-text'>Add Source to Any of Your Feeds</div>
+            <ul className="modal-feed-ul">
               {personalFeeds}
             </ul>
           </div>
