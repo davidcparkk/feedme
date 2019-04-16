@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import ArticleItem from './article_item';
 import { openModal, closeModal } from '../../actions/modal_actions';
+import {fetchArticle} from '../../actions/article_actions';
 
 const mapStateToProps = (state, ownProps) => {
   // let articleId = parseInt(ownProps.match.params.articleId);
@@ -12,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    openModal: (type) => dispatch(openModal(type))
+    // fetchArticle: (articleId) => dispatch(fetchArticle(articleId))
   }
 };
 

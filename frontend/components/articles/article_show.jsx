@@ -18,7 +18,9 @@ class ArticleShow extends React.Component {
       top: 0,
       behavior: 'smooth'
     });
-    this.props.fetchSource(this.props.match.params.sourceId);
+    const articleId = this.props.match.params.articleId;
+    this.props.fetchArticle(articleId);
+    // this.props.fetchSource(this.props.match.params.sourceId);
   }
 
   componentDidUpdate(prevProps) {

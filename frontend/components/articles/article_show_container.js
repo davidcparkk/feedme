@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import ArticleShow from './article_show';
 import { fetchSource } from '../../actions/source_actions';
+import {fetchArticle} from '../../actions/article_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let articleId = parseInt(ownProps.match.params.articleId);
@@ -15,7 +16,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchSource: (id) => dispatch(fetchSource(id))
+    fetchSource: (id) => dispatch(fetchSource(id)),
+    fetchArticle: (articleId) => dispatch(fetchArticle(articleId))
   }
 };
 

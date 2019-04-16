@@ -14,13 +14,13 @@ const receiveArticles = (articles) => {
   })
 }
 
-// export const fetchArticle = (articleId) => dispatch => {
-//   return sourceApiUtils.fetchArticle(articleId).then( payload => dispatch(receiveSource(payload)))
-//   };
+export const fetchArticle = (articleId) => dispatch => {
+  return sourceApiUtils.fetchArticle(articleId).then( article => dispatch(receiveArticle(article)))
+  };
 
-// export const receiveArticle = (article) => {
-//   return({
-//     type: RECEIVE_ARTICLE,
-//     article: article
-//   })
-// }
+export const receiveArticle = (article) => {
+  return({
+    type: RECEIVE_ARTICLE,
+    article: article
+  })
+}
