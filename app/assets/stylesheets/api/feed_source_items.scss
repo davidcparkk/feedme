@@ -3,15 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .source-boxes{
-  padding: 24px;
-  box-sizing: border-box;
-  border: 1px solid #e8e8e8;
-  border-radius: 0.25rem;
+  color: white;
   display: flex;
-  margin-bottom: 16px;
-  margin-right: 50px;
-  height: 175px;
-  width: 550px;
+  justify-content: center;
+  text-align: center;
 }
 .source-box-details{
   margin-left: 50px;

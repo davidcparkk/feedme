@@ -21,11 +21,16 @@
 }
 
 .source-li{
-  width: 100px;
-  height: 200px;
-  overflow: hidden;
-  background: yellow;
-  cursor:pointer;
+  width: 180px;
+  height: 250px;
+  background: #4cb69f;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  padding: 10px 10px;
+  margin: 10px 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
 }
 
 .source-description{
@@ -39,8 +44,8 @@
 }
 
 .image-class{
-  height: 50px;
-  width: 50px;
+  // height: 50px;
+  // width: 50px;
 }
 
 .margin-bottom-show-list{

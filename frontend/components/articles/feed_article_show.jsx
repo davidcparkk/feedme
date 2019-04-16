@@ -31,7 +31,7 @@ class FeedArticleShow extends React.Component {
   }
 
   render() {
-    if(this.props.article===undefined ||  this.props.feed===undefined) {
+    if(this.props.article===undefined ||  this.props.feed===undefined || this.props.source===undefined) {
       return null;
     }
 
