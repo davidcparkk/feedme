@@ -16,7 +16,7 @@ class ArticleItem extends React.Component {
     return (
       <li key={this.props.article.id} className='all-feeds-index-item' onClick={()=> this.handleClick()}>
         <div className='article-picture'>
-          <img src={this.props.article.image_url} alt=""/>
+          <img src={this.props.article.image_url} alt="" className="source-show-article-img" />
         </div>
           <div className='feed-show-article-container'>
             <div className="feed-show-article-name">{this.props.article.title}</div>   

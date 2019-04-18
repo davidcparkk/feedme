@@ -40,7 +40,9 @@ ActiveRecord::Schema.define(version: 2019_03_07_184057) do
     t.string "body", default: "", null: false
     t.string "title", default: "", null: false
     t.integer "source_id", null: false
-    t.string "image_url"
+    t.string "image_url", null: false
+    t.string "author", default: "", null: false
+    t.string "url", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["source_id"], name: "index_articles_on_source_id"
@@ -57,7 +59,6 @@ ActiveRecord::Schema.define(version: 2019_03_07_184057) do
   create_table "feeds", force: :cascade do |t|
     t.string "feed_title", null: false
     t.integer "user_id", null: false
-    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -65,7 +66,7 @@ ActiveRecord::Schema.define(version: 2019_03_07_184057) do
   create_table "sources", force: :cascade do |t|
     t.string "source_name", null: false
     t.string "description", null: false
-    t.string "image_url"
+    t.string "image_url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

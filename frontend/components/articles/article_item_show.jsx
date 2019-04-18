@@ -38,9 +38,11 @@ class ArticleItemShow extends React.Component {
         <div className='article-show-display-container'>    
         <h2 className='article-splash-tag-line'>{this.props.article.title}</h2>
           <p className="article-source-name">{this.props.source.source_name}</p>
-          <div className="article-show-img"></div>
+          <div className="article-show-img-container">
+            <img src={this.props.article.image_url} alt="" className="article-show-img"/>
+          </div>
           <div className='article-show-body'>{this.props.article.body}</div>
-          <div className='article-show-link'>VISIT WEBSITE</div>
+          <a className='article-show-link' href={`${this.props.article.url}`} target="_blank">VISIT WEBSITE</a>
           <div className="source-back-btn-container">
             <div className="source-back-instruction">Back to Articles</div>
             <img className="source-back-btn" src={back} alt="" onClick={() => this.handleClick()}/>

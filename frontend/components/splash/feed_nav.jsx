@@ -29,14 +29,14 @@ class FeedNav extends React.Component {
     return(
       <div className="feedmeTabsHolder">
         <div className='personal-feed'>
-          <div className="feeds-title">Personal Feeds</div>
+          <div className="feeds-title">Your Feeds</div>
           <ul>
             <li className="feed-list-item" onClick={() => this.handleClick()}>
               <div className="tab">
                 <div className='icon'><img src={window.arrowRightURL} />
                 </div>
                 <div className='nav-bar-feeds'>
-                  All Feeds
+                  All Articles
                   {/* <Link to='/feeds' className="all-feeds">All Feeds</Link> */}
                 </div>
               </div>

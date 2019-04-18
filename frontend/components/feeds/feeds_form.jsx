@@ -20,7 +20,7 @@ class FeedsForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const feed = Object.assign({}, this.state);
-    this.props.action(feed).then(this.props.closeModal).then(() => this.props.history.push('/feeds'));
+    this.props.action(feed).then(this.props.closeModal).then(() => this.props.history.push('/articles'));
   }
 
   render () {

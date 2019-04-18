@@ -14,8 +14,8 @@ class SourcesIndexItem extends React.Component {
   
   render() {
     return (
-      <li key={this.props.source.id} onClick={this.handleClick} className="source-li">
-        <div className='source-boxes'>{this.props.source.source_name}
+      <li key={this.props.source.id} onClick={this.handleClick} className="source-li" style={{backgroundImage:`url(${this.props.source.image_url})`}}>
+        <div className='source-boxes' >{this.props.source.source_name}
         {/* <img src={window.twitterURL} className='image-class'/> */}
           
             

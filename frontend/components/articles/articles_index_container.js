@@ -1,6 +1,8 @@
 import {connect} from 'react-redux';
 import {fetchArticles} from '../../actions/article_actions';
 import ArticlesIndex from './articles_index';
+import {fetchFeeds} from '../../actions/feed_actions';
+import {fetchSources} from '../../actions/source_actions';
 import {selectFeed} from '../../reducers/selectors';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
@@ -21,7 +23,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return{
-    fetchArticles: () => dispatch(fetchArticles())
+    fetchArticles: () => dispatch(fetchArticles()),
+    fetchFeeds: () => dispatch(fetchFeeds()),
+    fetchSources: () => dispatch(fetchSources())
     // deleteFeed: (feedId) => dispatch(deleteFeed(feedId)),
     // openModal: (type) => dispatch(openModal(type))
   };

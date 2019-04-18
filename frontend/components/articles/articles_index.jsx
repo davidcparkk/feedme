@@ -9,6 +9,8 @@ class ArticlesIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchArticles();
+    this.props.fetchFeeds();
+    this.props.fetchSources();
   }
   
   SignedInPage() {
@@ -32,10 +34,10 @@ class ArticlesIndex extends React.Component {
     )
   }
   render (){
-    if (this.props.currentUser){
-      return this.SignedInPage();
+    if (this.props.articles === undefined){
+      return null;  
   } else {
-    return null;
+      return this.SignedInPage();
   }
   }
 }

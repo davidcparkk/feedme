@@ -13,13 +13,21 @@
   color: gray;
 }
 
-.article-show-img{
+.article-show-img-container{
   background-color: #47b39b;
   max-width: 650px;
   width: 650px;
   height: 350px;
   max-height: 350px;
   margin-bottom: 50px;
+}
+
+.article-show-img{
+  max-width: 650px;
+  width: 650px;
+  height: 350px;
+  max-height: 350px;
+  border-radius: 5px;
 }
 
 .article-show-display-container{

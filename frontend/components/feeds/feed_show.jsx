@@ -36,7 +36,9 @@ class FeedShow extends React.Component {
     let articles = this.props.articles.map(article=> {
       return(
         <li key={article.id} className='all-feeds-index-item' onClick={()=> this.handleClick(article.id)}>
-          <div className='article-picture'></div>
+          <div className='article-picture'>
+            <img src={article.image_url} alt="" className="source-show-article-img" />
+            </div>
           <div className='feed-show-article-container'>
             <div className="feed-show-article-name">{article.title}</div>            
             <div className="feed-show-source-name">{this.props.sources[parseInt(article.source_id)].source_name}</div>
@@ -47,7 +49,7 @@ class FeedShow extends React.Component {
     })
 
 
-    if (this.props.feed === undefined) {
+    if (this.props.feed === undefined || this.props.sources === undefined) {
       return null;
     }
 

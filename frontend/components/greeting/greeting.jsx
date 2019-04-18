@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link , withRouter} from 'react-router-dom';
 import icon from '../../../app/assets/images/icon.svg';
+import user from '../../../app/assets/images/user.svg';
 
 const Greeting = (props) => {
   const signinLink = () => {
@@ -24,6 +25,8 @@ const Greeting = (props) => {
     props.logout();
   }
 
+
+
   const personalGreeting = () => {
     return(
       <div className='top-nav'>
@@ -33,7 +36,7 @@ const Greeting = (props) => {
             </div>
           <div className='profile-container'>
             <p className='header-name'>Welcome, {props.currentUser.username}!</p>
-            <img src={window.flashlightURL} alt="" className='icon-img' size={24} />  
+            <img src={user} alt="" className='icon-img' size={24} />  
             <button className='login-button' onClick={handleLogout}>Log Out</button>
           </div>
         </div>
@@ -44,7 +47,7 @@ const Greeting = (props) => {
   return props.currentUser ? personalGreeting() : signinLink();
 };
 
-export default Greeting;
+export default withRouter(Greeting);
 
  
 
