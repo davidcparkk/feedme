@@ -2,7 +2,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import FeedsIndexItem from '../feeds/feeds_index_item';
-// import splash from '../../../app/assets/images/splash.JPG';
 
 class Splash extends React.Component {
   SplashPage () {
@@ -14,8 +13,7 @@ class Splash extends React.Component {
             <h2 className='splash-h2'>GET INFORMED. GET INSPIRED.</h2>
             <h3 className='splash-h3'>Stories curated for you.</h3>
             <Link to='/signup' className='signup-link'>GET STARTED FOR FREE</Link>
-            <div className='container-centered-main-img'>
-              {/* <img src={splash} alt=""/> */}
+            <div className='container-centered-main-img' style={{backgroundImage:`url(${window.splashURL})`}}>
             </div>
           </div>
           
