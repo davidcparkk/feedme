@@ -1,9 +1,21 @@
-### feedme 
+# Feedme
+[Live Demo](https://feedme-fsp.herokuapp.com/#/)
 
-This repository contains step-by-step instructions on how to download, process, and operate Feedme to enjoy all your favorite sources of information all in one place. Feedme, a Feedly clone, is a news and media application that allows users to aggregate all their most-essential article sources, Twitter hashtags/users, or buzzwords into personalized feeds that can be shared and viewed by other users.
+### Background and Overview
 
-https://feedme-fsp.herokuapp.com/#/
+Inspired by the application Feedly, Feedme is a personalized news and media aggregator clone that gives users instant access to their favorite news articles and sources. 
 
-## Overview
 
-Uses Rails on the backend and React/Redux to handle frontend with PostgreSQL as the database.
+## Technologies and Challenges
+
+### Technologies Used
+
+2020 is built with a Ruby on Rails backend, Javascript, React/Redux frontend, and a customized database using PostgreSQL.
+
+### UI/UX 
+
+
+### Challenges
+
+
+### Bonus Features for the Future
