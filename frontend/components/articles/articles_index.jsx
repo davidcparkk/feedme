@@ -26,7 +26,7 @@ class ArticlesIndex extends React.Component {
     return(
       <div className='display-container'>
         <h2 className='splash-tag-line'>All</h2>
-        <p>TEST</p>
+        <p>All Articles</p>
         <ul className="article-ul">
           {allArticles}
         </ul>
