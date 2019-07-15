@@ -9,7 +9,7 @@ const Greeting = (props) => {
       <div className = 'splash-nav'>
         <div className = "splash-nav-container">
           <div className="feedme-welcome-container">
-              <img src={icon} alt="" className='icon-img' size={40} />
+              <img src={icon} alt="" className='icon-img' size={40} onClick={() => props.history.push('/')}/>
             </div>
           <div >
           <Link to='/' className='login-button'>Home</Link>
@@ -32,7 +32,7 @@ const Greeting = (props) => {
       <div className='top-nav'>
         <div className="top-nav-container">
           <div className="feedme-welcome-container">
-            <img src={icon} alt="" className='icon-img' size={40} />
+            <img src={icon} alt="" className='icon-img' size={40} onClick={() => props.history.push('/articles')}/>
             </div>
           <div className='profile-container'>
             <p className='header-name'>Welcome, {props.currentUser.username}!</p>
