@@ -13,26 +13,19 @@ class Splash extends React.Component {
             <h2 className='splash-h2'>GET INFORMED. GET INSPIRED.</h2>
             <h3 className='splash-h3'>Stories curated for you.</h3>
             <Link to='/signup' className='signup-link'>GET STARTED FOR FREE</Link>
-            <div className='container-centered-main-img' style={{backgroundImage:`url(${window.splashURL})`}}>
+            <div ><img className='container-centered-main-img' src={window.splashURL}></img>
             </div>
+            <div className="contact-info">
+          
+            <a href="https://www.linkedin.com/in/david-park-8007aa58/" target="_blank"><img src={window.linkedIn} className="logo-small"></img></a>
+            
+            <a href="https://www.github.com/davidcparkk" target="_blank"><img src={window.github} className="logo-small"></img></a>
+
+          </div>
           </div>
           
+          
         </div>
-        <div className='discover'>
-          <div className='container-centered'>
-            {/* <h2 className='splash-h2'>Discover insightful sources</h2>
-            <div className='splash-img-container'>
-              <div className="splash-descriptions">
-              <div><img src={window.youtubeURL} className='splash-images'/></div><div>
-              See new videos from the YouTube</div></div>
-              
-              <div className="splash-descriptions"><div><img src={window.twitterURL} className='splash-images'/></div><div>Follow your favorite twitter influencer or hashtag and never miss crucial updates</div></div>
-              
-              <div className="splash-descriptions"><div><img src={window.rssURL} className='splash-images'/></div>
-              <div>Follow anyone on the Web who publishes an RSS feed</div></div>
-            </div> */}
-          </div>
-        </div> 
       </div>
     );
   }
