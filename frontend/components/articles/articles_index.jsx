@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import ArticlesIndexItem from './articles_index_item';
+import Loader from '../loader/loader';
 
 class ArticlesIndex extends React.Component {
   constructor(props){
@@ -34,8 +35,8 @@ class ArticlesIndex extends React.Component {
     )
   }
   render (){
-    if (this.props.articles === undefined){
-      return null;  
+    if (!this.props.articles){
+      return <Loader />;  
   } else {
       return this.SignedInPage();
   }
